@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { StyleSheet, Text, View, Image, TextInput } from "react-native";
 
 
-export default class AverageCycle extends Component {
+export default class LastPeriodScreen extends Component {
     constructor(props) {
         super(props);
         this.state = {text: ''};
@@ -11,7 +11,7 @@ export default class AverageCycle extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Enter your Average Cycle Period</Text>
+        <Text style={styles.welcome}>Enter your Last Period</Text>
 
         <TextInput
           style={{height: 40}}
