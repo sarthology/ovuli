@@ -16,9 +16,9 @@ Welcome to project ovuli. I will try to make this guide as simple as possible an
 
 ### 1. You have to fork the repo
 
-You can get your own fork/copy of [ovuli](https://github.com/sarthology/ovuli) by using the <a href="https://github.com/sarthology/ovuli/new/master?readme=1#fork-destination-box"><kbd><b>Fork</b></kbd></a> button or clicking [this](https://github.com/sarthology/ovuli/new/master?readme=1#fork-destination-box).
+You can get your own fork/copy of [ovuli](https://github.com/sarthology/ovuli) by using the <kbd><b>Fork</b></kbd> button.
 
- ![Fork Button](https://help.github.com/assets/images/help/repository/fork_button.jpg)
+ [![Fork Button](https://help.github.com/assets/images/help/repository/fork_button.jpg)](https://github.com/sarthology/ovuli)
  
 ### 2. Then clone it locally
 
