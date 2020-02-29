@@ -4,9 +4,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from 'react-native-vector-icons';
 
-import HistoryScreen from './src/containers/HistoryScreen'
-import HomeScreen from './src/containers/HomeScreen'
-import ProfileScreen from './src/containers/ProfileScreen'
+import HistoryScreen from './src/screens/HistoryScreen'
+import HomeScreen from './src/screens/HomeScreen'
+import ProfileScreen from './src/screens/ProfileScreen'
 
 
 const Tab = createBottomTabNavigator();
