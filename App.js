@@ -1,41 +1,56 @@
+import 'react-native-gesture-handler';
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View, Image } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { MaterialCommunityIcons } from 'react-native-vector-icons';
 
-const instructions = Platform.select({
-  ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
-  android:
-    "Double tap R on your keyboard to reload,\n" +
-    "Shake or press menu button for dev menu"
-});
+import HistoryScreen from './src/containers/HistoryScreen'
+import HomeScreen from './src/containers/HomeScreen'
+import ProfileScreen from './src/containers/ProfileScreen'
+
+
+const Tab = createBottomTabNavigator();
 
 export default class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Image
-          style={{ width: 250, height: 250 }}
-          source={require("./src/assets/Ovuli.png")}
-        />
-        <Text style={styles.welcome}>Welcome to Ovuli!</Text>
-      </View>
+      <NavigationContainer>
+        <Tab.Navigator 
+          initialRouteName="Home" 
+          tabBarOptions={{
+            activeTintColor: '#e91e63',
+            style: {}
+          }} 
+        >
+          <Tab.Screen 
+            name="History" 
+            component={HistoryScreen}
+            options={{
+              tabBarLabel: 'History',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="history" color={color} size={size} />
+              ),
+            }} />
+          <Tab.Screen 
+            name="Home" 
+            component={HomeScreen}
+            options={{
+              tabBarLabel: 'Home',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="home" color={color} size={size} />
+              ),
+            }} />
+          <Tab.Screen 
+            name="Profile" 
+            component={ProfileScreen}
+            options={{
+              tabBarLabel: 'Profile',
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons name="account" color={color} size={size} />
+              ),
+            }} />
+        </Tab.Navigator>
+      </NavigationContainer>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "white"
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: "center"
-  },
-  instructions: {
-    textAlign: "center",
-    color: "#333333",
-    marginBottom: 5
-  }
-});
