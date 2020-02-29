@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": null,
-  "packagerPort": null,
-  "packagerPid": null,
+  "expoServerPort": 19000,
+  "packagerPort": 19001,
+  "packagerPid": 31084,
   "expoServerNgrokUrl": "https://n4-9cd.anonymous.ovuli.exp.direct",
   "packagerNgrokUrl": "https://packager.n4-9cd.anonymous.ovuli.exp.direct",
-  "ngrokPid": 54854
+  "ngrokPid": 31098
 }
