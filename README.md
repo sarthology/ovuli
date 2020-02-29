@@ -16,7 +16,7 @@ Before running this locally you must have these installed
 
 - [Node](https://nodejs.org/)
 - [npm](https://www.npmjs.com/)
--  [Expo](https://reactnative.dev/docs/getting-started)
+- [Expo](https://reactnative.dev/docs/getting-started)
 
 ## Installation
 To run locally
@@ -33,11 +33,7 @@ expo start
 ```
 ## Contributing
 
-1. 🍴 Fork this repo!
-2. **HACK AWAY!** 🔨🔨🔨
-3. 🔃 Create a new pull request.
-
-Feel free to contribute to this project and treat it like your own. 😊
+Please read [CONTRIBUTING.md](https://github.com/sarthology/ovuli/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## License
 

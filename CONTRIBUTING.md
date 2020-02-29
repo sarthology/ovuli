@@ -14,11 +14,81 @@ Welcome to project ovuli. I will try to make this guide as simple as possible an
 
 ## How to submit work
 
-1. You have to fork the repo
-2. Then clone it locally
-3. Next create new branch in your repo
-4. Start working on the issue
-5. Send the pull request 
+### 1. You have to fork the repo
+
+You can get your own fork/copy of [ovuli](https://github.com/sarthology/ovuli) by using the <kbd><b>Fork</b></kbd> button.
+
+ [![Fork Button](https://help.github.com/assets/images/help/repository/fork_button.jpg)](https://github.com/sarthology/ovuli)
+ 
+### 2. Then clone it locally
+
+You need to clone (download) it to local machine using
+
+```sh
+$ git clone https://github.com/Your_Username/ovuli.git
+```
+
+> This makes a local copy of repository in your machine.
+
+Once you have cloned the `ovuli` repository in Github, move to that folder first using change directory command on linux and Mac.
+
+```sh
+# This will change directory to a folder ovuli
+$ cd ovuli
+```
+
+Move to this folder for all other commands.
+
+To install dependencies
+
+```sh
+yarn install
+or 
+npm install
+```
+
+to run locally  
+
+```sh
+expo start
+```
+
+### 3. Next create new branch in your repo
+
+Whenever you are going to make contribution. Please create seperate branch using command and keep your `master` branch clean (i.e. synced with remote branch).
+
+```sh
+# It will create a new branch with name Branch_Name and will switch to that branch 
+$ git checkout -b Branch_Name
+```
+
+### 4. Start working on the issue
+
+To add the changes to the branch. Use
+
+```sh
+# To add all files to branch Branch_Name
+$ git add .
+```
+
+To commit type in a message relevant for the code reveiwer using
+
+```sh
+# This message get associated with all files you have changed
+$ git commit -m 'relevant message'
+```
+
+### 5. Send the pull request 
+
+Now, Push your awesome work to your remote repository using
+
+```sh
+# To push your work to your remote repository
+$ git push -u origin Branch_Name
+```
+
+Finally, go to your repository in browser and click on `compare and pull requests`.
+Then add a title and description to your pull request that explains your precious effort.
 
 👉 ***If you want to know the commands to do it see this: [Pull Request Gist](https://gist.github.com/Chaser324/ce0505fbed06b947d962)***
 
