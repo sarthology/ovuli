@@ -1,7 +1,6 @@
-import 'react-native-gesture-handler';
+import "react-native-gesture-handler";
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-
 
 export default class HomeScreen extends Component {
   render() {
@@ -27,5 +26,5 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
     textAlign: "center"
-  },
+  }
 });

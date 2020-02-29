@@ -1,22 +1,21 @@
-import 'react-native-gesture-handler';
+import "react-native-gesture-handler";
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image, TextInput } from "react-native";
 
-
 export default class LastPeriodScreen extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {text: ''};
-      }
+  constructor(props) {
+    super(props);
+    this.state = { text: "" };
+  }
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Enter your Last Period</Text>
 
         <TextInput
-          style={{height: 40}}
+          style={{ height: 40 }}
           placeholder="Type here !"
-          onChangeText={(text) => this.setState({text})}
+          onChangeText={text => this.setState({ text })}
           value={this.state.text}
         />
       </View>
@@ -34,5 +33,5 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
     textAlign: "center"
-  },
+  }
 });
