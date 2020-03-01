@@ -15,7 +15,7 @@ If you are as excited as I am, Open up your terminals 👩🏻‍💻💪🏽
 Before running this locally you must have these installed
 
 - [Node](https://nodejs.org/)
-- [npm](https://www.npmjs.com/)
+- [yarn](https://yarnpkg.com)
 - [Expo](https://reactnative.dev/docs/getting-started)
 
 ## Installation
@@ -23,14 +23,15 @@ To run locally
 
 ```sh
 yarn install
-or 
-npm install
 ```
 then 
 
 ```sh
 expo start
 ```
+
+**Note:** *Don't use npm*
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/sarthology/ovuli/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
