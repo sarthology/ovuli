@@ -7,6 +7,7 @@ import { MaterialCommunityIcons } from 'react-native-vector-icons';
 
 import HistoryScreen from './src/screens/HistoryScreen'
 import ProfileScreen from './src/screens/ProfileScreen'
+import HomeScreen from './src/screens/HomeScreen'
 
 import YourNameScreen from './src/screens/ProfileScreen/YourNameScreen';
 import AvgCycleScreen from './src/screens/ProfileScreen/AvgCycleScreen';
@@ -35,7 +36,7 @@ function TabNavigator(){
             }} />
           <Tab.Screen 
             name="Home" 
-            component={ProfileStack}
+            component={HomeScreen}
             options={{
               tabBarLabel: 'Home',
               tabBarIcon: ({ color, size }) => (
