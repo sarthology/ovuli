@@ -1,11 +1,11 @@
-import "react-native-gesture-handler";
-import React, { Component } from "react";
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import 'react-native-gesture-handler';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
 
 export default class YourNameScreeen extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: "" };
+    this.state = { text: '' };
   }
   render() {
     return (
@@ -26,12 +26,12 @@ export default class YourNameScreeen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "white"
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
   },
   welcome: {
     fontSize: 20,
-    textAlign: "center"
-  }
+    textAlign: 'center',
+  },
 });

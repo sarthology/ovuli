@@ -1,7 +1,6 @@
 import 'react-native-gesture-handler';
-import React, { Component } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
-
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default class HomeScreen extends Component {
   render() {
@@ -9,7 +8,7 @@ export default class HomeScreen extends Component {
       <View style={styles.container}>
         <Image
           style={{ width: 250, height: 250 }}
-          source={require("../../assets/images/Ovuli.png")}
+          source={require('../../assets/images/Ovuli.png')}
         />
         <Text style={styles.welcome}>Welcome to Ovuli!</Text>
       </View>
@@ -20,12 +19,12 @@ export default class HomeScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "white"
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
   },
   welcome: {
     fontSize: 20,
-    textAlign: "center"
+    textAlign: 'center',
   },
 });
