@@ -1,20 +1,27 @@
-import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
+import 'react-native-gesture-handler';
+import React, { Component } from "react";
+import { StyleSheet, Text, View, Image } from "react-native";
 
-import YourNameScreen from './YourNameScreen';
-import AvgCycleScreen from './AvgCycleScreen';
-import LastPeriodScreen from './LastPeriodScreen';
 
-const Stack = createStackNavigator();
-
-function ProfileStack(){
-  return(
-  <Stack.Navigator>
-    <Stack.Screen name="YourNameScreen" component={YourNameScreen} />
-    <Stack.Screen name="AvgCycleScreen" component={AvgCycleScreen} />
-    <Stack.Screen name="LastPeriodScreen" component={LastPeriodScreen} />
-  </Stack.Navigator>
-  );
+export default class ProfileScreen extends Component {
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.welcome}>Profile</Text>
+      </View>
+    );
+  }
 }
 
-export default ProfileStack;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white"
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: "center"
+  },
+});
