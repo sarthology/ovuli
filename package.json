@@ -8,6 +8,17 @@
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
     "test": "jest"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run format",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.6",
     "@react-navigation/bottom-tabs": "^5.1.0",
@@ -33,7 +44,9 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
+    "husky": "^4.2.3",
     "jest": "~24.9.0",
+    "lint-staged": "^10.0.8",
     "metro-react-native-babel-preset": "~0.56.0",
     "prettier": "^1.19.1",
     "react-test-renderer": "~16.9.0"
