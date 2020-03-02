@@ -1,9 +1,8 @@
-
-import "react-native-gesture-handler";
-import React, { Component } from "react";
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
-import { Calendar } from "react-native-calendars";
-import moment from "moment";
+import 'react-native-gesture-handler';
+import React, { Component } from 'react';
+import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { Calendar } from 'react-native-calendars';
+import moment from 'moment';
 
 export default class App extends Component {
   render() {
@@ -13,27 +12,27 @@ export default class App extends Component {
 
         <Calendar
           style={{
-            width: 90 + "%",
+            width: 90 + '%',
             borderWidth: 0.5,
             borderRadius: 8,
-            borderColor: "gray"
+            borderColor: 'gray',
           }}
           // Initially visible month. Default = Date()
           current={Date()}
-          markedDates={moment(new Date()).format("YYYY-MM-DD")}
+          markedDates={moment(new Date()).format('YYYY-MM-DD')}
           // Handler which gets executed on day press. Default = undefined
           onDayPress={day => {
-            console.log("selected day", day);
+            console.log('selected day', day);
           }}
           // Handler which gets executed on day long press. Default = undefined
           onDayLongPress={day => {
-            console.log("selected day", day);
+            console.log('selected day', day);
           }}
           // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
-          monthFormat={"dd MM yyyy"}
+          monthFormat={'dd MM yyyy'}
           // Handler which gets executed when visible month changes in calendar. Default = undefined
           onMonthChange={month => {
-            console.log("month changed", month);
+            console.log('month changed', month);
           }}
           // Hide month navigation arrows. Default = false
           // hideArrows={true}
@@ -63,13 +62,13 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "white"
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
   },
   welcome: {
     fontSize: 30,
-    textAlign: "center",
-    margin: 12
-  }
+    textAlign: 'center',
+    margin: 12,
+  },
 });
