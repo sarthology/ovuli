@@ -10,17 +10,17 @@
 ```bash
 npx-docusaurus-init
 ```
--***Your root directory will now contain a structure similar***
+-*** Your root directory will now contain a structure similar***
 ![Alt text](assests/images/Img.png?raw=true)
 -***Move to 'website' folder using***
 ```bash
 cd website
 ```
--***Now run the following command to start your server***
+-*** Now run the following command to start your server***
 ```bash
 npm start
 ```
--***This will open your server on http://localhost:3000, like this***
+-*** This will open your server on http://localhost:3000, like this***
 ![Alt text](assests/images/Img2.png?raw=true)
 
 ### You have successfully installed docusaurus on your Machine.
