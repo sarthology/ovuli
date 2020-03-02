@@ -43,8 +43,6 @@ To install dependencies
 
 ```sh
 yarn install
-or 
-npm install
 ```
 
 to run locally  
