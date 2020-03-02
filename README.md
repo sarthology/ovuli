@@ -10,7 +10,7 @@
 ```bash
 npx-docusaurus-init
 ```
-- ***Your root directory will now contain a structure similar***
+- ***Your root directory will now contain a structure similar***<br/>
 ![Alt text](assests/images/Img.png?raw=true)
 - ***Move to 'website' folder using***
 ```bash
