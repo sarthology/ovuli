@@ -2,7 +2,7 @@
  <img src="https://user-images.githubusercontent.com/3650216/75360727-3dbbf900-58dc-11ea-9a59-d881bbf0c61a.png"/>
 </p>
 
-> ***Note:*** *If you are looking for the Ovuli the cli app go [here](https://github.com/teamxenox/ovuli-cli)*
+> ***Note:*** *If you are looking for the Ovuli-cli app then go [here](https://github.com/teamxenox/ovuli-cli)*
 
 Welcome stars of ***GSSoC***, over the course of few months we will be creating magic here from our hard work. 
 
