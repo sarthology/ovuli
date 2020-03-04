@@ -6,7 +6,7 @@
 
 Welcome stars of ***GSSoC***, over the course of few months we will be creating magic here from our hard work. 
 
-We are creating a Ovulation Calculator and Calendar mobile app. This app is going to support ***20+ official Indian Languages***.
+We are creating an Ovulation Calculator and Calendar mobile app. This app is going to support ***20+ official Indian Languages***.
 
 If you are as excited as I am, Open up your terminals 👩🏻‍💻💪🏽
 
