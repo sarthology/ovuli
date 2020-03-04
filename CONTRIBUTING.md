@@ -6,7 +6,7 @@ Welcome to project ovuli. I will try to make this guide as simple as possible an
 
 ## How to work on an issue
 
-1. Go in to the issues section and find the issue your interested in.
+1. Go in to the issues section and find the issue you are interested in.
 2. Comment on the issue that you are interested.
 3. The Mentor will assign you the issue.
 
