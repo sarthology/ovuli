@@ -6,9 +6,9 @@ Welcome to project ovuli. I will try to make this guide as simple as possible an
 
 ## How to work on an issue
 
-1. Go in to the issues section and find the issue your insterested in.
+1. Go in to the issues section and find the issue you are interested in.
 2. Comment on the issue that you are interested.
-3. The Mentor will assign you the issue
+3. The Mentor will assign you the issue.
 
 👉 ***Make sure that you are assigned task before working on it.***
 
@@ -43,8 +43,6 @@ To install dependencies
 
 ```sh
 yarn install
-or 
-npm install
 ```
 
 to run locally  
@@ -94,7 +92,7 @@ Then add a title and description to your pull request that explains your preciou
 
 ## Ways to contribute
 
-I know not everyone has their grasp on React Native yet but there are multiple ways to contribut in this project.
+I know not everyone has their grasp on React Native yet but there are multiple ways to contribute in this project.
 
 1. **Design:** If you feel like that your *Design sense* is awesome. This section is for you, we are using figma to create deisgn. All the wireframes will be uploaded in `wireframes` folder. 
 2. **Documentation / Wiki:** Documentation is very important aspect of any open source project and it is for this project as well. You might learn a lot while writing about it.
