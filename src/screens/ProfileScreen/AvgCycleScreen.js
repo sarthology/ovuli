@@ -22,7 +22,7 @@ export default class AvgCycleScreen extends Component {
 
         <Picker
           selectedValue={this.state.PickerSelection}
-          style={{backgroundColor: "#FADBD8" , height: 50, width: 800}}
+          style={{backgroundColor: "#FADBD8" , height: 50, width: 250}}
           onValueChange={(itemValue, itemIndex) =>this.setState({PickerSelection: itemValue}) }>
         <Picker.Item style={{color:'#FADBD8'}} label="AVERAGE CYCLE DURATION" value="NULL" />
         <Picker.Item style={{color:'#FADBD8'}} label="3 days" value="3" />
