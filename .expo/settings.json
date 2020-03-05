@@ -1,8 +1,8 @@
 {
+  "urlRandomness": "tq-xsk",
   "hostType": "lan",
   "lanType": "ip",
   "dev": true,
   "minify": false,
-  "urlRandomness": "f7-thz",
   "https": false
 }
