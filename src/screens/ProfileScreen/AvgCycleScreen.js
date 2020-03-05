@@ -6,7 +6,9 @@ export default class AvgCycleScreen extends Component {
   constructor(props) {
 		super(props);
 		this.state = {
-	  PickerSelection: "NULL"
+    PickerSelection: "NULL"
+    
+    
 		};
 	}
   render() {
@@ -22,17 +24,17 @@ export default class AvgCycleScreen extends Component {
 
         <Picker
           selectedValue={this.state.PickerSelection}
-          style={{backgroundColor: "#FADBD8" , height: 50, width: 250}}
+          style={{backgroundColor: "#FADBD8" , height: 50, width: 250, alignSelf: 'center'}}
           onValueChange={(itemValue, itemIndex) =>this.setState({PickerSelection: itemValue}) }>
-        <Picker.Item style={{color:'#FADBD8'}} label="AVERAGE CYCLE DURATION" value="NULL" />
-        <Picker.Item style={{color:'#FADBD8'}} label="3 days" value="3" />
-        <Picker.Item style={{color:'#FADBD8'}} label="4 days" value="4" />
-        <Picker.Item style={{color:'#FADBD8'}} label="5 days" value="5" />    
-        <Picker.Item style={{color:'#FADBD8'}} label="6 days" value="6" />
-        <Picker.Item style={{color:'#FADBD8'}} label="7 days" value="7" />
-        <Picker.Item style={{color:'#FADBD8'}} label="8 days" value="8" />
-        <Picker.Item style={{color:'#FADBD8'}} label="9 days" value="9" />
-        <Picker.Item style={{color:'#FADBD8'}} label="10 days" value="10" />
+        <Picker.Item backgroundColor='#FADBD8' label="AVERAGE CYCLE DURATION" value="NULL" />
+        <Picker.Item backgroundColor='#FADBD8' label="3 days" value="3" />
+        <Picker.Item backgroundColor='#FADBD8' label="4 days" value="4" />
+        <Picker.Item backgroundColor='#FADBD8' label="5 days" value="5" />    
+        <Picker.Item backgroundColor='#FADBD8' label="6 days" value="6" />
+        <Picker.Item backgroundColor='#FADBD8' label="7 days" value="7" />
+        <Picker.Item backgroundColor='#FADBD8' label="8 days" value="8" />
+        <Picker.Item backgroundColor='#FADBD8' label="9 days" value="9" />
+        <Picker.Item backgroundColor='#FADBD8' label="10 days" value="10" />
         </Picker>
       </View>
     );
