@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 12696,
+  "packagerPid": 10448,
   "expoServerNgrokUrl": "https://cs-k6v.anonymous.ovuli-1.exp.direct",
   "packagerNgrokUrl": "https://packager.cs-k6v.anonymous.ovuli-1.exp.direct",
-  "ngrokPid": 14208,
+  "ngrokPid": 13376,
   "webpackServerPort": 19006
 }
