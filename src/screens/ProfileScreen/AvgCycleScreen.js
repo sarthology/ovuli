@@ -19,10 +19,10 @@ export default class AvgCycleScreen extends Component {
           style={{ height: 40 }}
           placeholder="Type here !"
           onChangeText={text => this.setState({ text })}
-          value={this.state.PickerSelection}  
+          value={this.state.PickerSelection}
         />
 
-        <Picker
+        <Picker style={styles.cont}
           selectedValue={this.state.PickerSelection}
           style={{backgroundColor: "#FADBD8" , height: 50, width: 250}}
           itemStyle={{ backgroundColor: "#FADBD8" }}
@@ -75,5 +75,11 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
     textAlign: 'center',
+  },
+  cont: {
+    fontSize: 20,
+    textAlign: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FADBD8',
   },
 });
