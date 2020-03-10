@@ -9,7 +9,9 @@
     "version": "1.0.0",
     "entryPoint": "node_modules/expo/AppEntry.js",
     "splash": {
-      "image": "./src/assets/images/Ovuli.png"
+      "image": "./wireframes/GetStarted.png",
+     
+      "resizeMode" : "cover"
     },
     "platforms": [
       "ios",
