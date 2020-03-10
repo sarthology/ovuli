@@ -10,7 +10,6 @@
     "entryPoint": "node_modules/expo/AppEntry.js",
     "splash": {
       "image": "./wireframes/GetStarted.png",
-     
       "resizeMode" : "cover"
     },
     "platforms": [
