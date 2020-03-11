@@ -1,10 +1,10 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import moment from 'moment';
 
-export default class App extends Component {
+export default class LastPeriodScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -54,6 +54,7 @@ export default class App extends Component {
           // Handler which gets executed when press arrow icon right. It receive a callback can go next month
           onPressArrowRight={addMonth => addMonth()}
         />
+        <Button title="next" onPress={() => this.props.navigation.navigate('Dashboard')} />
       </View>
     );
   }

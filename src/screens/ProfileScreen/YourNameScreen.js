@@ -1,8 +1,8 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Button, Image, TextInput } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, View, TextInput } from 'react-native';
 
-export default class YourNameScreeen extends Component {
+export default class YourNameScreen extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
@@ -10,20 +10,23 @@ export default class YourNameScreeen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Please Enter Your Name</Text>
+        <Text style={styles.welcome}>Enter Your Name</Text>
 
         <TextInput
-          style={styles.input}
-          underlineColorAndroid = "transparent"
-          autoCapitalize = "none"
-          placeholder="  Enter your name here "
+          style={styles.inputContainer}
+          underlineColorAndroid="transparent"
+          autoCapitalize="none"
+          placeholder="Please Enter your name here"
           onChangeText={text => this.setState({ text })}
           value={this.state.text}
         />
-        
-        <View style={styles.buttonContainer}>
-          <Button onPress={this._onPress} title="Next" color="#FFFFFF" />
-      </View>
+
+        <TouchableOpacity
+          style={styles.buttonContainer}
+          onPress={() => this.props.navigation.navigate('AverageCycle')}
+        >
+          <Text style={{ fontSize: 22 }}>Next</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -34,31 +37,34 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'white',  
-   
+    backgroundColor: 'white',
   },
   welcome: {
     fontSize: 25,
-    textAlign: 'center',
   },
-  input: {
+  inputContainer: {
     margin: 15,
     height: 40,
     borderColor: 'blue',
-    borderWidth: 1,
-    width: '80%'
- },
+    padding: 8,
+    borderWidth: 0.5,
+    borderRadius: 8,
+    width: '80%',
+  },
   buttonContainer: {
-    backgroundColor: 'blue',
+    backgroundColor: '#45CE30',
     borderRadius: 10,
-    padding: 5,
+    padding: 8,
+    height: 40,
+    alignContent: 'center',
+    justifyContent: 'center',
     shadowColor: '#000000',
-    width: 120,
+    width: '20%',
     shadowOffset: {
       width: 0,
       height: 3,
     },
     shadowRadius: 10,
-    shadowOpacity: 0.5
-  }
+    shadowOpacity: 0.5,
+  },
 });

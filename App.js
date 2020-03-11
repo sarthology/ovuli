@@ -64,10 +64,10 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="Name" component={YourNameScreen} />
+        <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />
-        <Stack.Screen name="Tab" component={TabNavigator} />
+        <Stack.Screen name="Dashboard" component={TabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );
