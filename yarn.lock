@@ -6352,6 +6352,11 @@ react-native-web@~0.11.7:
     prop-types "^15.6.0"
     react-timer-mixin "^0.13.4"
 
+react-native-wheel-scroll-picker@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/react-native-wheel-scroll-picker/-/react-native-wheel-scroll-picker-0.2.4.tgz#d923f17d08334fd16ea01dc4c21d7641888ea55b"
+  integrity sha512-fwHKko8e/FprM6diUa5jTZrajK1oN8YBSqOAMFKrkPtyQGGR/zzv4vJduEQxG396291YsanLM+UM9ejDjzXsow==
+
 react-native@^0.61.5:
   version "0.61.5"
   resolved "https://registry.yarnpkg.com/react-native/-/react-native-0.61.5.tgz#6e21acb56cbd75a3baeb1f70201a66f42600bba8"

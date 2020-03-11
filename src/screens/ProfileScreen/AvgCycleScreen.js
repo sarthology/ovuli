@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, Picker, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, Picker, TextInput, Button } from 'react-native';
 
 export default class AvgCycleScreen extends Component {
   constructor(props) {
@@ -60,6 +60,7 @@ export default class AvgCycleScreen extends Component {
           <Picker.Item label="39 days" value="39" />
           <Picker.Item label="40 days" value="40" />
         </Picker>
+        <Button title="next" onPress={() => this.props.navigation.navigate('LastPeriod')} />
       </View>
     );
   }

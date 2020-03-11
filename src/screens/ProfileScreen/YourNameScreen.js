@@ -1,9 +1,8 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import { StyleSheet, TouchableOpacity, Text, View, TextInput } from 'react-native';
-import AvgCycleScreen from './AvgCycleScreen';
 
-export default class YourNameScreeen extends Component {
+export default class YourNameScreen extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
@@ -24,7 +23,7 @@ export default class YourNameScreeen extends Component {
 
         <TouchableOpacity
           style={styles.buttonContainer}
-          onPress={() => this.props.navigation.navigate('AvgCycleScreen')}
+          onPress={() => this.props.navigation.navigate('AverageCycle')}
         >
           <Text style={{ fontSize: 22 }}>Next</Text>
         </TouchableOpacity>
