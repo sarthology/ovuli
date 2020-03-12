@@ -12,6 +12,7 @@ import HomeScreen from './src/screens/HomeScreen';
 import YourNameScreen from './src/screens/ProfileScreen/YourNameScreen';
 import AvgCycleScreen from './src/screens/ProfileScreen/AvgCycleScreen';
 import LastPeriodScreen from './src/screens/ProfileScreen/LastPeriodScreen';
+import CalculatingCyclePeriodPage from './src/screens/ProfileScreen/CalculatingCyclePeriodPage';
 
 const Tab = createBottomTabNavigator();
 
@@ -64,6 +65,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="CalculatingCyclePeriodPage" component={CalculatingCyclePeriodPage} />
         <Stack.Screen name="Name" component={YourNameScreen} />
         <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />
