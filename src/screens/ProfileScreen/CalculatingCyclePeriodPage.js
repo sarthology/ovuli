@@ -5,8 +5,7 @@ import { Calendar } from 'react-native-calendars';
 import moment from 'moment';
 
 
-const calculateAverageCycle = cycles => {
-  let totalCycleDays = 0;
+const calculateAverageCycle = cycles => {let totalCycleDays = 0;
 
   for (let index = 1; index < cycles.length; index++) {
     let start = moment(cycles[index - 1]).format('YYYY-MM-DD');
@@ -27,7 +26,7 @@ const calculateAverageCycle = cycles => {
   return averageCycleDay;
 };
 
-export default class calculateAverageCycle extends Component {
+export default class CalculatingCyclePeriodPage extends Component {
 
   render() {
     return (
