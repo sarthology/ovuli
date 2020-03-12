@@ -8,6 +8,9 @@
     "sdkVersion": "36.0.0",
     "version": "1.0.0",
     "entryPoint": "node_modules/expo/AppEntry.js",
+    "splash": {
+      "image": "./src/assets/images/Ovuli.png"
+    },
     "platforms": [
       "ios",
       "android",

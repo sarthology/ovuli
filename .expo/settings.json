@@ -1,8 +1,8 @@
 {
+  "urlRandomness": "cs-k6v",
   "hostType": "lan",
   "lanType": "ip",
   "dev": true,
   "minify": false,
-  "urlRandomness": "cs-k6v",
   "https": false
 }
