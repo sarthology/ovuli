@@ -4,15 +4,7 @@ import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import moment from 'moment';
 
-
-calculateAverageCycle = cycles => {let totalCycleDays = 0;
-
-  for (let index = 1; index < cycles.length; index++) {
-    let start = moment(cycles[index - 1]).format('YYYY-MM-DD');
-    let end = moment(cycles[index]).format('YYYY-MM-DD');
-
 export default class CalculatingCyclePeriodPage extends Component {
-
   render() {
     return (
       <View style={styles.container}>
@@ -26,7 +18,7 @@ export default class CalculatingCyclePeriodPage extends Component {
             borderColor: 'gray',
           }}
           current={Date()}
-          let start = {moment(cycles[index - 1]).format('YYYY-MM-DD')}
+          start = {moment(cycles[index - 1]).format('YYYY-MM-DD')}
          // start={moment(new Date()).format('YYYY-MM-DD')}
           onDayPress={day => {
             console.log('selected day', day);
@@ -45,8 +37,8 @@ export default class CalculatingCyclePeriodPage extends Component {
           onPressArrowRight={addMonth => addMonth()}
         />
 
-        <Text style={styles.welcome}>Select the first date of Bleeding of your second Period</Text>
-
+        <Text style={styles.welcome}>Select the first date of Bleeding of next Period</Text>
+ 
         <Calendar
           style={{
             width: 90 + '%',
@@ -55,7 +47,7 @@ export default class CalculatingCyclePeriodPage extends Component {
             borderColor: 'gray',
           }}
           current={Date()}
-          let end ={ moment(cycles[index]).format('YYYY-MM-DD')}
+          end = {moment(cycles[index]).format('YYYY-MM-DD')}
           //end={moment(new Date()).format('YYYY-MM-DD')}
           onDayPress={day => {
             console.log('selected day', day);
@@ -79,21 +71,6 @@ export default class CalculatingCyclePeriodPage extends Component {
     );
   }
 }
-
-    // If you are using moment.js you can do it easily.
-
-    start = moment(start, 'YYYY-MM-DD');
-    end = moment(end, 'YYYY-MM-DD');
-
-    //Difference in number of days
-    let duration = moment.duration(start.diff(end)).asDays();
-    totalCycleDays = totalCycleDays + duration;
-  }
-
-  let averageCycleDay = totalCycleDays / (cycles.length - 1);
-
-  return averageCycleDay;
-};
 
 const styles = StyleSheet.create({
   container: {
