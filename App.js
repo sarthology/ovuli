@@ -63,7 +63,7 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator headerMode="none">
         <Stack.Screen name="Name" component={YourNameScreen} />
         <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />
