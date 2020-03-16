@@ -23,7 +23,7 @@ export default class CalculatingCyclePeriodPage extends Component {
 
         <TouchableOpacity
           style={styles.buttonContainer}
-          onPress={() => this.props.navigation.navigate('calender')}
+          onPress={() => this.props.navigation.navigate('CalenderPage')}
         >
         <Text style={{ fontSize: 22 }}>|C|</Text>
         </TouchableOpacity>
@@ -39,7 +39,7 @@ export default class CalculatingCyclePeriodPage extends Component {
         
         <TouchableOpacity
           style={styles.buttonContainer}
-          onPress={() => this.props.navigation.navigate('calender')}
+          onPress={() => this.props.navigation.navigate('CalenderPage')}
         >
         <Text style={{ fontSize: 22 }}>|C|</Text>
         </TouchableOpacity>

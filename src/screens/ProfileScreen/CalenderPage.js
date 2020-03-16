@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import moment from 'moment';
 
-export default class calender extends Component {
+export default class CalenderPage extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -56,5 +56,21 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textAlign: 'center',
     margin: 12,
+  },
+  buttonContainer: {
+    backgroundColor: '#45CE30',
+    borderRadius: 5,
+    padding: 8,
+    height: 30,
+    alignContent: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000000',
+    width: '20%',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowRadius: 10,
+    shadowOpacity: 0.5,
   },
 });
