@@ -66,6 +66,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="CalculatingCyclePeriodPage" component={CalculatingCyclePeriodPage} />
+        <Stack.Screen name="calender" component={calender} />
         <Stack.Screen name="Name" component={YourNameScreen} />
         <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />
