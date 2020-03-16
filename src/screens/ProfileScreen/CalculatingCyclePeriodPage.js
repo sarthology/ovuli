@@ -1,10 +1,14 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
+import { StyleSheet, Text, View, Image,TouchableOpacity,TextInput, Button } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import moment from 'moment';
 
 export default class CalculatingCyclePeriodPage extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: '' };
+  } 
   render() {
     return (
       <View style={styles.container}>
@@ -73,5 +77,30 @@ const styles = StyleSheet.create({
     fontSize: 30,
     textAlign: 'center',
     margin: 12,
+  },
+  inputContainer: {
+    margin: 15,
+    height: 40,
+    borderColor: 'blue',
+    padding: 8,
+    borderWidth: 0.5,
+    borderRadius: 8,
+    width: '80%',
+  },
+  buttonContainer: {
+    backgroundColor: '#45CE30',
+    borderRadius: 10,
+    padding: 8,
+    height: 40,
+    alignContent: 'center',
+    justifyContent: 'center',
+    shadowColor: '#000000',
+    width: '20%',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowRadius: 10,
+    shadowOpacity: 0.5,
   },
 });
