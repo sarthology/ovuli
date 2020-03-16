@@ -2,9 +2,9 @@
   "devToolsPort": 19002,
   "expoServerPort": 19000,
   "packagerPort": 19001,
-  "packagerPid": 7524,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "packagerPid": 8052,
+  "expoServerNgrokUrl": "https://up-5am.anonymous.ovuli-1.exp.direct",
+  "packagerNgrokUrl": "https://packager.up-5am.anonymous.ovuli-1.exp.direct",
+  "ngrokPid": 1644,
   "webpackServerPort": null
 }
