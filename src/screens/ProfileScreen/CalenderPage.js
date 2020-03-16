@@ -34,12 +34,7 @@ export default class CalenderPage extends Component {
           onPressArrowLeft={substractMonth => substractMonth()}
           onPressArrowRight={addMonth => addMonth()}
         />
-       <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => this.props.navigation.navigate('CalculatingCyclePeriodPage')}
-        >
-          <Text style={{ fontSize: 22 }}>Back</Text>
-        </TouchableOpacity>
+       <Button title="Back" onPress={() => this.props.navigation.navigate('CalculatingCyclePeriodPage')} />
       </View>
     );
   }
