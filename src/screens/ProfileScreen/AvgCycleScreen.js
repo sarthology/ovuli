@@ -8,6 +8,7 @@ import {
   Picker,
   TouchableOpacity,
   StatusBar,
+  AsyncStorage,
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import SmoothPicker from 'react-native-smooth-picker';
@@ -52,6 +53,16 @@ export default class AvgCycle extends Component {
     });
   };
 
+  saveAvgPeriod = () => {
+    try {
+      AsyncStorage.setItem('AvgPeriod', JSON.stringify(this.state.selected));
+    } catch (error) {
+      console.log(error);
+    }
+
+    this.props.navigation.navigate('LastPeriod');
+  };
+
   render() {
     const { selected } = this.state;
     return (
@@ -70,16 +81,13 @@ export default class AvgCycle extends Component {
             data={Array.from({ length: 40 }, (_, i) => 1 + i)}
             onSelected={({ item, index }) => this.handleChange(index)}
             renderItem={({ item, index }) => (
-              <Bubble horizontal selected={index === selected}>
+              <Bubble horizontal selected={++index === selected}>
                 {item}
               </Bubble>
             )}
           />
         </View>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => this.props.navigation.navigate('LastPeriod')}
-        >
+        <TouchableOpacity style={styles.button} onPress={this.saveAvgPeriod}>
           <Text style={styles.buttonText}>Continue</Text>
           <AntDesign
             style={{ alignSelf: 'center', color: '#F55963' }}

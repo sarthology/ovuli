@@ -1,8 +1,8 @@
 {
   "urlRandomness": "cs-k6v",
   "hostType": "tunnel",
-
   "urlRandomness": "ae-ekk",
+  "urlRandomness": "xs-wq6",
   "hostType": "lan",
   "lanType": "ip",
   "dev": true,
