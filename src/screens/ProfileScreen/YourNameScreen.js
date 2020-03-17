@@ -1,12 +1,25 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
-import { StyleSheet, TouchableOpacity, Text, View, TextInput } from 'react-native';
+import { StyleSheet, TouchableOpacity, Text, View, TextInput, AsyncStorage } from 'react-native';
 
 export default class YourNameScreen extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
   }
+
+  saveName = async () => {
+    // Saving the Name in Asyncstorage
+    try {
+      await AsyncStorage.setItem('Name', this.state.text);
+    } catch (e) {
+      console.log(e);
+    }
+
+    // Navigating to the next screen
+    this.props.navigation.navigate('AverageCycle');
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -21,10 +34,7 @@ export default class YourNameScreen extends Component {
           value={this.state.text}
         />
 
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => this.props.navigation.navigate('AverageCycle')}
-        >
+        <TouchableOpacity style={styles.buttonContainer} onPress={this.saveName}>
           <Text style={{ fontSize: 22 }}>Next</Text>
         </TouchableOpacity>
       </View>
