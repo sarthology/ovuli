@@ -4,13 +4,12 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "format": "prettier \"**/*.{js,html}\" --write",
-    "lint": "eslint \"**/*.{js,jsx}\" --quiet",
+    "format": "eslint \"**/*.{js,jsx}\" --quiet",
     "test": "jest"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm run format"
     }
   },
   "lint-staged": {
