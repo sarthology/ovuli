@@ -9,9 +9,10 @@
   ],
   "rules": {
     "react/prop-types": 0,
-    "no-console": 1
+    "no-console": 1,
+    "prettier/prettier": "error"
   },
-  "plugin": ["react", "import", "jsx-a11y"],
+  "plugins": ["react", "import", "jsx-a11y", "prettier"],
   "parserOptions": {
     "ecmaVersion": 2019,
     "sourceType": "module",
