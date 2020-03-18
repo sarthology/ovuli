@@ -17,12 +17,12 @@ The secondary colors used are:
 ```
 
 ### Typography
-> **Font Style** 
+> **Font Style**  
 PT Sans is used throughout the app. It can be downloaded [here](https://www.fontsquirrel.com/fonts/pt-sans).
-![font style](www.github.com/robot-with-feelings/ovuli/fontstyle.png)
+![](fontstyle.png)
  
  
-> **Font Size**
- The following font sizes are used in the onboarding wireframes:
- ![font size]('www.github.com/robot-with-feelings/ovuli/fontsize.png')
+> **Font Size**  
+The following font sizes are used in the onboarding wireframes:
+ ![](fontsize.png)
  
