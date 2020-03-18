@@ -1,75 +1,123 @@
 import 'react-native-gesture-handler';
-import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Button } from 'react-native';
-import { Calendar } from 'react-native-calendars';
-import moment from 'moment';
-
-export default class LastPeriodScreen extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>Enter your Last Period</Text>
-
-        <Calendar
-          style={{
-            width: 90 + '%',
-            borderWidth: 0.5,
-            borderRadius: 8,
-            borderColor: 'gray',
-          }}
-          // Initially visible month. Default = Date()
-          current={Date()}
-          markedDates={moment(new Date()).format('YYYY-MM-DD')}
-          // Handler which gets executed on day press. Default = undefined
-          onDayPress={day => {
-            console.log('selected day', day);
-          }}
-          // Handler which gets executed on day long press. Default = undefined
-          onDayLongPress={day => {
-            console.log('selected day', day);
-          }}
-          // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
-          monthFormat={'dd MM yyyy'}
-          // Handler which gets executed when visible month changes in calendar. Default = undefined
-          onMonthChange={month => {
-            console.log('month changed', month);
-          }}
-          // Hide month navigation arrows. Default = false
-          // hideArrows={true}
-          // Replace default arrows with custom ones (direction can be 'left' or 'right')
-          // renderArrow={(direction) => (<Arrow/>)}
-          // Do not show days of other months in month page. Default = false
-          hideExtraDays={true}
-          // If hideArrows=false and hideExtraDays=false do not switch month when tapping on greyed out
-          // day from another month that is visible in calendar page. Default = false
-          disableMonthChange={false}
-          // If firstDay=1 week starts from Monday. Note that dayNames and dayNamesShort should still start from Sunday.
-          firstDay={1}
-          // Hide day names. Default = false
-          // hideDayNames={true}
-          // Show week numbers to the left. Default = false
-          // showWeekNumbers={true}
-          // Handler which gets executed when press arrow icon left. It receive a callback can go back month
-          onPressArrowLeft={substractMonth => substractMonth()}
-          // Handler which gets executed when press arrow icon right. It receive a callback can go next month
-          onPressArrowRight={addMonth => addMonth()}
-        />
-        <Button title="next" onPress={() => this.props.navigation.navigate('Dashboard')} />
-      </View>
-    );
-  }
-}
+import React from 'react';
+import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
+import { CalendarList } from 'react-native-calendars';
+import TopImage from '../../assets/images/Last_Period/top.png';
+import AskLastPeriodImage from '../../assets/images/Last_Period/AskLastPeriod.png';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: 'white',
   },
-  welcome: {
-    fontSize: 30,
+  topImage: {
+    alignSelf: 'flex-end',
+  },
+  lastPeriodText: {
+    alignSelf: 'flex-start',
+    marginVertical: 24,
+  },
+  button: {
+    borderWidth: 2,
+    width: 120,
+    borderRadius: 5,
+    borderColor: '#F55963',
+    position: 'absolute',
+    right: 30,
+    top: Dimensions.get('window').height - 50,
+    flex: 1,
+    flexDirection: 'row',
+  },
+  buttonText: {
+    fontSize: 20,
     textAlign: 'center',
-    margin: 12,
+    padding: 5,
+    justifyContent: 'center',
+    color: '#F55963',
+  },
+
+  calenderContainer: {
+    height: '80%',
+  },
+  calenderWeekHeader: {
+    marginTop: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderWidth: 1,
+    padding: 10,
+    borderColor: '#F55963',
+    fontWeight: '600',
+    color: 'white',
+    backgroundColor: '#F55963',
+    textAlignVertical: 'center',
+  },
+  dayHeader: {
+    color: '#ffff',
+    textAlign: 'center',
+    fontWeight: '500',
+    fontSize: 18,
+  },
+  buttonTextContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    width: '100%',
+  },
+  arrowIcon: {
+    alignSelf: 'center',
+    color: '#F55963',
+    justifyContent: 'flex-end',
   },
 });
+
+const LastPeriodScreen = props => {
+  const [selectedDate, setSelectedDate] = React.useState(new Date());
+
+  console.log(selectedDate);
+  return (
+    <View style={styles.container}>
+      <Image style={styles.topImage} source={TopImage} />
+      <View style={{ padding: 20, alignSelf: 'flex-start' }}>
+        <Image style={styles.lastPeriodText} source={AskLastPeriodImage} />
+      </View>
+
+      <View style={styles.calenderContainer}>
+        <CalendarList
+          theme={{
+            todayTextColor: '#F55963',
+            textDayFontWeight: '500',
+            'stylesheet.calendar.header': {
+              week: { ...styles.calenderWeekHeader },
+              header: {
+                height: 0,
+              },
+              dayHeader: { ...styles.dayHeader },
+            },
+          }}
+          current={Date()}
+          onDayPress={dateObject => {
+            setSelectedDate(new Date(dateObject.dateString));
+          }}
+          onVisibleMonthsChange={month => {
+            console.log('month changed', month);
+          }}
+          firstDay={1}
+          scrollEnabled={true}
+          horizontal={true}
+          pagingEnabled={true}
+        />
+      </View>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => props.navigation.navigate('Dashboard')}
+      >
+        <View style={styles.buttonTextContainer}>
+          <Text style={styles.buttonText}>Finish</Text>
+          <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default LastPeriodScreen;

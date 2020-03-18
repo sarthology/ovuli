@@ -6307,6 +6307,11 @@ react-native-screens@^2.2.0:
   dependencies:
     debounce "^1.2.0"
 
+react-native-smooth-picker@^0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/react-native-smooth-picker/-/react-native-smooth-picker-0.2.4.tgz#64f8a3fbe12888d83d5648f4a50e7d6c133d74be"
+  integrity sha512-tMKBl+hhstGJWtiJUM3dAcVhWLlQyl0exnmCR645z2Qi5QQiW9fY2Dz2e5PGAExwHHEkLAPHC0L4zGxrEz4qSw==
+
 react-native-unimodules@~0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/react-native-unimodules/-/react-native-unimodules-0.7.0.tgz#ce4e48898c3ef0b986b87e7421303abf8afc862c"
