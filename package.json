@@ -4,7 +4,7 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "format": "eslint \"**/*.{js,jsx}\" --quiet",
+    "lint": "eslint \"**/*.{js,jsx}\" --quiet",
     "test": "jest"
   },
   "husky": {
