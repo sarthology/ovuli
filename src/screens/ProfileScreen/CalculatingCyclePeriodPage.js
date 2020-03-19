@@ -9,7 +9,7 @@ export default class CalculatingCyclePeriodPage extends Component {
         markedDates: {},
         isStartDatePicked: false,
         isEndDatePicked: false,
-        duration:{},
+        duration:'',
         startDate: ''
     }
     
@@ -21,7 +21,7 @@ export default class CalculatingCyclePeriodPage extends Component {
                 markedDates: markedDates,
                 isStartDatePicked: true,
                 isEndDatePicked: false,
-                duration:{},
+                duration:'',
                 startDate: day.dateString,
             });
         } else {
