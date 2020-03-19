@@ -10,6 +10,7 @@ import ProfileScreen from './src/screens/ProfileScreen';
 import HomeScreen from './src/screens/HomeScreen';
 
 import YourNameScreen from './src/screens/ProfileScreen/YourNameScreen';
+import LanguageScreen from './src/screens/ProfileScreen/LanguageScreen';
 import AvgCycleScreen from './src/screens/ProfileScreen/AvgCycleScreen';
 import LastPeriodScreen from './src/screens/ProfileScreen/LastPeriodScreen';
 import CalculatingCyclePeriodPage from './src/screens/ProfileScreen/CalculatingCyclePeriodPage';
@@ -64,8 +65,9 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="CalculatingCyclePeriodPage" component={CalculatingCyclePeriodPage} />  
+      <Stack.Navigator headerMode="none">
+        <Stack.Screen name="CalculatingCyclePeriodPage" component={CalculatingCyclePeriodPage} /> 
+        <Stack.Screen name="Language" component={LanguageScreen} />
         <Stack.Screen name="Name" component={YourNameScreen} />
         <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />

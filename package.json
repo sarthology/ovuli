@@ -4,7 +4,6 @@
     "ios": "react-native run-ios",
     "web": "expo start --web",
     "start": "react-native start",
-    "format": "prettier \"**/*.{js,html}\" --write",
     "lint": "eslint \"**/*.{js,jsx}\" --quiet",
     "test": "jest"
   },
@@ -14,8 +13,8 @@
     }
   },
   "lint-staged": {
-    "*.js": [
-      "npm run format",
+    "*.{js,jsx}": [
+      "eslint --fix",
       "git add"
     ]
   },
@@ -25,6 +24,7 @@
     "@react-navigation/native": "^5.0.8",
     "@react-navigation/stack": "^5.1.0",
     "expo": "~36.0.0",
+    "expo-cli": "^3.13.6",
     "moment": "^2.24.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -35,8 +35,10 @@
     "react-native-reanimated": "^1.7.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.2.0",
+    "react-native-smooth-picker": "^0.2.4",
     "react-native-unimodules": "~0.7.0",
     "react-native-web": "~0.11.7",
+    "react-native-wheel-picker-android": "^2.0.6",
     "react-native-wheel-scroll-picker": "^0.2.4"
   },
   "devDependencies": {
@@ -47,6 +49,7 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
     "husky": "^4.2.3",
     "jest": "~24.9.0",
