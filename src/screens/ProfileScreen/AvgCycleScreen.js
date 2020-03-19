@@ -60,7 +60,7 @@ export default class AvgCycleScreen extends Component {
           <Picker.Item label="39 days" value="39" />
           <Picker.Item label="40 days" value="40" />
         </Picker>
-        <Button title="next" onPress={() => this.props.navigation.navigate('LastPeriod')} />
+        <Button title="next" onPress={() => this.props.navigation.navigate('CalculatingCyclePeriodPage')} />
       </View>
     );
   }

@@ -70,9 +70,8 @@ export default function App() {
         <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />
         <Stack.Screen name="Dashboard" component={TabNavigator} />
-        <Stack.Screen name="CalenderPage" component={CalenderPage} />
+      
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-//<Stack.Screen name="CalenderPage" component={CalenderPage} />
