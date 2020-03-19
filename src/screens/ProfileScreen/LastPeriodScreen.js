@@ -26,7 +26,6 @@ export default class LastPeriodScreen extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>Enter your Last Period</Text>
-        {console.log(this.state.lastPeriod)}
         <Calendar
           style={{
             width: 90 + '%',
