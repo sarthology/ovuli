@@ -9,6 +9,7 @@ export default class CalculatingCyclePeriodPage extends Component {
         markedDates: {},
         isStartDatePicked: false,
         isEndDatePicked: false,
+        duration:{},
         startDate: ''
     }
     
@@ -20,6 +21,7 @@ export default class CalculatingCyclePeriodPage extends Component {
                 markedDates: markedDates,
                 isStartDatePicked: true,
                 isEndDatePicked: false,
+                duration:{},
                 startDate: day.dateString,
             });
         } else {
@@ -27,7 +29,7 @@ export default class CalculatingCyclePeriodPage extends Component {
             let startDate = moment(this.state.startDate);
             let endDate = moment(day.dateString);
             let range = endDate.diff(startDate, 'days')
-
+            let duration = moment.duration(startDate.diff(endDate)).asDays();
             if (range > 0) {
                 for (let i = 1; i <= range; i++) {
                     let tempDate = startDate.add(1, 'day');
@@ -42,6 +44,7 @@ export default class CalculatingCyclePeriodPage extends Component {
                     markedDates: markedDates,
                     isStartDatePicked: false,
                     isEndDatePicked: true,
+                    duration: '29',
                     startDate: ''
                 });
             } else {
@@ -70,7 +73,7 @@ export default class CalculatingCyclePeriodPage extends Component {
               style={styles.welcome}
               placeholder="00 Days"
               onChangeText={text => this.setState({ text })}
-              value={this.state.range}
+              value={this.state.duration}
              />
             <Button title="next" onPress={() => this.props.navigation.navigate('LastPeriod')} />
             </View>
