@@ -1,0 +1,13 @@
+name: Greet Everyone
+on: [pull_request]
+
+jobs:
+  build:
+    name: Greeting
+    runs-on: ubuntu-latest
+    steps:
+      - name: Interaction on PR
+        uses: actions/first-interaction@v1
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-message: 'Hello @${{ github.actor }}! , thank you submitting a pull request!'
