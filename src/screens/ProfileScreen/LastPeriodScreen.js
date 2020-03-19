@@ -45,7 +45,7 @@ export default class LastPeriodScreen extends Component {
             console.log('selected day', day);
           }}
           // Month format in calendar title. Formatting values: http://arshaw.com/xdate/#Formatting
-          monthFormat={'dd MM yyyy'}
+          monthFormat={'yyyy dd MM'}
           // Handler which gets executed when visible month changes in calendar. Default = undefined
           onMonthChange={month => {
             this.setState({ lastPeriod: month['dateString'] });
