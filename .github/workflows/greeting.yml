@@ -2,8 +2,7 @@ name: Greet Everyone
 on: [pull_request]
 
 jobs:
-  build:
-    name: Greeting
+  greeting:
     runs-on: ubuntu-latest
     steps:
       - name: Interaction on PR
