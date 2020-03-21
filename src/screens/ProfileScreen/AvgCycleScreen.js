@@ -5,7 +5,6 @@ import {
   StyleSheet,
   Image,
   Dimensions,
-  Picker,
   TouchableOpacity,
   StatusBar,
   AsyncStorage,
@@ -13,11 +12,11 @@ import {
 import { AntDesign } from '@expo/vector-icons';
 import SmoothPicker from 'react-native-smooth-picker';
 
-import top from '../../../wireframe/assets/Avg_Cycle/top.png';
-import How_long_is_your_cycle from '../../../wireframe/assets/Avg_Cycle/How_long_is_your_cycle.png';
+import top from '../../../wireframes/assets/Avg_Cycle/top.png';
+import How_long_is_your_cycle from '../../../wireframes/assets/Avg_Cycle/How_long_is_your_cycle.png';
 
 const Bubble = props => {
-  const { children, selected, horizontal } = props;
+  const { children, selected } = props;
   return (
     <View
       style={[
@@ -79,7 +78,7 @@ export default class AvgCycle extends Component {
             showsHorizontalScrollIndicator={false}
             bounces={true}
             data={Array.from({ length: 40 }, (_, i) => 1 + i)}
-            onSelected={({ item, index }) => this.handleChange(index)}
+            onSelected={({ index }) => this.handleChange(index)}
             renderItem={({ item, index }) => (
               <Bubble horizontal selected={++index === selected}>
                 {item}
