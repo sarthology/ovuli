@@ -9,7 +9,7 @@
     "version": "1.0.0",
     "entryPoint": "node_modules/expo/AppEntry.js",
     "splash": {
-      "image": "./wireframes/GetStarted.png",
+      "image": "./wireframes/onboard-wirefames/onboard-page.png",
       "resizeMode" : "cover"
     },
     "platforms": [

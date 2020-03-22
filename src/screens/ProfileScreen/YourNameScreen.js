@@ -23,7 +23,10 @@ export default class YourNameScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Enter Your Name</Text>
+       
+       <Image source={top} style={styles.top} />
+        <Image source={How_can_we_call_you} style={styles.nameText} />
+        <Image source={bottom} style={styles.bottom} />
 
         <TextInput
           style={styles.inputContainer}

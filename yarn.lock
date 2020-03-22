@@ -11878,11 +11878,6 @@ react-native-wheel-picker-android@^2.0.6:
   dependencies:
     moment "^2.22.0"
 
-react-native-wheel-picker@^1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/react-native-wheel-picker/-/react-native-wheel-picker-1.2.0.tgz#0503e37b3326856724501679bdf5697e0dd247a6"
-  integrity sha1-BQPjezMmhWckUBZ5vfVpfg3SR6Y=
-
 react-native-wheel-scroll-picker@^0.2.4:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/react-native-wheel-scroll-picker/-/react-native-wheel-scroll-picker-0.2.4.tgz#d923f17d08334fd16ea01dc4c21d7641888ea55b"
