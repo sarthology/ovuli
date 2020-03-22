@@ -1,6 +1,7 @@
 import 'react-native-gesture-handler';
 import React from 'react';
 import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity } from 'react-native';
+import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
 import { CalendarList } from 'react-native-calendars';
 import TopImage from '../../assets/images/Last_Period/top.png';
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
   },
   lastPeriodText: {
     alignSelf: 'flex-start',
-    marginVertical: 24,
+    marginVertical: 48,
   },
   button: {
     borderWidth: 2,
@@ -40,24 +41,6 @@ const styles = StyleSheet.create({
   calenderContainer: {
     height: '80%',
   },
-  calenderWeekHeader: {
-    marginTop: 5,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    borderWidth: 1,
-    padding: 10,
-    borderColor: '#F55963',
-    fontWeight: '600',
-    color: 'white',
-    backgroundColor: '#F55963',
-    textAlignVertical: 'center',
-  },
-  dayHeader: {
-    color: '#ffff',
-    textAlign: 'center',
-    fontWeight: '500',
-    fontSize: 18,
-  },
   buttonTextContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
@@ -71,9 +54,8 @@ const styles = StyleSheet.create({
 });
 
 const LastPeriodScreen = props => {
-  const [selectedDate, setSelectedDate] = React.useState(new Date());
+  const [selectedDate, setSelectedDate] = React.useState();
 
-  console.log(selectedDate);
   return (
     <View style={styles.container}>
       <Image style={styles.topImage} source={TopImage} />
@@ -82,29 +64,18 @@ const LastPeriodScreen = props => {
       </View>
 
       <View style={styles.calenderContainer}>
-        <CalendarList
-          theme={{
-            todayTextColor: '#F55963',
-            textDayFontWeight: '500',
-            'stylesheet.calendar.header': {
-              week: { ...styles.calenderWeekHeader },
-              header: {
-                height: 0,
-              },
-              dayHeader: { ...styles.dayHeader },
-            },
+        <CalendarPicker
+          onDateChange={date => setSelectedDate(date)}
+          startFromMonday={true}
+          previousTitle=""
+          nextTitle=""
+          headingLevel={0}
+          weekdays={CALENDAR_WEEK_DAYS}
+          dayOfWeekStyles={{
+            backgroundColor: '#F55963',
           }}
-          current={Date()}
-          onDayPress={dateObject => {
-            setSelectedDate(new Date(dateObject.dateString));
-          }}
-          onVisibleMonthsChange={month => {
-            console.log('month changed', month);
-          }}
-          firstDay={1}
-          scrollEnabled={true}
-          horizontal={true}
-          pagingEnabled={true}
+          selectedDayStyle={{ backgroundColor: '#F55963' }}
+          selectedDayTextColor="#fff"
         />
       </View>
       <TouchableOpacity
