@@ -1,10 +1,12 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
+
+  "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": "https://wa-kdw.anonymous.ovuli-1.exp.direct",
-  "packagerNgrokUrl": "https://packager.wa-kdw.anonymous.ovuli-1.exp.direct",
-  "ngrokPid": 15348,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null,
+
   "webpackServerPort": null
 }

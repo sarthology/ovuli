@@ -1,6 +1,7 @@
 {
-  "urlRandomness": "wa-kdw",
-  "hostType": "tunnel",
+
+  "urlRandomness": "mk-pf7",
+  "hostType": "lan",
   "lanType": "ip",
   "dev": true,
   "minify": false,
