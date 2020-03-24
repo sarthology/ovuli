@@ -51,6 +51,12 @@ const styles = StyleSheet.create({
     color: '#F55963',
     justifyContent: 'flex-end',
   },
+  selectedDate: {
+    backgroundColor: '#F55963',
+  },
+  dayOfWeekStyles: {
+    backgroundColor: '#F55963',
+  },
 });
 
 const LastPeriodScreen = props => {
@@ -71,10 +77,8 @@ const LastPeriodScreen = props => {
           nextTitle=""
           headingLevel={0}
           weekdays={CALENDAR_WEEK_DAYS}
-          dayOfWeekStyles={{
-            backgroundColor: '#F55963',
-          }}
-          selectedDayStyle={{ backgroundColor: '#F55963' }}
+          dayOfWeekStyles={styles.dayOfWeekStyles}
+          selectedDayStyle={styles.selectedDate}
           selectedDayTextColor="#fff"
         />
       </View>
