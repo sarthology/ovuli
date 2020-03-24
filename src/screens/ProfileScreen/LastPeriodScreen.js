@@ -1,11 +1,22 @@
 import 'react-native-gesture-handler';
 
 import React from 'react';
-import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Dimensions,
+  TouchableOpacity,
+  AsyncStorage,
+  StatusBar,
+} from 'react-native';
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
 import TopImage from '../../assets/images/Last_Period/top.png';
 import AskLastPeriodImage from '../../assets/images/Last_Period/AskLastPeriod.png';
+import { useNavigation } from '@react-navigation/native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const styles = StyleSheet.create({
   container: {
@@ -59,11 +70,23 @@ const styles = StyleSheet.create({
   },
 });
 
-const LastPeriodScreen = props => {
-  const [selectedDate, setSelectedDate] = React.useState();
+const LastPeriodScreen = () => {
+  const [selectedDate, setSelectedDate] = React.useState(null);
+  const navigation = useNavigation();
+
+  const saveLastPeriod = () => {
+    try {
+      AsyncStorage.setItem('lastPeriod', selectedDate.toISOString());
+    } catch (error) {
+      // console.log(error);
+    }
+
+    navigation.navigate('Dashboard');
+  };
 
   return (
     <View style={styles.container}>
+      <StatusBar hidden />
       <Image style={styles.topImage} source={TopImage} />
       <View style={{ padding: 20, alignSelf: 'flex-start' }}>
         <Image style={styles.lastPeriodText} source={AskLastPeriodImage} />
@@ -82,10 +105,7 @@ const LastPeriodScreen = props => {
           selectedDayTextColor="#fff"
         />
       </View>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => props.navigation.navigate('Dashboard', { lastPeriodDate: selectedDate })}
-      >
+      <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
         <View style={styles.buttonTextContainer}>
           <Text style={styles.buttonText}>Finish</Text>
           <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
