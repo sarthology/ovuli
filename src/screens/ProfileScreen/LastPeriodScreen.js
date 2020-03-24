@@ -3,7 +3,6 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, Dimensions, TouchableOpacity } from 'react-native';
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
-import { CalendarList } from 'react-native-calendars';
 import TopImage from '../../assets/images/Last_Period/top.png';
 import AskLastPeriodImage from '../../assets/images/Last_Period/AskLastPeriod.png';
 
@@ -17,7 +16,7 @@ const styles = StyleSheet.create({
   },
   lastPeriodText: {
     alignSelf: 'flex-start',
-    marginVertical: 48,
+    marginVertical: 25,
   },
   button: {
     borderWidth: 2,
@@ -80,7 +79,7 @@ const LastPeriodScreen = props => {
       </View>
       <TouchableOpacity
         style={styles.button}
-        onPress={() => props.navigation.navigate('Dashboard')}
+        onPress={() => props.navigation.navigate('Dashboard', { lastPeriodDate: selectedDate })}
       >
         <View style={styles.buttonTextContainer}>
           <Text style={styles.buttonText}>Finish</Text>

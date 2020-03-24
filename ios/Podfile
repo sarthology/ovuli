@@ -43,4 +43,6 @@ target 'ovuli' do
 
   # react-native-cli autolinking
   use_native_modules!
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
 end
