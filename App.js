@@ -72,7 +72,6 @@ export default function App() {
         <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />
         <Stack.Screen name="Dashboard" component={TabNavigator} />
-      
       </Stack.Navigator>
     </NavigationContainer>
   );
