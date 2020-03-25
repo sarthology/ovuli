@@ -13,9 +13,12 @@ import {
 } from 'react-native';
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
+
 import TopImage from '../../assets/images/Last_Period/top.png';
 import { useNavigation } from '@react-navigation/native';
 import * as Font from 'expo-font';
+import AskLastPeriodImage from '@/assets/images/Last_Period/AskLastPeriod.png';
+
 
 const LastPeriodScreen = () => {
   const [selectedDate, setSelectedDate] = React.useState(null);
@@ -69,6 +72,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
+  topImageContainer: {
+    padding: 20,
+    alignSelf: 'flex-start',
+  },
   topImage: {
     alignSelf: 'flex-end',
   },
@@ -95,7 +102,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     color: '#F55963',
   },
-
   calenderContainer: {
     height: '60%',
   },
@@ -120,6 +126,7 @@ const styles = StyleSheet.create({
 const LastPeriodScreen = () => {
   const [selectedDate, setSelectedDate] = React.useState(null);
   const navigation = useNavigation();
+
 
   useEffect(() => {
     Font.loadAsync({
@@ -175,5 +182,6 @@ const LastPeriodScreen = () => {
     </View>
   );
 };
+
 
 export default LastPeriodScreen;
