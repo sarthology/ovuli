@@ -1,9 +1,9 @@
 import 'react-native-gesture-handler';
-import React, { Component } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { MaterialCommunityIcons } from 'react-native-vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 import HistoryScreen from './src/screens/HistoryScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
@@ -66,9 +66,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
-        <Stack.Screen name="CalculatingCyclePeriodPage" component={CalculatingCyclePeriodPage} /> 
-        <Stack.Screen name="Language" component={LanguageScreen} />
         <Stack.Screen name="Name" component={YourNameScreen} />
+        <Stack.Screen name="CalculatingCyclePeriodPage" component={CalculatingCyclePeriodPage} />
+        <Stack.Screen name="Language" component={LanguageScreen} />
         <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />
         <Stack.Screen name="Dashboard" component={TabNavigator} />
