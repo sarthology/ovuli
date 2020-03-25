@@ -23,6 +23,10 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
+  topImageContainer: {
+    padding: 20,
+    alignSelf: 'flex-start',
+  },
   topImage: {
     alignSelf: 'flex-end',
   },
@@ -48,7 +52,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     color: '#F55963',
   },
-
   calenderContainer: {
     height: '80%',
   },
@@ -88,7 +91,7 @@ const LastPeriodScreen = () => {
     <View style={styles.container}>
       <StatusBar hidden />
       <Image style={styles.topImage} source={TopImage} />
-      <View style={{ padding: 20, alignSelf: 'flex-start' }}>
+      <View style={styles.topImageContainer}>
         <Image style={styles.lastPeriodText} source={AskLastPeriodImage} />
       </View>
 

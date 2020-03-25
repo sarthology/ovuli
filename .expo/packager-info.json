@@ -3,8 +3,8 @@
   "expoServerPort": null,
   "packagerPort": null,
   "packagerPid": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://3t-r56.anonymous.ovuli.exp.direct",
+  "packagerNgrokUrl": "https://packager.3t-r56.anonymous.ovuli.exp.direct",
+  "ngrokPid": 55640,
   "webpackServerPort": null
 }
