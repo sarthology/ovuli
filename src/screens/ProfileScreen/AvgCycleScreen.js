@@ -71,17 +71,16 @@ export default class AvgCycle extends Component {
         <View style={styles.wrapperHorizontal}>
           <StatusBar hidden />
           <SmoothPicker
-            initialScrollToIndex={selected+1}
+            initialScrollToIndex={selected + 1}
             ref={ref => (this.refList = ref)}
             keyExtractor={(_, index) => index.toString()}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             bounces={true}
-
             data={Array.from({ length: 40 }, (_, i) => 1 + i)}
             onSelected={({ index }) => this.handleChange(index)}
             renderItem={({ item, index }) => (
-              <Bubble horizontal selected={++index === selected+1}>
+              <Bubble horizontal selected={++index === selected + 1}>
                 {item}
               </Bubble>
             )}
@@ -115,6 +114,7 @@ const styles = StyleSheet.create({
   button: {
     borderWidth: 2,
     width: 120,
+    marginTop: -25,
     borderRadius: 5,
     borderColor: '#F55963',
     position: 'absolute',

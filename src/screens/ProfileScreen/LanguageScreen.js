@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
-import { 
-  StyleSheet, 
-  View, 
-  Text, 
-  Dimensions,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import { StyleSheet, View, Text, Dimensions, Image, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { WheelPicker } from 'react-native-wheel-picker-android';
 
@@ -14,7 +7,7 @@ import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
 import please_select_your_language from '../../../wireframes/assets/Lang_Screen/please_select_your_language.png';
 
-const wheelPickerData = ["Hindi", "Marathi", "English", "Telugu", "Tulu", "Tamil"];
+const wheelPickerData = ['Hindi', 'Marathi', 'English', 'Telugu', 'Tulu', 'Tamil'];
 
 export default class LanguageScreen extends Component {
   state = { selectedItem: 0 };
@@ -51,7 +44,7 @@ const styles = StyleSheet.create({
   top: {
     alignSelf: 'flex-end',
     height: Dimensions.get('window').height / 7,
-    width: Dimensions.get('window').width / 2 ,
+    width: Dimensions.get('window').width / 2,
   },
   bottom: {
     position: 'absolute',
@@ -80,6 +73,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     width: 120,
     borderRadius: 5,
+    marginTop: -25,
     borderColor: '#F55963',
     position: 'absolute',
     right: 30,
