@@ -11,14 +11,20 @@ import {
   Dimensions,
 } from 'react-native';
 import top from '../../../wireframes/assets/Your_Name/top.png';
-import How_can_we_call_you from '../../../wireframes/assets/Your_Name/How_can_we_call_you.png';
 import bottom from '../../../wireframes/assets/Your_Name/bottom.png';
 import { AntDesign } from '@expo/vector-icons';
+import * as Font from 'expo-font';
 
 export default class YourNameScreen extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '' };
+  }
+
+  componentDidMount() {
+    Font.loadAsync({
+      'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
+    });
   }
 
   saveName = async () => {
@@ -37,7 +43,14 @@ export default class YourNameScreen extends Component {
     return (
       <View style={styles.container}>
         <Image source={top} style={styles.top} />
-        <Image source={How_can_we_call_you} style={styles.nameText} />
+        <View style={{ flexDirection: 'row' }}>
+          <Text
+            style={[styles.nameText, { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' }]}
+          >
+            How
+          </Text>
+          <Text style={styles.nameText}> can we call you?</Text>
+        </View>
         <Image source={bottom} style={styles.bottom} />
         <TextInput
           style={styles.inputContainer}
@@ -82,7 +95,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     marginTop: Dimensions.get('window').height / 3 - 150,
     marginBottom: 27,
-    marginLeft: 38,
+    fontFamily: 'PT-Sans',
+    fontSize: 25,
   },
   button: {
     borderWidth: 2,
