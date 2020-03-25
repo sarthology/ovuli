@@ -129,6 +129,7 @@ const styles = StyleSheet.create({
   button: {
     borderWidth: 2,
     width: 120,
+    marginTop: -25,
     borderRadius: 5,
     borderColor: '#F55963',
     position: 'absolute',
