@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React, { Component } from 'react';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -66,11 +66,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
-        <Stack.Screen name="Language" component={LanguageScreen} />
-        <Stack.Screen name="CalculatingCyclePeriodPage" component={CalculatingCyclePeriodPage} /> 
         <Stack.Screen name="Name" component={YourNameScreen} />
+        <Stack.Screen name="Language" component={LanguageScreen} />
         <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />
+        <Stack.Screen name="CalculatingCyclePeriodPage" component={CalculatingCyclePeriodPage} />
         <Stack.Screen name="Dashboard" component={TabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>

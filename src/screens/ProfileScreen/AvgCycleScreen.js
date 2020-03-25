@@ -5,7 +5,6 @@ import {
   StyleSheet,
   Image,
   Dimensions,
-  Picker,
   TouchableOpacity,
   StatusBar,
   AsyncStorage,
@@ -78,8 +77,9 @@ export default class AvgCycle extends Component {
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             bounces={true}
-            data={Array.from({ length: 41 }, (_, i) =>  i)}
-            onSelected={({ item, index }) => this.handleChange(index)}
+
+            data={Array.from({ length: 40 }, (_, i) => 1 + i)}
+            onSelected={({ index }) => this.handleChange(index)}
             renderItem={({ item, index }) => (
               <Bubble horizontal selected={++index === selected+1}>
                 {item}
