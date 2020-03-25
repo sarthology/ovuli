@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   StyleSheet,
   Text,
@@ -13,9 +13,12 @@ import {
 } from 'react-native';
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
-import TopImage from '@/assets/images/Last_Period/top.png';
-import AskLastPeriodImage from '@/assets/images/Last_Period/AskLastPeriod.png';
+
+import TopImage from '../../assets/images/Last_Period/top.png';
 import { useNavigation } from '@react-navigation/native';
+import * as Font from 'expo-font';
+import AskLastPeriodImage from '@/assets/images/Last_Period/AskLastPeriod.png';
+
 
 const LastPeriodScreen = () => {
   const [selectedDate, setSelectedDate] = React.useState(null);
@@ -124,6 +127,13 @@ const LastPeriodScreen = () => {
   const [selectedDate, setSelectedDate] = React.useState(null);
   const navigation = useNavigation();
 
+
+  useEffect(() => {
+    Font.loadAsync({
+      'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
+    });
+  }, []);
+
   const saveLastPeriod = () => {
     try {
       AsyncStorage.setItem('lastPeriod', selectedDate.toISOString());
@@ -138,8 +148,16 @@ const LastPeriodScreen = () => {
     <View style={styles.container}>
       <StatusBar hidden />
       <Image style={styles.topImage} source={TopImage} />
-      <View style={styles.topImageContainer}>
-        <Image style={styles.lastPeriodText} source={AskLastPeriodImage} />
+      <View style={{ padding: 20, alignSelf: 'center', flexDirection: 'row' }}>
+        <Text
+          style={[{ fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' }]}
+        >
+          When
+        </Text>
+        <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
+          {' '}
+          was your last period?
+        </Text>
       </View>
 
       <View style={styles.calenderContainer}>
@@ -164,5 +182,6 @@ const LastPeriodScreen = () => {
     </View>
   );
 };
+
 
 export default LastPeriodScreen;
