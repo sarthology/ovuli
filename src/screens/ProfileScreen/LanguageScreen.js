@@ -11,9 +11,9 @@ import {
 import { AntDesign } from '@expo/vector-icons';
 import { WheelPicker } from 'react-native-wheel-picker-android';
 
-import top from '../../../wireframes/assets/Lang_Screen/top.png';
-import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
-import please_select_your_language from '../../../wireframes/assets/Lang_Screen/please_select_your_language.png';
+import top from '@wireframes/assets/Lang_Screen/top.png';
+import bottom from '@wireframes/assets/Lang_Screen/bottom.png';
+import please_select_your_language from '@wireframes/assets/Lang_Screen/please_select_your_language.png';
 
 const wheelPickerData = ['Hindi', 'Marathi', 'English', 'Telugu', 'Tulu', 'Tamil'];
 

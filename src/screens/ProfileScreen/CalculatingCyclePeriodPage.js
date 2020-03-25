@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
-import { View, StyleSheet, Text, Image, TextInput, Button } from 'react-native';
+import { View, StyleSheet, Text, TextInput, Button } from 'react-native';
 import { Calendar } from 'react-native-calendars';
 import moment from 'moment';
 

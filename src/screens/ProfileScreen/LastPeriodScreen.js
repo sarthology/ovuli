@@ -13,10 +13,9 @@ import {
 } from 'react-native';
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
-import TopImage from '../../assets/images/Last_Period/top.png';
-import AskLastPeriodImage from '../../assets/images/Last_Period/AskLastPeriod.png';
+import TopImage from '@/assets/images/Last_Period/top.png';
+import AskLastPeriodImage from '@/assets/images/Last_Period/AskLastPeriod.png';
 import { useNavigation } from '@react-navigation/native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 
 const styles = StyleSheet.create({
   container: {

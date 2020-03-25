@@ -7,9 +7,9 @@
     "prettier",
     "prettier/react"
   ],
-  "parser":"babel-eslint",
+  "parser": "babel-eslint",
   "rules": {
-    "react/display-name":0,
+    "react/display-name": 0,
     "react/prop-types": 0,
     "no-console": 1,
     "prettier/prettier": "error"
@@ -30,6 +30,9 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "babel-module": {}
     }
   }
 }
