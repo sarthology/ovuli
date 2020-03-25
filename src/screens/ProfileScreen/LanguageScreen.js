@@ -1,12 +1,6 @@
+import 'react-native-gesture-handler';
 import React, { Component } from 'react';
-import { 
-  StyleSheet, 
-  View, 
-  Text, 
-  Dimensions,
-  Image,
-  TouchableOpacity,
-} from 'react-native';
+import { StyleSheet, View, Text, Dimensions, Image, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { WheelPicker } from 'react-native-wheel-picker-android';
 
@@ -14,13 +8,24 @@ import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
 import please_select_your_language from '../../../wireframes/assets/Lang_Screen/please_select_your_language.png';
 
-const wheelPickerData = ["Hindi", "Marathi", "English", "Telugu", "Tulu", "Tamil"];
+const wheelPickerData = ['Hindi', 'Marathi', 'English', 'Telugu', 'Tulu', 'Tamil'];
 
 export default class LanguageScreen extends Component {
   state = { selectedItem: 0 };
 
   onItemSelected = selectedItem => {
     this.setState({ selectedItem });
+  };
+  saveselectedItem = async () => {
+    // Saving the Name in Asyncstorage
+    try {
+      await AsyncStorage.setItem('language', this.state.selectedItem);
+    } catch (e) {
+      console.log(e);
+    }
+
+    // Navigating to the next screen
+    this.props.navigation.navigate('Name');
   };
 
   render() {
@@ -51,7 +56,7 @@ const styles = StyleSheet.create({
   top: {
     alignSelf: 'flex-end',
     height: Dimensions.get('window').height / 7,
-    width: Dimensions.get('window').width / 2 ,
+    width: Dimensions.get('window').width / 2,
   },
   bottom: {
     position: 'absolute',
