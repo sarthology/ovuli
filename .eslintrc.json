@@ -7,7 +7,9 @@
     "prettier",
     "prettier/react"
   ],
+  "parser":"babel-eslint",
   "rules": {
+    "react/display-name":0,
     "react/prop-types": 0,
     "no-console": 1,
     "prettier/prettier": "error"
