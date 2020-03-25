@@ -16,9 +16,8 @@ import { AntDesign } from '@expo/vector-icons';
 
 import TopImage from '../../assets/images/Last_Period/top.png';
 import { useNavigation } from '@react-navigation/native';
-import * as Font from 'expo-font';
 
-const LastPeriodScreen = () => {
+const ThirdLastPeriodScreen = () => {
   const [selectedDate, setSelectedDate] = React.useState(null);
   const navigation = useNavigation();
 
@@ -30,7 +29,7 @@ const LastPeriodScreen = () => {
 
   const saveLastPeriod = () => {
     try {
-      AsyncStorage.setItem('lastPeriod', selectedDate.toISOString());
+      AsyncStorage.setItem('thirdLastPeriod', selectedDate.toISOString());
     } catch (error) {
       console.log(error);
     }
@@ -43,7 +42,13 @@ const LastPeriodScreen = () => {
       <StatusBar hidden />
       <Image style={styles.topImage} source={TopImage} />
       <View
-        style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 20, marginBottom: 20 }}
+        style={{
+          flexDirection: 'row',
+          marginTop: 20,
+          marginBottom: 20,
+          width: Dimensions.get('window').width - 50,
+          marginLeft: 20,
+        }}
       >
         <Text
           style={[styles.nameText, { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' }]}
@@ -52,7 +57,7 @@ const LastPeriodScreen = () => {
         </Text>
         <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
           {' '}
-          was your last period?
+          was your third last period?
         </Text>
       </View>
 
@@ -135,4 +140,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default LastPeriodScreen;
+export default ThirdLastPeriodScreen;

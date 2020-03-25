@@ -13,6 +13,8 @@ import YourNameScreen from './src/screens/ProfileScreen/YourNameScreen';
 import LanguageScreen from './src/screens/ProfileScreen/LanguageScreen';
 import AvgCycleScreen from './src/screens/ProfileScreen/AvgCycleScreen';
 import LastPeriodScreen from './src/screens/ProfileScreen/LastPeriodScreen';
+import SecondLastPeriodScreen from './src/screens/ProfileScreen/SecondLastPeriod';
+import ThirdLastPeriodScreen from './src/screens/ProfileScreen/ThirdLastPeriodScreen';
 import CalculatingCyclePeriodPage from './src/screens/ProfileScreen/CalculatingCyclePeriodPage';
 
 const Tab = createBottomTabNavigator();
