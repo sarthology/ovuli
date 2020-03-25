@@ -12,8 +12,8 @@ import {
 import { AntDesign } from '@expo/vector-icons';
 import SmoothPicker from 'react-native-smooth-picker';
 
-import top from '@wireframes/assets/Avg_Cycle/top.png';
-import How_long_is_your_cycle from '@wireframes/assets/Avg_Cycle/How_long_is_your_cycle.png';
+import top from '../../../wireframes/assets/Avg_Cycle/top.png';
+import * as Font from 'expo-font';
 
 const Bubble = props => {
   const { children, selected } = props;
@@ -46,6 +46,12 @@ export default class AvgCycle extends Component {
     };
   }
 
+  componentDidMount() {
+    Font.loadAsync({
+      'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
+    });
+  }
+
   handleChange = index => {
     this.setState({
       selected: index,
@@ -67,7 +73,16 @@ export default class AvgCycle extends Component {
     return (
       <View style={{ backgroundColor: '#fff', flex: 1 }}>
         <Image source={top} style={styles.top} />
-        <Image source={How_long_is_your_cycle} style={styles.cycleText} />
+        <View style={[{ flexDirection: 'row' }, styles.cycleText]}>
+          <Text
+            style={[
+              { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' },
+            ]}
+          >
+            How long
+          </Text>
+          <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}> is your cycle?</Text>
+        </View>
         <View style={styles.wrapperHorizontal}>
           <StatusBar hidden />
           <SmoothPicker
