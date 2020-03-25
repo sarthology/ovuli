@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, AsyncStorage } from 'react-native';
-import { calculateOvuli } from '../../util/ovuli';
+import { calculateOvuli } from '@/util/ovuli';
 
 export default class HomeScreen extends Component {
   constructor(props) {

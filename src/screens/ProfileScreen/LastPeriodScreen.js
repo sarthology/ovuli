@@ -13,15 +13,65 @@ import {
 } from 'react-native';
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
-import TopImage from '../../assets/images/Last_Period/top.png';
-import AskLastPeriodImage from '../../assets/images/Last_Period/AskLastPeriod.png';
+import TopImage from '@/assets/images/Last_Period/top.png';
+import AskLastPeriodImage from '@/assets/images/Last_Period/AskLastPeriod.png';
 import { useNavigation } from '@react-navigation/native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+
+const LastPeriodScreen = () => {
+  const [selectedDate, setSelectedDate] = React.useState(null);
+  const navigation = useNavigation();
+
+  const saveLastPeriod = () => {
+    try {
+      AsyncStorage.setItem('lastPeriod', selectedDate.toISOString());
+    } catch (error) {
+      // console.log(error);
+    }
+
+    navigation.navigate('Dashboard');
+  };
+
+  return (
+    <View style={styles.container}>
+      <StatusBar hidden />
+      <Image style={styles.topImage} source={TopImage} />
+      <View style={{ padding: 20, alignSelf: 'flex-start' }}>
+        <Image style={styles.lastPeriodText} source={AskLastPeriodImage} />
+      </View>
+
+      <View style={styles.calenderContainer}>
+        <CalendarPicker
+          onDateChange={date => setSelectedDate(date)}
+          startFromMonday={true}
+          previousTitle=""
+          nextTitle=""
+          headingLevel={0}
+          weekdays={CALENDAR_WEEK_DAYS}
+          dayOfWeekStyles={styles.dayOfWeekStyles}
+          selectedDayStyle={styles.selectedDate}
+          selectedDayTextColor="#fff"
+        />
+      </View>
+      <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
+        <View style={styles.buttonTextContainer}>
+          <Text style={styles.buttonText}>Finish</Text>
+          <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default LastPeriodScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+  },
+  topImageContainer: {
+    padding: 20,
+    alignSelf: 'flex-start',
   },
   topImage: {
     alignSelf: 'flex-end',
@@ -34,6 +84,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     width: 120,
     borderRadius: 5,
+    marginTop: -25,
     borderColor: '#F55963',
     position: 'absolute',
     right: 30,
@@ -48,9 +99,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     color: '#F55963',
   },
-
   calenderContainer: {
-    height: '80%',
+    height: '60%',
   },
   buttonTextContainer: {
     flexDirection: 'row',
@@ -88,7 +138,7 @@ const LastPeriodScreen = () => {
     <View style={styles.container}>
       <StatusBar hidden />
       <Image style={styles.topImage} source={TopImage} />
-      <View style={{ padding: 20, alignSelf: 'flex-start' }}>
+      <View style={styles.topImageContainer}>
         <Image style={styles.lastPeriodText} source={AskLastPeriodImage} />
       </View>
 

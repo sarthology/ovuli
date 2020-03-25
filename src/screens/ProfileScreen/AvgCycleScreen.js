@@ -12,8 +12,8 @@ import {
 import { AntDesign } from '@expo/vector-icons';
 import SmoothPicker from 'react-native-smooth-picker';
 
-import top from '../../../wireframes/assets/Avg_Cycle/top.png';
-import How_long_is_your_cycle from '../../../wireframes/assets/Avg_Cycle/How_long_is_your_cycle.png';
+import top from '@wireframes/assets/Avg_Cycle/top.png';
+import How_long_is_your_cycle from '@wireframes/assets/Avg_Cycle/How_long_is_your_cycle.png';
 
 const Bubble = props => {
   const { children, selected } = props;
@@ -59,7 +59,7 @@ export default class AvgCycle extends Component {
       console.log(error);
     }
 
-    this.props.navigation.navigate('LastPeriod');
+    this.props.navigation.navigate('CalculatingCyclePeriodPage');
   };
 
   render() {
@@ -71,17 +71,16 @@ export default class AvgCycle extends Component {
         <View style={styles.wrapperHorizontal}>
           <StatusBar hidden />
           <SmoothPicker
-            initialScrollToIndex={selected+1}
+            initialScrollToIndex={selected + 1}
             ref={ref => (this.refList = ref)}
             keyExtractor={(_, index) => index.toString()}
             horizontal={true}
             showsHorizontalScrollIndicator={false}
             bounces={true}
-
             data={Array.from({ length: 40 }, (_, i) => 1 + i)}
             onSelected={({ index }) => this.handleChange(index)}
             renderItem={({ item, index }) => (
-              <Bubble horizontal selected={++index === selected+1}>
+              <Bubble horizontal selected={++index === selected + 1}>
                 {item}
               </Bubble>
             )}
@@ -115,6 +114,7 @@ const styles = StyleSheet.create({
   button: {
     borderWidth: 2,
     width: 120,
+    marginTop: -25,
     borderRadius: 5,
     borderColor: '#F55963',
     position: 'absolute',

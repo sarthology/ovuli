@@ -10,9 +10,9 @@ import {
   Image,
   Dimensions,
 } from 'react-native';
-import top from '../../../wireframes/assets/Your_Name/top.png';
-import How_can_we_call_you from '../../../wireframes/assets/Your_Name/How_can_we_call_you.png';
-import bottom from '../../../wireframes/assets/Your_Name/bottom.png';
+import top from '@wireframes/assets/Your_Name/top.png';
+import How_can_we_call_you from '@wireframes/assets/Your_Name/How_can_we_call_you.png';
+import bottom from '@wireframes/assets/Your_Name/bottom.png';
 import { AntDesign } from '@expo/vector-icons';
 
 export default class YourNameScreen extends Component {
@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     width: 120,
     borderRadius: 5,
+    marginTop: -25,
     borderColor: '#F55963',
     position: 'absolute',
     right: 30,
