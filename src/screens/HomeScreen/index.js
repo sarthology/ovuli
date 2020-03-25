@@ -19,6 +19,7 @@ export default class HomeScreen extends Component {
     }
 
     const lastPeriod = await AsyncStorage.getItem('lastPeriod');
+
     if (lastPeriod !== '') {
       this.setState({ lastPeriod });
     }
@@ -28,7 +29,7 @@ export default class HomeScreen extends Component {
     let avgCycle = this.state.avgCycle.toString();
     let lastPeriod = this.state.lastPeriod;
     const data = calculateOvuli({ lastDate: lastPeriod }, { averageCycle: avgCycle });
-    
+
     return (
       <View style={styles.container}>
         <Text>
@@ -42,15 +43,11 @@ export default class HomeScreen extends Component {
           Next Pregnancy Test Date : {data['nextPregnancTestDate']['day']}-
           {data['nextPregnancTestDate']['month']}
         </Text>
-        <Text style={{marginTop : 20}}>
-          Fertile Window : START :: {data['fertileWindow']['start']} 
+        <Text style={{ marginTop: 20 }}>
+          Fertile Window : START :: {data['fertileWindow']['start']}
         </Text>
-        <Text>
-        Fertile Window : END :: {data['fertileWindow']['end']}
-        </Text>
-        <Text>
-        Fertile Window : START MONTH :: {data['fertileWindow']['startMonth']}
-        </Text>
+        <Text>Fertile Window : END :: {data['fertileWindow']['end']}</Text>
+        <Text>Fertile Window : START MONTH :: {data['fertileWindow']['startMonth']}</Text>
       </View>
     );
   }

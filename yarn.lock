@@ -11772,6 +11772,14 @@ react-is@^16.7.0:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.0.tgz#0f37c3613c34fe6b37cd7f763a0d6293ab15c527"
   integrity sha512-GFMtL0vHkiBv9HluwNZTggSn/sCyEt9n02aM0dSAjGGyqyNlAyftYm4phPxdvCigG15JreC5biwxCgTAJZ7yAA==
 
+react-native-calendar-picker@^6.0.5:
+  version "6.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-calendar-picker/-/react-native-calendar-picker-6.0.5.tgz#a91b1c5cd2057b4405e30339934b1136890efe92"
+  integrity sha512-HVxHqNO85YfrgwTqf+ANLgmjvn9Uq9cQoFrhsMtZfJAKehLkSQhXTcK3KqPPSd+xUuGCqRDlQY1VuNAFNl3a5g==
+  dependencies:
+    prop-types "^15.6.0"
+    uuid "3.2.1"
+
 react-native-calendar@^0.13.1:
   version "0.13.1"
   resolved "https://registry.yarnpkg.com/react-native-calendar/-/react-native-calendar-0.13.1.tgz#c3fb4b7dfb47adbf6f5f2d7313a88f99916b0fee"
@@ -11779,10 +11787,10 @@ react-native-calendar@^0.13.1:
   dependencies:
     moment ">=2.10.3"
 
-react-native-calendars@^1.263.0:
-  version "1.263.0"
-  resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.263.0.tgz#49048d50b9b55c6dc0900f8584f8485b3093a562"
-  integrity sha512-Xi1b/B/yKd7vnfREMCmN/MAaDD7uKmYxiwm4spFB/gbJv6naHc0vXX5Fxqr00jifzKoc9C6/LYE9YYaWnIL97A==
+react-native-calendars@^1.264.0:
+  version "1.264.0"
+  resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.264.0.tgz#552cfff1480ab6c860f54e12ec2b82f9b514aae6"
+  integrity sha512-NHNekv1iwHMI+evr8dDLFqCdvnCWGlBxPKO0/bw1+HDy4uukuab//akoOx9/GGl/3+XV6MVTLdda+qjT6pD2Bg==
   dependencies:
     hoist-non-react-statics "^3.3.1"
     lodash "^4.0.0"
@@ -14271,6 +14279,11 @@ uuid@3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.0.0.tgz#6728fc0459c450d796a99c31837569bdf672d728"
   integrity sha1-Zyj8BFnEUNeWqZwxg3VpvfZy1yg=
+
+uuid@3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.2.1.tgz#12c528bb9d58d0b9265d9a2f6f0fe8be17ff1f14"
+  integrity sha512-jZnMwlb9Iku/O3smGWvZhauCf6cvvpKi4BKRiliS3cxnI+Gz9j5MEpTz2UFuXiKPJocb7gnsLHwiS05ige5BEA==
 
 uuid@3.3.2:
   version "3.3.2"
