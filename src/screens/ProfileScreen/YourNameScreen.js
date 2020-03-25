@@ -1,6 +1,19 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
-import { StyleSheet, TouchableOpacity, Text, View, TextInput, AsyncStorage } from 'react-native';
+import {
+  StyleSheet,
+  TouchableOpacity,
+  Text,
+  View,
+  TextInput,
+  AsyncStorage,
+  Image,
+  Dimensions,
+} from 'react-native';
+import top from '../../../wireframes/assets/Your_Name/top.png';
+import How_can_we_call_you from '../../../wireframes/assets/Your_Name/How_can_we_call_you.png';
+import bottom from '../../../wireframes/assets/Your_Name/bottom.png';
+import { AntDesign } from '@expo/vector-icons';
 
 export default class YourNameScreen extends Component {
   constructor(props) {
@@ -23,19 +36,28 @@ export default class YourNameScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Enter Your Name</Text>
-
+       <Image source={top} style={styles.top} />
+        <Image source={How_can_we_call_you} style={styles.nameText} />
+        <Image source={bottom} style={styles.bottom} />
+        <Image source={top} style={styles.top} />
+        <Image source={How_can_we_call_you} style={styles.nameText} />
+        <Image source={bottom} style={styles.bottom} />
         <TextInput
           style={styles.inputContainer}
           underlineColorAndroid="transparent"
           autoCapitalize="none"
-          placeholder="Please Enter your name here"
+          placeholder="Enter your name here"
           onChangeText={text => this.setState({ text })}
           value={this.state.text}
         />
 
-        <TouchableOpacity style={styles.buttonContainer} onPress={this.saveName}>
-          <Text style={{ fontSize: 22 }}>Next</Text>
+        <TouchableOpacity style={styles.button} onPress={this.saveName}>
+          <Text style={styles.buttonText}>Continue</Text>
+          <AntDesign
+            style={{ alignSelf: 'center', color: '#F55963' }}
+            name="arrowright"
+            size={18}
+          />
         </TouchableOpacity>
       </View>
     );
@@ -43,23 +65,55 @@ export default class YourNameScreen extends Component {
 }
 
 const styles = StyleSheet.create({
+  top: {
+    position: 'absolute',
+    top: 0,
+    right: 0,
+  },
+  bottom: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
   },
-  welcome: {
-    fontSize: 25,
+  nameText: {
+    alignSelf: 'center',
+    marginTop: Dimensions.get('window').height / 3 - 150,
+    marginBottom: 27,
+    marginLeft: 38,
+  },
+  button: {
+    borderWidth: 2,
+    width: 120,
+    borderRadius: 5,
+    borderColor: '#F55963',
+    position: 'absolute',
+    right: 30,
+    top: Dimensions.get('window').height - 50,
+    flex: 1,
+    flexDirection: 'row',
+  },
+  buttonText: {
+    fontSize: 20,
+    textAlign: 'center',
+    padding: 5,
+    paddingLeft: 10,
+    color: '#F55963',
   },
   inputContainer: {
+    color: '#f88c70',
+    fontSize: 21,
     margin: 15,
-    height: 40,
-    borderColor: 'blue',
-    padding: 8,
-    borderWidth: 0.5,
-    borderRadius: 8,
-    width: '80%',
+    height: 60,
+    borderBottomWidth: 5,
+    borderBottomColor: '#f2f7fd',
+    padding: 15,
+    width: '85%',
   },
   buttonContainer: {
     backgroundColor: '#45CE30',
