@@ -1,4 +1,6 @@
+import 'react-native-gesture-handler';
 import React, { Component } from 'react';
+
 import {
   StyleSheet,
   View,
@@ -40,6 +42,17 @@ export default class LanguageScreen extends Component {
 
   onItemSelected = selectedItem => {
     this.setState({ selectedItem });
+  };
+  saveselectedItem = async () => {
+    // Saving the Name in Asyncstorage
+    try {
+      await AsyncStorage.setItem('language', this.state.selectedItem);
+    } catch (e) {
+      console.log(e);
+    }
+
+    // Navigating to the next screen
+    this.props.navigation.navigate('Name');
   };
 
   render() {
