@@ -17,22 +17,18 @@ import { AntDesign } from '@expo/vector-icons';
 import TopImage from '../../assets/images/Last_Period/top.png';
 import { useNavigation } from '@react-navigation/native';
 import * as Font from 'expo-font';
+import AskLastPeriodImage from '@/assets/images/Last_Period/AskLastPeriod.png';
+
 
 const LastPeriodScreen = () => {
   const [selectedDate, setSelectedDate] = React.useState(null);
   const navigation = useNavigation();
 
-  useEffect(() => {
-    Font.loadAsync({
-      'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
-    });
-  }, []);
-
   const saveLastPeriod = () => {
     try {
       AsyncStorage.setItem('lastPeriod', selectedDate.toISOString());
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
 
     navigation.navigate('Dashboard');
@@ -42,18 +38,8 @@ const LastPeriodScreen = () => {
     <View style={styles.container}>
       <StatusBar hidden />
       <Image style={styles.topImage} source={TopImage} />
-      <View
-        style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 20, marginBottom: 20 }}
-      >
-        <Text
-          style={[styles.nameText, { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' }]}
-        >
-          When
-        </Text>
-        <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
-          {' '}
-          was your last period?
-        </Text>
+      <View style={{ padding: 20, alignSelf: 'flex-start' }}>
+        <Image style={styles.lastPeriodText} source={AskLastPeriodImage} />
       </View>
 
       <View style={styles.calenderContainer}>
@@ -78,6 +64,8 @@ const LastPeriodScreen = () => {
     </View>
   );
 };
+
+export default LastPeriodScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -134,5 +122,66 @@ const styles = StyleSheet.create({
     backgroundColor: '#F55963',
   },
 });
+
+const LastPeriodScreen = () => {
+  const [selectedDate, setSelectedDate] = React.useState(null);
+  const navigation = useNavigation();
+
+
+  useEffect(() => {
+    Font.loadAsync({
+      'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
+    });
+  }, []);
+
+  const saveLastPeriod = () => {
+    try {
+      AsyncStorage.setItem('lastPeriod', selectedDate.toISOString());
+    } catch (error) {
+      // console.log(error);
+    }
+
+    navigation.navigate('Dashboard');
+  };
+
+  return (
+    <View style={styles.container}>
+      <StatusBar hidden />
+      <Image style={styles.topImage} source={TopImage} />
+      <View style={{ padding: 20, alignSelf: 'center', flexDirection: 'row' }}>
+        <Text
+          style={[{ fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' }]}
+        >
+          When
+        </Text>
+        <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
+          {' '}
+          was your last period?
+        </Text>
+      </View>
+
+      <View style={styles.calenderContainer}>
+        <CalendarPicker
+          onDateChange={date => setSelectedDate(date)}
+          startFromMonday={true}
+          previousTitle=""
+          nextTitle=""
+          headingLevel={0}
+          weekdays={CALENDAR_WEEK_DAYS}
+          dayOfWeekStyles={styles.dayOfWeekStyles}
+          selectedDayStyle={styles.selectedDate}
+          selectedDayTextColor="#fff"
+        />
+      </View>
+      <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
+        <View style={styles.buttonTextContainer}>
+          <Text style={styles.buttonText}>Finish</Text>
+          <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
 
 export default LastPeriodScreen;
