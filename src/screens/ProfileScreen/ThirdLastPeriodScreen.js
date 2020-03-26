@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
+import * as Font from 'expo-font';
 
 import TopImage from '../../assets/images/Last_Period/top.png';
 import { useNavigation } from '@react-navigation/native';
@@ -46,7 +47,7 @@ const ThirdLastPeriodScreen = () => {
           flexDirection: 'row',
           marginTop: 20,
           marginBottom: 20,
-          width: Dimensions.get('window').width - 50,
+          width: Dimensions.get('window').width - 70,
           marginLeft: 20,
         }}
       >

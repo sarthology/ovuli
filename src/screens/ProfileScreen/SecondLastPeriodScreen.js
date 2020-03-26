@@ -42,7 +42,15 @@ const SecondLastPeriodScreen = () => {
     <View style={styles.container}>
       <StatusBar hidden />
       <Image style={styles.topImage} source={TopImage} />
-      <View style={{ flexDirection: 'row', marginTop: 20, marginBottom: 20 }}>
+      <View
+        style={{
+          flexDirection: 'row',
+          marginTop: 20,
+          marginBottom: 20,
+          width: Dimensions.get('window').width - 50,
+          marginLeft: 10,
+        }}
+      >
         <Text
           style={[styles.nameText, { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' }]}
         >
@@ -53,7 +61,6 @@ const SecondLastPeriodScreen = () => {
           was your second last period?
         </Text>
       </View>
-
       <View style={styles.calenderContainer}>
         <CalendarPicker
           onDateChange={date => setSelectedDate(date)}
