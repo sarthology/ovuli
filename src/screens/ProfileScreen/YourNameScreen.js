@@ -36,7 +36,7 @@ export default class YourNameScreen extends Component {
     }
 
     // Navigating to the next screen
-    this.props.navigation.navigate('AverageCycle');
+    this.props.navigation.navigate('DoYouKnow');
   };
 
   render() {
