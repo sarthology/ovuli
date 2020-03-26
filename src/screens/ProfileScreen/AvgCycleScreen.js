@@ -66,7 +66,7 @@ export default class AvgCycle extends Component {
     }
 
     // this.props.navigation.navigate('CalculatingCyclePeriodPage');
-    this.props.navigation.navigate('DoYouKnow');
+    this.props.navigation.navigate('LastPeriod');
   };
 
   render() {
