@@ -18,7 +18,9 @@ import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
 import * as Font from 'expo-font';
 
 
-const wheelPickerData = ['Hindi', 'Marathi', 'English', 'Telugu', 'Tulu', 'Tamil'];
+const wheelPickerData = ['Assamese', 'Bengali', 'Bodo', 'English', 'Dogri', 'Gujarati', 
+'Hindi', 'Kannada', 'Kashmiri', 'Konkani', 'Maithili', 'Malayalam', 'Manipuri', 'Marathi', 
+'Nepali', 'Oriya', 'Punjabi', 'Sanskrit', 'Santhali', 'Sindhi', 'Tamil', 'Telugu', 'Urdu'];
 
 export default class LanguageScreen extends Component {
   state = { selectedItem: 0 };
