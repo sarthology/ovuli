@@ -17,14 +17,15 @@ import * as Font from 'expo-font';
 export default class DoYouKnow extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: '', count: '' };
+    this.state = { text: '', count: '', fontLoaded: false };
     // console.log(this.state.count);
   }
 
-  componentDidMount() {
-    Font.loadAsync({
+  async componentDidMount() {
+    await Font.loadAsync({
       'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
     });
+    this.setState({ fontLoaded: true });
   }
 
   saveName = async () => {
@@ -56,164 +57,168 @@ export default class DoYouKnow extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={top} style={styles.top} />
-        <View style={{ flexDirection: 'row' }}>
-          <Text style={styles.nameText}>Do you know your Cycle Length?</Text>
-        </View>
+        {this.state.fontLoaded ? (
+          <>
+            <Image source={top} style={styles.top} />
+            <View style={{ flexDirection: 'row' }}>
+              <Text style={styles.nameText}>Do you know your Cycle Length?</Text>
+            </View>
 
-        <TouchableOpacity
-          style={
-            (styles.condbutton,
-            this.state.count == 'yes'
-              ? {
-                  borderWidth: 2,
-                  // color: 'red',
-                  width: 80,
+            <TouchableOpacity
+              style={
+                (styles.condbutton,
+                this.state.count == 'yes'
+                  ? {
+                      borderWidth: 2,
+                      // color: 'red',
+                      width: 80,
 
-                  borderRadius: 5,
-                  // marginTop: -170,
-                  // padding: 4,
-                  top: Dimensions.get('window').height - 230,
-                  borderColor: '#F55963',
-                  position: 'absolute',
-                  // right: 30,
-                  // top: Dimensions.get('window').height - 50,
-                  flex: 1,
-                  alignContent: 'center',
-                  justifyContent: 'center',
-                  flexDirection: 'row',
-                  left: 80,
-                  backgroundColor: '#F55963',
+                      borderRadius: 5,
+                      // marginTop: -170,
+                      // padding: 4,
+                      top: Dimensions.get('window').height - 230,
+                      borderColor: '#F55963',
+                      position: 'absolute',
+                      // right: 30,
+                      // top: Dimensions.get('window').height - 50,
+                      flex: 1,
+                      alignContent: 'center',
+                      justifyContent: 'center',
+                      flexDirection: 'row',
+                      left: 80,
+                      backgroundColor: '#F55963',
+                    }
+                  : {
+                      borderWidth: 2,
+                      // color: 'red',
+                      width: 80,
+
+                      borderRadius: 5,
+                      // marginTop: -170,
+                      // padding: 4,
+                      top: Dimensions.get('window').height - 230,
+                      borderColor: '#F55963',
+                      position: 'absolute',
+                      // right: 30,
+                      // top: Dimensions.get('window').height - 50,
+                      flex: 1,
+                      alignContent: 'center',
+                      justifyContent: 'center',
+                      flexDirection: 'row',
+                      left: 80,
+                      backgroundColor: null,
+                    })
+              }
+              onPress={this.countYes}
+            >
+              {/* {console.log(this.state.count + 'hello')} */}
+              <Text
+                style={
+                  (styles.condText,
+                  this.state.count == 'yes'
+                    ? {
+                        fontSize: 20,
+                        textAlign: 'center',
+                        padding: 5,
+                        // paddingLeft: 10,
+                        color: '#F55963',
+                        color: 'white',
+                      }
+                    : {
+                        fontSize: 20,
+                        textAlign: 'center',
+                        padding: 5,
+                        // paddingLeft: 10,
+                        color: '#F55963',
+                        color: '#F55963',
+                      })
                 }
-              : {
-                  borderWidth: 2,
-                  // color: 'red',
-                  width: 80,
+              >
+                Yes
+              </Text>
+              <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
+            </TouchableOpacity>
 
-                  borderRadius: 5,
-                  // marginTop: -170,
-                  // padding: 4,
-                  top: Dimensions.get('window').height - 230,
-                  borderColor: '#F55963',
-                  position: 'absolute',
-                  // right: 30,
-                  // top: Dimensions.get('window').height - 50,
-                  flex: 1,
-                  alignContent: 'center',
-                  justifyContent: 'center',
-                  flexDirection: 'row',
-                  left: 80,
-                  backgroundColor: null,
-                })
-          }
-          onPress={this.countYes}
-        >
-          {/* {console.log(this.state.count + 'hello')} */}
-          <Text
-            style={
-              (styles.condText,
-              this.state.count == 'yes'
-                ? {
-                    fontSize: 20,
-                    textAlign: 'center',
-                    padding: 5,
-                    // paddingLeft: 10,
-                    color: '#F55963',
-                    color: 'white',
-                  }
-                : {
-                    fontSize: 20,
-                    textAlign: 'center',
-                    padding: 5,
-                    // paddingLeft: 10,
-                    color: '#F55963',
-                    color: '#F55963',
-                  })
-            }
-          >
-            Yes
-          </Text>
-          <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={
-            (styles.condnobutton,
-            this.state.count == 'no'
-              ? {
-                  borderWidth: 2,
-                  width: 80,
-                  borderRadius: 5,
-                  // marginTop: -170,
-                  // padding: 4,
-                  top: Dimensions.get('window').height - 230,
-                  borderColor: '#F55963',
-                  position: 'absolute',
-                  // right: 30,
-                  // top: Dimensions.get('window').height - 50,
-                  flex: 1,
-                  alignContent: 'center',
-                  justifyContent: 'center',
-                  flexDirection: 'row',
-                  right: 80,
-                  backgroundColor: '#F55963',
+            <TouchableOpacity
+              style={
+                (styles.condnobutton,
+                this.state.count == 'no'
+                  ? {
+                      borderWidth: 2,
+                      width: 80,
+                      borderRadius: 5,
+                      // marginTop: -170,
+                      // padding: 4,
+                      top: Dimensions.get('window').height - 230,
+                      borderColor: '#F55963',
+                      position: 'absolute',
+                      // right: 30,
+                      // top: Dimensions.get('window').height - 50,
+                      flex: 1,
+                      alignContent: 'center',
+                      justifyContent: 'center',
+                      flexDirection: 'row',
+                      right: 80,
+                      backgroundColor: '#F55963',
+                    }
+                  : {
+                      borderWidth: 2,
+                      width: 80,
+                      borderRadius: 5,
+                      // marginTop: -170,
+                      // padding: 4,
+                      top: Dimensions.get('window').height - 230,
+                      borderColor: '#F55963',
+                      position: 'absolute',
+                      // right: 30,
+                      // top: Dimensions.get('window').height - 50,
+                      flex: 1,
+                      alignContent: 'center',
+                      justifyContent: 'center',
+                      flexDirection: 'row',
+                      right: 80,
+                      backgroundColor: null,
+                    })
+              }
+              onPress={this.countNo}
+            >
+              <Text
+                style={
+                  (styles.condText,
+                  this.state.count == 'no'
+                    ? {
+                        fontSize: 20,
+                        textAlign: 'center',
+                        padding: 5,
+                        // paddingLeft: 10,
+                        color: '#F55963',
+                        color: 'white',
+                      }
+                    : {
+                        fontSize: 20,
+                        textAlign: 'center',
+                        padding: 5,
+                        // paddingLeft: 10,
+                        color: '#F55963',
+                        color: '#F55963',
+                      })
                 }
-              : {
-                  borderWidth: 2,
-                  width: 80,
-                  borderRadius: 5,
-                  // marginTop: -170,
-                  // padding: 4,
-                  top: Dimensions.get('window').height - 230,
-                  borderColor: '#F55963',
-                  position: 'absolute',
-                  // right: 30,
-                  // top: Dimensions.get('window').height - 50,
-                  flex: 1,
-                  alignContent: 'center',
-                  justifyContent: 'center',
-                  flexDirection: 'row',
-                  right: 80,
-                  backgroundColor: null,
-                })
-          }
-          onPress={this.countNo}
-        >
-          <Text
-            style={
-              (styles.condText,
-              this.state.count == 'no'
-                ? {
-                    fontSize: 20,
-                    textAlign: 'center',
-                    padding: 5,
-                    // paddingLeft: 10,
-                    color: '#F55963',
-                    color: 'white',
-                  }
-                : {
-                    fontSize: 20,
-                    textAlign: 'center',
-                    padding: 5,
-                    // paddingLeft: 10,
-                    color: '#F55963',
-                    color: '#F55963',
-                  })
-            }
-          >
-            No
-          </Text>
-          <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
-        </TouchableOpacity>
+              >
+                No
+              </Text>
+              <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
+            </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button} onPress={this.saveName}>
-          <Text style={styles.buttonText}>Continue</Text>
-          <AntDesign
-            style={{ alignSelf: 'center', color: '#F55963' }}
-            name="arrowright"
-            size={18}
-          />
-        </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={this.saveName}>
+              <Text style={styles.buttonText}>Continue</Text>
+              <AntDesign
+                style={{ alignSelf: 'center', color: '#F55963' }}
+                name="arrowright"
+                size={18}
+              />
+            </TouchableOpacity>
+          </>
+        ) : null}
       </View>
     );
   }

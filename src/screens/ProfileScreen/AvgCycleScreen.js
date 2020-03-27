@@ -43,13 +43,15 @@ export default class AvgCycle extends Component {
     super(props);
     this.state = {
       selected: 4,
+      fontLoaded: false,
     };
   }
 
-  componentDidMount() {
-    Font.loadAsync({
+  async componentDidMount() {
+    await Font.loadAsync({
       'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
     });
+    this.setState({ fontLoaded: true });
   }
 
   handleChange = index => {
@@ -73,43 +75,50 @@ export default class AvgCycle extends Component {
     const { selected } = this.state;
     return (
       <View style={{ backgroundColor: '#fff', flex: 1 }}>
-        <Image source={top} style={styles.top} />
-        <View style={[{ flexDirection: 'row' }, styles.cycleText]}>
-          <Text
-            style={[
-              { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' },
-            ]}
-          >
-            How long
-          </Text>
-          <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}> is your cycle?</Text>
-        </View>
-        <View style={styles.wrapperHorizontal}>
-          <StatusBar hidden />
-          <SmoothPicker
-            initialScrollToIndex={selected + 1}
-            ref={ref => (this.refList = ref)}
-            keyExtractor={(_, index) => index.toString()}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            bounces={true}
-            data={Array.from({ length: 40 }, (_, i) => 1 + i)}
-            onSelected={({ index }) => this.handleChange(index)}
-            renderItem={({ item, index }) => (
-              <Bubble horizontal selected={++index === selected + 1}>
-                {item}
-              </Bubble>
-            )}
-          />
-        </View>
-        <TouchableOpacity style={styles.button} onPress={this.saveAvgPeriod}>
-          <Text style={styles.buttonText}>Continue</Text>
-          <AntDesign
-            style={{ alignSelf: 'center', color: '#F55963' }}
-            name="arrowright"
-            size={18}
-          />
-        </TouchableOpacity>
+        {this.state.fontLoaded ? (
+          <>
+            <Image source={top} style={styles.top} />
+            <View style={[{ flexDirection: 'row' }, styles.cycleText]}>
+              <Text
+                style={[
+                  { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' },
+                ]}
+              >
+                How long
+              </Text>
+              <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
+                {' '}
+                is your cycle?
+              </Text>
+            </View>
+            <View style={styles.wrapperHorizontal}>
+              <StatusBar hidden />
+              <SmoothPicker
+                initialScrollToIndex={selected + 1}
+                ref={ref => (this.refList = ref)}
+                keyExtractor={(_, index) => index.toString()}
+                horizontal={true}
+                showsHorizontalScrollIndicator={false}
+                bounces={true}
+                data={Array.from({ length: 40 }, (_, i) => 1 + i)}
+                onSelected={({ index }) => this.handleChange(index)}
+                renderItem={({ item, index }) => (
+                  <Bubble horizontal selected={++index === selected + 1}>
+                    {item}
+                  </Bubble>
+                )}
+              />
+            </View>
+            <TouchableOpacity style={styles.button} onPress={this.saveAvgPeriod}>
+              <Text style={styles.buttonText}>Continue</Text>
+              <AntDesign
+                style={{ alignSelf: 'center', color: '#F55963' }}
+                name="arrowright"
+                size={18}
+              />
+            </TouchableOpacity>{' '}
+          </>
+        ) : null}
       </View>
     );
   }

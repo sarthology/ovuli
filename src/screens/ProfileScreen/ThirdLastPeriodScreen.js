@@ -20,12 +20,14 @@ import { useNavigation } from '@react-navigation/native';
 
 const ThirdLastPeriodScreen = () => {
   const [selectedDate, setSelectedDate] = React.useState(null);
+  const [fontLoaded, setFontLoaded] = React.useState(false);
   const navigation = useNavigation();
 
-  useEffect(() => {
-    Font.loadAsync({
+  useEffect(async () => {
+    await Font.loadAsync({
       'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
     });
+    setFontLoaded(true);
   }, []);
 
   const saveLastPeriod = () => {
@@ -40,47 +42,50 @@ const ThirdLastPeriodScreen = () => {
 
   return (
     <View style={styles.container}>
-      <StatusBar hidden />
-      <Image style={styles.topImage} source={TopImage} />
-      <View
-        style={{
-          flexDirection: 'row',
-          marginTop: 20,
-          marginBottom: 20,
-          width: Dimensions.get('window').width - 70,
-          marginLeft: 20,
-        }}
-      >
-        <Text
-          style={[styles.nameText, { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' }]}
-        >
-          When
-        </Text>
-        <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
-          {' '}
-          was your third last period?
-        </Text>
-      </View>
-
-      <View style={styles.calenderContainer}>
-        <CalendarPicker
-          onDateChange={date => setSelectedDate(date)}
-          startFromMonday={true}
-          previousTitle=""
-          nextTitle=""
-          headingLevel={0}
-          weekdays={CALENDAR_WEEK_DAYS}
-          dayOfWeekStyles={styles.dayOfWeekStyles}
-          selectedDayStyle={styles.selectedDate}
-          selectedDayTextColor="#fff"
-        />
-      </View>
-      <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
-        <View style={styles.buttonTextContainer}>
-          <Text style={styles.buttonText}>Finish</Text>
-          <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
-        </View>
-      </TouchableOpacity>
+      {fontLoaded ? (
+        <>
+          <StatusBar hidden />
+          <Image style={styles.topImage} source={TopImage} />
+          <View
+            style={{
+              flexDirection: 'row',
+              marginTop: 20,
+              marginBottom: 20,
+              width: Dimensions.get('window').width - 70,
+              marginLeft: 20,
+            }}
+          >
+            <Text
+              style={[styles.nameText, { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' }]}
+            >
+              When
+            </Text>
+            <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
+              {' '}
+              was your third last period?
+            </Text>
+          </View>
+          <View style={styles.calenderContainer}>
+            <CalendarPicker
+              onDateChange={date => setSelectedDate(date)}
+              startFromMonday={true}
+              previousTitle=""
+              nextTitle=""
+              headingLevel={0}
+              weekdays={CALENDAR_WEEK_DAYS}
+              dayOfWeekStyles={styles.dayOfWeekStyles}
+              selectedDayStyle={styles.selectedDate}
+              selectedDayTextColor="#fff"
+            />
+          </View>
+          <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
+            <View style={styles.buttonTextContainer}>
+              <Text style={styles.buttonText}>Finish</Text>
+              <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
+            </View>
+          </TouchableOpacity>{' '}
+        </>
+      ) : null}
     </View>
   );
 };

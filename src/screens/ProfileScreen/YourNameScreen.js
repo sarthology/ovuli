@@ -18,13 +18,14 @@ import * as Font from 'expo-font';
 export default class YourNameScreen extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = { text: '', fontLoaded: false };
   }
 
-  componentDidMount() {
-    Font.loadAsync({
+  async componentDidMount() {
+    await Font.loadAsync({
       'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
     });
+    this.setState({ fontLoaded: true });
   }
 
   saveName = async () => {
@@ -42,33 +43,39 @@ export default class YourNameScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={top} style={styles.top} />
-        <View style={{ flexDirection: 'row' }}>
-          <Text
-            style={[styles.nameText, { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' }]}
-          >
-            How
-          </Text>
-          <Text style={styles.nameText}> can we call you?</Text>
-        </View>
-        <Image source={bottom} style={styles.bottom} />
-        <TextInput
-          style={styles.inputContainer}
-          underlineColorAndroid="transparent"
-          autoCapitalize="none"
-          placeholder="Enter your name here"
-          onChangeText={text => this.setState({ text })}
-          value={this.state.text}
-        />
-
-        <TouchableOpacity style={styles.button} onPress={this.saveName}>
-          <Text style={styles.buttonText}>Continue</Text>
-          <AntDesign
-            style={{ alignSelf: 'center', color: '#F55963' }}
-            name="arrowright"
-            size={18}
-          />
-        </TouchableOpacity>
+        {this.state.fontLoaded ? (
+          <>
+            <Image source={top} style={styles.top} />
+            <View style={{ flexDirection: 'row' }}>
+              <Text
+                style={[
+                  styles.nameText,
+                  { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' },
+                ]}
+              >
+                How
+              </Text>
+              <Text style={styles.nameText}> can we call you?</Text>
+            </View>
+            <Image source={bottom} style={styles.bottom} />
+            <TextInput
+              style={styles.inputContainer}
+              underlineColorAndroid="transparent"
+              autoCapitalize="none"
+              placeholder="Enter your name here"
+              onChangeText={text => this.setState({ text })}
+              value={this.state.text}
+            />
+            <TouchableOpacity style={styles.button} onPress={this.saveName}>
+              <Text style={styles.buttonText}>Continue</Text>
+              <AntDesign
+                style={{ alignSelf: 'center', color: '#F55963' }}
+                name="arrowright"
+                size={18}
+              />
+            </TouchableOpacity>{' '}
+          </>
+        ) : null}
       </View>
     );
   }

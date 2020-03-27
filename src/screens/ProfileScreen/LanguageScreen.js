@@ -17,18 +17,40 @@ import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
 import * as Font from 'expo-font';
 
-
-const wheelPickerData = ['Assamese', 'Bengali', 'Bodo', 'English', 'Dogri', 'Gujarati', 
-'Hindi', 'Kannada', 'Kashmiri', 'Konkani', 'Maithili', 'Malayalam', 'Manipuri', 'Marathi', 
-'Nepali', 'Oriya', 'Punjabi', 'Sanskrit', 'Santhali', 'Sindhi', 'Tamil', 'Telugu', 'Urdu'];
+const wheelPickerData = [
+  'Assamese',
+  'Bengali',
+  'Bodo',
+  'English',
+  'Dogri',
+  'Gujarati',
+  'Hindi',
+  'Kannada',
+  'Kashmiri',
+  'Konkani',
+  'Maithili',
+  'Malayalam',
+  'Manipuri',
+  'Marathi',
+  'Nepali',
+  'Oriya',
+  'Punjabi',
+  'Sanskrit',
+  'Santhali',
+  'Sindhi',
+  'Tamil',
+  'Telugu',
+  'Urdu',
+];
 
 export default class LanguageScreen extends Component {
-  state = { selectedItem: 0 };
+  state = { selectedItem: 0, fontLoaded: false };
 
-  componentDidMount() {
-    Font.loadAsync({
+  async componentDidMount() {
+    await Font.loadAsync({
       'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
     });
+    this.setState({ fontLoaded: true });
   }
 
   saveSelectedItem = async () => {
@@ -60,47 +82,53 @@ export default class LanguageScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image source={top} style={styles.top} />
-        <View style={styles.cycleText}>
-          <Text
-            style={[
-              { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' },
-            ]}
-          >
-            please
-          </Text>
-          <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8, alignSelf: 'center' }}>
-            {' '}
-            select your{' '}
-          </Text>
-        </View>
-        <Text
-          style={{ fontSize: 25, fontFamily: 'PT-Sans', alignSelf: 'center', marginBottom: 25 }}
-        >
-          language?
-        </Text>
-        <WheelPicker
-          selectedItem={this.state.selectedItem}
-          data={wheelPickerData}
-          onItemSelected={this.onItemSelected}
-        />
-        <Image source={please_select_your_language} style={styles.cycleText} />
-        <View style={styles.wheelPicker}>
-          <WheelPicker
-            selectedItem={this.state.selectedItem}
-            data={wheelPickerData}
-            onItemSelected={this.onItemSelected}
-          />
-        </View>
-        <Image source={bottom} style={styles.bottom} />
-        <TouchableOpacity style={styles.button} onPress={this.saveSelectedItem}>
-          <Text style={styles.buttonText}>Continue</Text>
-          <AntDesign
-            style={{ alignSelf: 'center', color: '#F55963' }}
-            name="arrowright"
-            size={18}
-          />
-        </TouchableOpacity>
+        {this.state.fontLoaded ? (
+          <>
+            <Image source={top} style={styles.top} />
+            <View style={styles.cycleText}>
+              <Text
+                style={[
+                  { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' },
+                ]}
+              >
+                please
+              </Text>
+              <Text
+                style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8, alignSelf: 'center' }}
+              >
+                {' '}
+                select your{' '}
+              </Text>
+            </View>
+            <Text
+              style={{ fontSize: 25, fontFamily: 'PT-Sans', alignSelf: 'center', marginBottom: 25 }}
+            >
+              language?
+            </Text>
+            <WheelPicker
+              selectedItem={this.state.selectedItem}
+              data={wheelPickerData}
+              onItemSelected={this.onItemSelected}
+            />
+            <Image source={please_select_your_language} style={styles.cycleText} />
+            <View style={styles.wheelPicker}>
+              <WheelPicker
+                selectedItem={this.state.selectedItem}
+                data={wheelPickerData}
+                onItemSelected={this.onItemSelected}
+              />
+            </View>
+            <Image source={bottom} style={styles.bottom} />
+            <TouchableOpacity style={styles.button} onPress={this.saveSelectedItem}>
+              <Text style={styles.buttonText}>Continue</Text>
+              <AntDesign
+                style={{ alignSelf: 'center', color: '#F55963' }}
+                name="arrowright"
+                size={18}
+              />
+            </TouchableOpacity>{' '}
+          </>
+        ) : null}
       </View>
     );
   }
