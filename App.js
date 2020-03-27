@@ -3,7 +3,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
-import { MaterialCommunityIcons } from 'react-native-vector-icons';
+//import { MaterialCommunityIcons } from 'react-native-vector-icons';
+import { Feather } from 'react-native-vector-icons';
 
 import HistoryScreen from './src/screens/HistoryScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
@@ -34,7 +35,7 @@ function TabNavigator() {
         options={{
           tabBarLabel: 'History',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="history" color={color} size={size} />
+            <Feather name="clock" color={color} size={size} />
           ),
         }}
       />
@@ -44,7 +45,7 @@ function TabNavigator() {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <Feather name="home" color={color} size={size} />
           ),
         }}
       />
@@ -54,7 +55,7 @@ function TabNavigator() {
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
+            <Feather name="settings" color={color} size={size} />
           ),
         }}
       />
@@ -68,14 +69,14 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
+        <Stack.Screen name="Dashboard" component={TabNavigator} />
         {/* <Stack.Screen name="Language" component={LanguageScreen} /> */}
         <Stack.Screen name="Name" component={YourNameScreen} />
         <Stack.Screen name="DoYouKnow" component={DoYouKnow} />
-
         <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />
         <Stack.Screen name="CalculatingCyclePeriodPage" component={CalculatingCyclePeriodPage} />
-        <Stack.Screen name="Dashboard" component={TabNavigator} />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );
