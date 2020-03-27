@@ -11,11 +11,12 @@ import {
   AsyncStorage,
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { WheelPicker } from 'react-native-wheel-picker-android';
+// import { WheelPicker } from 'react-native-wheel-picker-android';
 
 import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
 import * as Font from 'expo-font';
+import { isConfigurationAvailable } from 'expo/build/AR';
 
 const wheelPickerData = [
   'Assamese',
@@ -78,12 +79,25 @@ export default class LanguageScreen extends Component {
     this.props.navigation.navigate('Name');
   };
 
+  checkData = async () => {
+    try {
+      const name = await AsyncStorage.getItem('Name');
+      const lastPeriod = await AsyncStorage.getItem('lastPeriod');
+      const useLanguage = await AsyncStorage.getItem('useLanguage');
+      const avgCycle = await AsyncStorage.getItem('AvgPeriod');
+
+      if (name !== null && useLanguage !== null && (lastPeriod !== null || avgCycle !== null)) {
+        return true;
+      }
+      return false;
+    } catch (e) {
+      console.log(e);
+      return false;
+    }
+  };
+
   render() {
-    const name = AsyncStorage.getItem('AvgPeriod');
-    const lastPeriod = AsyncStorage.getItem('lastPeriod');
-    const useLanguage = AsyncStorage.getItem('useLanguage');
-    const avgCycle = AsyncStorage.getItem('AvgPeriod');
-    if (name !== '' && useLanguage !== '' && (avgCycle !== '' || lastPeriod !== '')) {
+    if (this.checkData() === true) {
       return <View>{this.props.navigation.navigate('Dashboard')}</View>;
     }
     return (
@@ -107,18 +121,18 @@ export default class LanguageScreen extends Component {
         >
           language?
         </Text>
-        <WheelPicker
+        {/* /* <WheelPicker
           selectedItem={this.state.selectedItem}
           data={wheelPickerData}
           onItemSelected={this.onItemSelected}
-        />
-        <Image source={please_select_your_language} style={styles.cycleText} />
+        /> */}
+        {/* <Image source={please_select_your_language} style={styles.cycleText} /> */}
         <View style={styles.wheelPicker}>
-          <WheelPicker
+          {/* <WheelPicker
             selectedItem={this.state.selectedItem}
             data={wheelPickerData}
             onItemSelected={this.onItemSelected}
-          />
+          /> */}
         </View>
         <Image source={bottom} style={styles.bottom} />
         <TouchableOpacity style={styles.button} onPress={this.saveSelectedItem}>
