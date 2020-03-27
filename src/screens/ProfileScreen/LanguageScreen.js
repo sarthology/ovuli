@@ -90,10 +90,23 @@ export default class LanguageScreen extends Component {
       <View style={styles.container}>
         <Image source={top} style={styles.top} />
         <View style={styles.cycleText}>
-          <Text style={[{ fontSize: 30, fontWeight: 'bold', alignSelf: 'center' }]}>please</Text>
-          <Text style={{ fontSize: 25, marginTop: 8, alignSelf: 'center' }}> select your </Text>
+          <Text
+            style={[
+              { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' },
+            ]}
+          >
+            please
+          </Text>
+          <Text style={{ fontFamily: 'PT-Sans', fontSize: 25, marginTop: 8, alignSelf: 'center' }}>
+            {' '}
+            select your{' '}
+          </Text>
         </View>
-        <Text style={{ fontSize: 25, alignSelf: 'center', marginBottom: 25 }}>language?</Text>
+        <Text
+          style={{ fontFamily: 'PT-Sans', fontSize: 25, alignSelf: 'center', marginBottom: 25 }}
+        >
+          language?
+        </Text>
         <WheelPicker
           selectedItem={this.state.selectedItem}
           data={wheelPickerData}
