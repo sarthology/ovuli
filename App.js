@@ -68,10 +68,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
-        {/* <Stack.Screen name="Language" component={LanguageScreen} /> */}
+        <Stack.Screen name="Language" component={LanguageScreen} />
         <Stack.Screen name="Name" component={YourNameScreen} />
         <Stack.Screen name="DoYouKnow" component={DoYouKnow} />
-
         <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />
         <Stack.Screen name="CalculatingCyclePeriodPage" component={CalculatingCyclePeriodPage} />

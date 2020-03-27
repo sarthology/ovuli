@@ -17,10 +17,31 @@ import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
 import * as Font from 'expo-font';
 
-
-const wheelPickerData = ['Assamese', 'Bengali', 'Bodo', 'English', 'Dogri', 'Gujarati', 
-'Hindi', 'Kannada', 'Kashmiri', 'Konkani', 'Maithili', 'Malayalam', 'Manipuri', 'Marathi', 
-'Nepali', 'Oriya', 'Punjabi', 'Sanskrit', 'Santhali', 'Sindhi', 'Tamil', 'Telugu', 'Urdu'];
+const wheelPickerData = [
+  'Assamese',
+  'Bengali',
+  'Bodo',
+  'English',
+  'Dogri',
+  'Gujarati',
+  'Hindi',
+  'Kannada',
+  'Kashmiri',
+  'Konkani',
+  'Maithili',
+  'Malayalam',
+  'Manipuri',
+  'Marathi',
+  'Nepali',
+  'Oriya',
+  'Punjabi',
+  'Sanskrit',
+  'Santhali',
+  'Sindhi',
+  'Tamil',
+  'Telugu',
+  'Urdu',
+];
 
 export default class LanguageScreen extends Component {
   state = { selectedItem: 0 };
@@ -58,27 +79,21 @@ export default class LanguageScreen extends Component {
   };
 
   render() {
+    const name = AsyncStorage.getItem('AvgPeriod');
+    const lastPeriod = AsyncStorage.getItem('lastPeriod');
+    const useLanguage = AsyncStorage.getItem('useLanguage');
+    const avgCycle = AsyncStorage.getItem('AvgPeriod');
+    if (name !== '' && useLanguage !== '' && (avgCycle !== '' || lastPeriod !== '')) {
+      return <View>{this.props.navigation.navigate('Dashboard')}</View>;
+    }
     return (
       <View style={styles.container}>
         <Image source={top} style={styles.top} />
         <View style={styles.cycleText}>
-          <Text
-            style={[
-              { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' },
-            ]}
-          >
-            please
-          </Text>
-          <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8, alignSelf: 'center' }}>
-            {' '}
-            select your{' '}
-          </Text>
+          <Text style={[{ fontSize: 30, fontWeight: 'bold', alignSelf: 'center' }]}>please</Text>
+          <Text style={{ fontSize: 25, marginTop: 8, alignSelf: 'center' }}> select your </Text>
         </View>
-        <Text
-          style={{ fontSize: 25, fontFamily: 'PT-Sans', alignSelf: 'center', marginBottom: 25 }}
-        >
-          language?
-        </Text>
+        <Text style={{ fontSize: 25, alignSelf: 'center', marginBottom: 25 }}>language?</Text>
         <WheelPicker
           selectedItem={this.state.selectedItem}
           data={wheelPickerData}

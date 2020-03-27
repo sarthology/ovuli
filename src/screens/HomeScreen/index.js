@@ -12,13 +12,13 @@ export default class HomeScreen extends Component {
     };
   }
 
-  async componentDidMount() {
-    const avgCycle = await AsyncStorage.getItem('AvgPeriod');
+  componentDidMount() {
+    const avgCycle = AsyncStorage.getItem('AvgPeriod');
     if (avgCycle !== '') {
       this.setState({ avgCycle });
     }
 
-    const lastPeriod = await AsyncStorage.getItem('lastPeriod');
+    const lastPeriod = AsyncStorage.getItem('lastPeriod');
 
     if (lastPeriod !== '') {
       this.setState({ lastPeriod });
