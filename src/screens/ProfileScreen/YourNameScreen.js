@@ -34,9 +34,13 @@ export default class YourNameScreen extends Component {
     } catch (e) {
       console.log(e);
     }
-
-    // Navigating to the next screen
-    this.props.navigation.navigate('DoYouKnow');
+    if (this.state.text) {
+      console.log(this.state.text);
+      // Navigating to the next screen
+      this.props.navigation.navigate('DoYouKnow');
+    } else {
+      alert('Please enter your Name to Proceed');
+    }
   };
 
   render() {
