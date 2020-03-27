@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, AsyncStorage } from 'react-native';
+import { StyleSheet, Text, View, AsyncStorage, Button } from 'react-native';
 import { calculateOvuli } from '@/util/ovuli';
 
 export default class HomeScreen extends Component {
@@ -12,13 +12,24 @@ export default class HomeScreen extends Component {
     };
   }
 
-  async componentDidMount() {
-    const avgCycle = await AsyncStorage.getItem('AvgPeriod');
+  reset = () => {
+    try {
+      AsyncStorage.removeItem('Name');
+      AsyncStorage.removeItem('lastPeriod');
+      AsyncStorage.removeItem('useLanguage');
+      AsyncStorage.removeItem('AvgPeriod');
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  componentDidMount() {
+    const avgCycle = AsyncStorage.getItem('AvgPeriod');
     if (avgCycle !== '') {
       this.setState({ avgCycle });
     }
 
-    const lastPeriod = await AsyncStorage.getItem('lastPeriod');
+    const lastPeriod = AsyncStorage.getItem('lastPeriod');
 
     if (lastPeriod !== '') {
       this.setState({ lastPeriod });
@@ -48,6 +59,7 @@ export default class HomeScreen extends Component {
         </Text>
         <Text>Fertile Window : END :: {data['fertileWindow']['end']}</Text>
         <Text>Fertile Window : START MONTH :: {data['fertileWindow']['startMonth']}</Text>
+        <Button title="Reset" onPress={this.reset} />
       </View>
     );
   }
