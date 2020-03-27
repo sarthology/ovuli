@@ -68,7 +68,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator headerMode="none">
-        {/* <Stack.Screen name="Language" component={LanguageScreen} /> */}
+        <Stack.Screen name="Language" component={LanguageScreen} />
         <Stack.Screen name="Name" component={YourNameScreen} />
 
         <Stack.Screen name="DoYouKnow" component={DoYouKnow} />
