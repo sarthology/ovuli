@@ -14,17 +14,23 @@ import top from '../../../wireframes/assets/Your_Name/top.png';
 import bottom from '../../../wireframes/assets/Your_Name/bottom.png';
 import { AntDesign } from '@expo/vector-icons';
 import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
 
 export default class YourNameScreen extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: '' };
+    this.state = { text: '', fontLoaded: false };
   }
 
-  componentDidMount() {
-    Font.loadAsync({
-      'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
-    });
+  async componentDidMount() {
+    try {
+      await Font.loadAsync({
+        'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
+      });
+      this.setState({ fontLoaded: true });
+    } catch (error) {
+      console.log('error loading fonts', error);
+    }
   }
 
   saveName = async () => {
@@ -44,6 +50,10 @@ export default class YourNameScreen extends Component {
   };
 
   render() {
+    if (!this.state.fontLoaded) {
+      return <AppLoading />;
+    }
+
     return (
       <View style={styles.container}>
         <Image source={top} style={styles.top} />
