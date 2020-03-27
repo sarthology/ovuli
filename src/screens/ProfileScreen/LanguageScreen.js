@@ -15,6 +15,7 @@ import { WheelPicker } from 'react-native-wheel-picker-android';
 
 import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
+import please_select_your_language from '../../../wireframes/assets/Lang_Screen/please_select_your_language.png';
 import * as Font from 'expo-font';
 
 
