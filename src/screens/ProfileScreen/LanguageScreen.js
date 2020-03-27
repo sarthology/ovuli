@@ -11,12 +11,11 @@ import {
   AsyncStorage,
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-// import { WheelPicker } from 'react-native-wheel-picker-android';
+import { WheelPicker } from 'react-native-wheel-picker-android';
 
 import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
 import * as Font from 'expo-font';
-import { isConfigurationAvailable } from 'expo/build/AR';
 
 const wheelPickerData = [
   'Assamese',
@@ -121,18 +120,18 @@ export default class LanguageScreen extends Component {
         >
           language?
         </Text>
-        {/* /* <WheelPicker
+        <WheelPicker
           selectedItem={this.state.selectedItem}
           data={wheelPickerData}
           onItemSelected={this.onItemSelected}
-        /> */}
-        {/* <Image source={please_select_your_language} style={styles.cycleText} /> */}
+        />
+        <Image source={please_select_your_language} style={styles.cycleText} />
         <View style={styles.wheelPicker}>
-          {/* <WheelPicker
+          <WheelPicker
             selectedItem={this.state.selectedItem}
             data={wheelPickerData}
             onItemSelected={this.onItemSelected}
-          /> */}
+          />
         </View>
         <Image source={bottom} style={styles.bottom} />
         <TouchableOpacity style={styles.button} onPress={this.saveSelectedItem}>
