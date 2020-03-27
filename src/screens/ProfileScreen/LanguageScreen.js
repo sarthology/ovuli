@@ -11,11 +11,12 @@ import {
   AsyncStorage,
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { WheelPicker } from 'react-native-wheel-picker-android';
+// import { WheelPicker } from 'react-native-wheel-picker-android';
 
 import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
 import * as Font from 'expo-font';
+import { isConfigurationAvailable } from 'expo/build/AR';
 
 const wheelPickerData = [
   'Assamese',
