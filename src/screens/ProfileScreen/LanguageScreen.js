@@ -11,7 +11,7 @@ import {
   AsyncStorage,
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-// import { WheelPicker } from 'react-native-wheel-picker-android';
+import { WheelPicker } from 'react-native-wheel-picker-android';
 
 import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
