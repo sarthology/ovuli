@@ -15,7 +15,6 @@ import { WheelPicker } from 'react-native-wheel-picker-android';
 
 import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
-import * as Font from 'expo-font';
 
 const wheelPickerData = [
   'Assamese',
@@ -41,12 +40,6 @@ const wheelPickerData = [
 
 export default class LanguageScreen extends Component {
   state = { selectedItem: 0 };
-
-  componentDidMount() {
-    Font.loadAsync({
-      'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
-    });
-  }
 
   saveSelectedItem = async () => {
     let selectedLanguage = wheelPickerData[this.state.selectedItem];

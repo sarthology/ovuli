@@ -13,7 +13,6 @@ import { AntDesign } from '@expo/vector-icons';
 import SmoothPicker from 'react-native-smooth-picker';
 
 import top from '../../../wireframes/assets/Avg_Cycle/top.png';
-import * as Font from 'expo-font';
 
 const Bubble = props => {
   const { children, selected } = props;
@@ -44,12 +43,6 @@ export default class AvgCycle extends Component {
     this.state = {
       selected: 4,
     };
-  }
-
-  componentDidMount() {
-    Font.loadAsync({
-      'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
-    });
   }
 
   handleChange = index => {

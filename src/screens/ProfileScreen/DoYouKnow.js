@@ -12,19 +12,12 @@ import {
 } from 'react-native';
 import top from '../../../wireframes/assets/Your_Name/top.png';
 import { AntDesign } from '@expo/vector-icons';
-import * as Font from 'expo-font';
 
 export default class DoYouKnow extends Component {
   constructor(props) {
     super(props);
     this.state = { text: '', count: '' };
     // console.log(this.state.count);
-  }
-
-  componentDidMount() {
-    Font.loadAsync({
-      'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
-    });
   }
 
   saveName = async () => {
