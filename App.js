@@ -18,6 +18,8 @@ import DoYouKnow from './src/screens/ProfileScreen/DoYouKnow';
 
 import AvgCycleScreen from './src/screens/ProfileScreen/AvgCycleScreen';
 import LastPeriodScreen from './src/screens/ProfileScreen/LastPeriodScreen';
+import SecondLastPeriodScreen from './src/screens/ProfileScreen/SecondLastPeriodScreen';
+import ThirdLastPeriodScreen from './src/screens/ProfileScreen/ThirdLastPeriodScreen';
 import CalculatingCyclePeriodPage from './src/screens/ProfileScreen/CalculatingCyclePeriodPage';
 
 const Tab = createBottomTabNavigator();
@@ -27,7 +29,8 @@ function TabNavigator() {
     <Tab.Navigator
       initialRouteName="Home"
       tabBarOptions={{
-        activeTintColor: '#e91e63',
+        activeTintColor: '#F78161',
+
         style: {},
       }}
     >
@@ -85,12 +88,14 @@ export default class App extends Component {
 
     return (
       <NavigationContainer>
-        <Stack.Navigator headerMode="none">
+        <Stack.Navigator initialRouteName="DoYouKnow" headerMode="none">
           <Stack.Screen name="Language" component={LanguageScreen} />
           <Stack.Screen name="Name" component={YourNameScreen} />
           <Stack.Screen name="DoYouKnow" component={DoYouKnow} />
           <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
           <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />
+          <Stack.Screen name="SecondLastPeriod" component={SecondLastPeriodScreen} />
+          <Stack.Screen name="ThirdLastPeriod" component={ThirdLastPeriodScreen} />
           <Stack.Screen name="CalculatingCyclePeriodPage" component={CalculatingCyclePeriodPage} />
           <Stack.Screen name="Dashboard" component={TabNavigator} />
         </Stack.Navigator>
