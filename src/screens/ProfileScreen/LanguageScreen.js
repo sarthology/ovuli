@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
   },
   wheelPicker: {
     width: '100%',
-    flex: '1',
+    flex: 1,
     alignItems: 'center',
   },
 });
