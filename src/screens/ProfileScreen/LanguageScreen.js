@@ -20,9 +20,7 @@ import * as Font from 'expo-font';
 const wheelPickerData = [
   'Assamese',
   'Bengali',
-  'Bodo',
   'English',
-  'Dogri',
   'Gujarati',
   'Hindi',
   'Kannada',
@@ -35,8 +33,6 @@ const wheelPickerData = [
   'Nepali',
   'Oriya',
   'Punjabi',
-  'Sanskrit',
-  'Santhali',
   'Sindhi',
   'Tamil',
   'Telugu',
@@ -191,7 +187,7 @@ const styles = StyleSheet.create({
   },
   wheelPicker: {
     width: '100%',
-    flex: '1',
+    flex: 1,
     alignItems: 'center',
   },
 });

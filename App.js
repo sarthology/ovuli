@@ -53,7 +53,7 @@ function TabNavigator() {
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'Settings',
           tabBarIcon: ({ color, size }) => (
             <Feather name="settings" color={color} size={size} />
           ),
@@ -71,7 +71,6 @@ export default function App() {
       <Stack.Navigator headerMode="none">
         <Stack.Screen name="Language" component={LanguageScreen} />
         <Stack.Screen name="Name" component={YourNameScreen} />
-
         <Stack.Screen name="DoYouKnow" component={DoYouKnow} />
         <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
         <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />

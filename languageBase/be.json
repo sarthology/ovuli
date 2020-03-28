@@ -9,6 +9,17 @@
     "No": "না",
     "When was your second last period?": "যখন ছিল আপনার দ্বিতীয় শেষ সময়ের?",
     "When was your third last period?": "যখন ছিল আপনার তৃতীয় শেষ সময়ের?",
-    "Continue":"অবিরত"
+    "Continue":"অবিরত",
+    "History": "ইতিহাস",
+    "Home": "বাড়ি",
+    "Settings": "সেটিংস",
+    "Language": "ভাষা",
+    "Cycle length": "চক্র দৈর্ঘ্য",
+    "Last Period": "শেষ সময়কাল",
+    "Alert": "সতর্ক",
+    "Please enter your Name to proceed" : "এগিয়ে যেতে আপনার নাম লিখুন",
+    "OK": "ঠিক আছে",
+    "Finish": "শেষ ",
+    "RESET": "রিসেট"
 }
   
