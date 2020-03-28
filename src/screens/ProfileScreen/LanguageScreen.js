@@ -15,12 +15,34 @@ import { WheelPicker } from 'react-native-wheel-picker-android';
 
 import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
+import please_select_your_language from '../../../wireframes/assets/Lang_Screen/please_select_your_language.png';
 import * as Font from 'expo-font';
 
-
-const wheelPickerData = ['Assamese', 'Bengali', 'Bodo', 'English', 'Dogri', 'Gujarati', 
-'Hindi', 'Kannada', 'Kashmiri', 'Konkani', 'Maithili', 'Malayalam', 'Manipuri', 'Marathi', 
-'Nepali', 'Oriya', 'Punjabi', 'Sanskrit', 'Santhali', 'Sindhi', 'Tamil', 'Telugu', 'Urdu'];
+const wheelPickerData = [
+  'Assamese',
+  'Bengali',
+  'Bodo',
+  'English',
+  'Dogri',
+  'Gujarati',
+  'Hindi',
+  'Kannada',
+  'Kashmiri',
+  'Konkani',
+  'Maithili',
+  'Malayalam',
+  'Manipuri',
+  'Marathi',
+  'Nepali',
+  'Oriya',
+  'Punjabi',
+  'Sanskrit',
+  'Santhali',
+  'Sindhi',
+  'Tamil',
+  'Telugu',
+  'Urdu',
+];
 
 export default class LanguageScreen extends Component {
   state = { selectedItem: 0 };
@@ -57,7 +79,27 @@ export default class LanguageScreen extends Component {
     this.props.navigation.navigate('Name');
   };
 
+  checkData = async () => {
+    try {
+      const name = await AsyncStorage.getItem('Name');
+      const lastPeriod = await AsyncStorage.getItem('lastPeriod');
+      const useLanguage = await AsyncStorage.getItem('useLanguage');
+      const avgCycle = await AsyncStorage.getItem('AvgPeriod');
+
+      if (name !== null && useLanguage !== null && (lastPeriod !== null || avgCycle !== null)) {
+        return true;
+      }
+      return false;
+    } catch (e) {
+      console.log(e);
+      return false;
+    }
+  };
+
   render() {
+    if (this.checkData() === true) {
+      return <View>{this.props.navigation.navigate('Dashboard')}</View>;
+    }
     return (
       <View style={styles.container}>
         <Image source={top} style={styles.top} />
@@ -69,13 +111,13 @@ export default class LanguageScreen extends Component {
           >
             please
           </Text>
-          <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8, alignSelf: 'center' }}>
+          <Text style={{ fontFamily: 'PT-Sans', fontSize: 25, marginTop: 8, alignSelf: 'center' }}>
             {' '}
             select your{' '}
           </Text>
         </View>
         <Text
-          style={{ fontSize: 25, fontFamily: 'PT-Sans', alignSelf: 'center', marginBottom: 25 }}
+          style={{ fontFamily: 'PT-Sans', fontSize: 25, alignSelf: 'center', marginBottom: 25 }}
         >
           language?
         </Text>

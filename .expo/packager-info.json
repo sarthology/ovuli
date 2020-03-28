@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": 19000,
-  "packagerPort": 19003,
-  "packagerPid": 2921,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "packagerPort": 19001,
+  "packagerPid": 5671,
+  "expoServerNgrokUrl": "https://id-q37.iharshit009.ovuli.exp.direct",
+  "packagerNgrokUrl": "https://packager.id-q37.iharshit009.ovuli.exp.direct",
+  "ngrokPid": 5786,
   "webpackServerPort": null
 }
