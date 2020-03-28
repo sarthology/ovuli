@@ -37,6 +37,7 @@
     "react-native-calendar-picker": "^6.0.5",
     "react-native-calendars": "^1.264.0",
     "react-native-gesture-handler": "^1.6.0",
+    "react-native-keyboard-aware-scroll-view": "^0.9.1",
     "react-native-reanimated": "^1.7.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.2.0",
