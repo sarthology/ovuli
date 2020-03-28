@@ -15,7 +15,6 @@ import { WheelPicker } from 'react-native-wheel-picker-android';
 
 import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
-import please_select_your_language from '../../../wireframes/assets/Lang_Screen/please_select_your_language.png';
 import * as Font from 'expo-font';
 
 const wheelPickerData = [
@@ -126,7 +125,6 @@ export default class LanguageScreen extends Component {
           data={wheelPickerData}
           onItemSelected={this.onItemSelected}
         />
-        <Image source={please_select_your_language} style={styles.cycleText} />
         <View style={styles.wheelPicker}>
           <WheelPicker
             selectedItem={this.state.selectedItem}
@@ -193,6 +191,7 @@ const styles = StyleSheet.create({
   },
   wheelPicker: {
     width: '100%',
+    flex: '1',
     alignItems: 'center',
   },
 });
