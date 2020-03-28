@@ -27,7 +27,7 @@ const LastPeriodScreen = () => {
       // console.log(error);
     }
 
-    navigation.navigate('Dashboard');
+    navigation.navigate('SecondLastPeriod');
   };
 
   return (
@@ -53,7 +53,7 @@ const LastPeriodScreen = () => {
       </View>
       <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
         <View style={styles.buttonTextContainer}>
-          <Text style={styles.buttonText}>Finish</Text>
+          <Text style={styles.buttonText}>Continue</Text>
           <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
         </View>
       </TouchableOpacity>

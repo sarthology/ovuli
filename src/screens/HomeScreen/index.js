@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, AsyncStorage, Button } from 'react-native';
-import { calculateOvuli } from '@/util/ovuli';
+import { calculateOvuli, calculateAverageCycle } from '@/util/ovuli';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -9,6 +9,7 @@ export default class HomeScreen extends Component {
     this.state = {
       avgCycle: '',
       lastPeriod: '',
+      calculateCycle: '',
     };
   }
 
@@ -23,14 +24,20 @@ export default class HomeScreen extends Component {
     }
   };
 
-  componentDidMount() {
+  async componentDidMount() {
     const avgCycle = AsyncStorage.getItem('AvgPeriod');
     if (avgCycle !== '') {
       this.setState({ avgCycle });
     }
 
-    const lastPeriod = AsyncStorage.getItem('lastPeriod');
+    const lastPeriod = await AsyncStorage.getItem('lastPeriod');
+    const secondlastPeriod = await AsyncStorage.getItem('secondLastPeriod');
+    const thirdlastPeriod = await AsyncStorage.getItem('thirdLastPeriod');
 
+    const cycle = calculateAverageCycle([lastPeriod, secondlastPeriod, thirdlastPeriod]);
+    this.setState({ calculateCycle: cycle });
+
+    console.log(secondlastPeriod, thirdlastPeriod);
     if (lastPeriod !== '') {
       this.setState({ lastPeriod });
     }
@@ -43,6 +50,7 @@ export default class HomeScreen extends Component {
 
     return (
       <View style={styles.container}>
+        <Text>The Average Cycle is {this.state.calculateCycle}</Text>
         <Text>
           Approximate Ovulation Date : {data['approximateOvulationDate']['day']}-
           {data['approximateOvulationDate']['month']}
