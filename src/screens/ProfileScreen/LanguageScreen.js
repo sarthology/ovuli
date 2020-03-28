@@ -11,7 +11,7 @@ import {
   AsyncStorage,
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-// import { WheelPicker } from 'react-native-wheel-picker-android';
+import { WheelPicker } from 'react-native-wheel-picker-android';
 
 import top from '../../../wireframes/assets/Lang_Screen/top.png';
 import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
@@ -113,17 +113,17 @@ export default class LanguageScreen extends Component {
         >
           language?
         </Text>
-        {/* <WheelPicker
+        <WheelPicker
           selectedItem={this.state.selectedItem}
           data={wheelPickerData}
           onItemSelected={this.onItemSelected}
-        /> */}
+        />
         <View style={styles.wheelPicker}>
-          {/* <WheelPicker
+          <WheelPicker
             selectedItem={this.state.selectedItem}
             data={wheelPickerData}
             onItemSelected={this.onItemSelected}
-          /> */}
+          />
         </View>
         <Image source={bottom} style={styles.bottom} />
         <TouchableOpacity style={styles.button} onPress={this.saveSelectedItem}>
