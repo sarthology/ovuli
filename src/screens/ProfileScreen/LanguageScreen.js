@@ -19,9 +19,7 @@ import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
 const wheelPickerData = [
   'Assamese',
   'Bengali',
-  'Bodo',
   'English',
-  'Dogri',
   'Gujarati',
   'Hindi',
   'Kannada',
@@ -34,8 +32,6 @@ const wheelPickerData = [
   'Nepali',
   'Oriya',
   'Punjabi',
-  'Sanskrit',
-  'Santhali',
   'Sindhi',
   'Tamil',
   'Telugu',

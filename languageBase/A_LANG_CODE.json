@@ -3,8 +3,6 @@
     "Please select your language":" ",
     "Assamese":" as ",
     "Bengali":" be ", 
-    "Bodo":" bo ", 
-    "Dogri":" do ", 
     "English":" en ",
     "Gujarati":" gu ", 
     "Hindi":" hi ", 
@@ -18,8 +16,6 @@
     "Nepali":" ne ", 
     "Oriya":" or ", 
     "Punjabi":" pa ", 
-    "Sanskrit":" sa ", 
-    "Santhali":" sn ", 
     "Sindhi":" sd ", 
     "Tamil":" ta ", 
     "Telugu":" te ",
@@ -32,6 +28,17 @@
     "No": " ",
     "When was your second last period?": " ",
     "When was your third last period?": " ",
-    "Continue":" "
+    "Continue":" ",
+    "History": " ",
+    "Home": " ",
+    "Settings": " ",
+    "Language": " ",
+    "Cycle length": " ",
+    "Last Period": " ",
+    "Alert": " ",
+    "Please enter your Name to proceed" : " ",
+    "OK": " ",
+    "Finish": " ",
+    "RESET": " "
 }
   

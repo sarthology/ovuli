@@ -56,6 +56,7 @@ function TabNavigator() {
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color, size }) => <Feather name="settings" color={color} size={size} />,
+
         }}
       />
     </Tab.Navigator>
@@ -63,7 +64,6 @@ function TabNavigator() {
 }
 
 const Stack = createStackNavigator();
-
 export default class App extends Component {
   constructor(props) {
     super(props);

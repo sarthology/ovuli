@@ -9,6 +9,17 @@
     "No": "No",
     "When was your second last period?": "When was your second last period?",
     "When was your third last period?": "When was your third last period?",
-    "Continue":"Continue"
+    "Continue":"Continue",
+    "History": "History",
+    "Home": "Home",
+    "Settings": "Settings",
+    "Language": "Language",
+    "Cycle length": "Cycle Length",
+    "Last Period": "Last Period",
+    "Alert": "Alert",
+    "Please enter your Name to proceed" : "Please enter your Name to proceed",
+    "OK": "OK",
+    "Finish": "Finish",
+    "RESET": "RESET"
 }
   
