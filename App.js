@@ -29,7 +29,8 @@ function TabNavigator() {
     <Tab.Navigator
       initialRouteName="Home"
       tabBarOptions={{
-        activeTintColor: '#e91e63',
+        activeTintColor: '#F78161',
+
         style: {},
       }}
     >
@@ -87,7 +88,7 @@ export default class App extends Component {
 
     return (
       <NavigationContainer>
-        <Stack.Navigator headerMode="none">
+        <Stack.Navigator initialRouteName="Dashboard" headerMode="none">
           <Stack.Screen name="Language" component={LanguageScreen} />
           <Stack.Screen name="Name" component={YourNameScreen} />
           <Stack.Screen name="DoYouKnow" component={DoYouKnow} />
