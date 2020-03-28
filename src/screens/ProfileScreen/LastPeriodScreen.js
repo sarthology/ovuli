@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -14,7 +14,6 @@ import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker
 import { AntDesign } from '@expo/vector-icons';
 import TopImage from '../../assets/images/Last_Period/top.png';
 import { useNavigation } from '@react-navigation/native';
-import * as Font from 'expo-font';
 import AskLastPeriodImage from '@/assets/images/Last_Period/AskLastPeriod.png';
 
 const LastPeriodScreen = () => {
