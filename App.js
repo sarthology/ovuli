@@ -88,7 +88,7 @@ export default class App extends Component {
 
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Dashboard" headerMode="none">
+        <Stack.Navigator initialRouteName="DoYouKnow" headerMode="none">
           <Stack.Screen name="Language" component={LanguageScreen} />
           <Stack.Screen name="Name" component={YourNameScreen} />
           <Stack.Screen name="DoYouKnow" component={DoYouKnow} />
