@@ -7,30 +7,20 @@ import {
   View,
   TextInput,
   AsyncStorage,
+  ScrollView,
   Image,
   Dimensions,
 } from 'react-native';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import top from '../../../wireframes/assets/Your_Name/top.png';
 import bottom from '../../../wireframes/assets/Your_Name/bottom.png';
+
 import { AntDesign } from '@expo/vector-icons';
-import * as Font from 'expo-font';
-import { AppLoading } from 'expo';
 
 export default class YourNameScreen extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: '', fontLoaded: false };
-  }
-
-  async componentDidMount() {
-    try {
-      await Font.loadAsync({
-        'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
-      });
-      this.setState({ fontLoaded: true });
-    } catch (error) {
-      console.log('error loading fonts', error);
-    }
+    this.state = { text: '' };
   }
 
   saveName = async () => {
@@ -50,40 +40,53 @@ export default class YourNameScreen extends Component {
   };
 
   render() {
-    if (!this.state.fontLoaded) {
-      return <AppLoading />;
-    }
-
     return (
-      <View style={styles.container}>
-        <Image source={top} style={styles.top} />
-        <View style={{ flexDirection: 'row' }}>
-          <Text
-            style={[styles.nameText, { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' }]}
-          >
-            How
-          </Text>
-          <Text style={styles.nameText}> can we call you?</Text>
-        </View>
-        <Image source={bottom} style={styles.bottom} />
-        <TextInput
-          style={styles.inputContainer}
-          underlineColorAndroid="transparent"
-          autoCapitalize="none"
-          placeholder="Enter your name here"
-          onChangeText={text => this.setState({ text })}
-          value={this.state.text}
-        />
+      <KeyboardAwareScrollView
+        style={{ flex: 1 }}
+        enableOnAndroid="true"
+        enableAutoAutomaticScrol="true"
+        keyboardOpeningTime={0}
+      >
+        <ScrollView
+          style={{
+            flex: 1,
+            backgroundColor: 'white',
+          }}
+        >
+          <View style={styles.container}>
+            <Image source={top} style={styles.top} />
+            <View style={{ flexDirection: 'row', marginTop: 200 }}>
+              <Text
+                style={[
+                  styles.nameText,
+                  { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' },
+                ]}
+              >
+                How
+              </Text>
+              <Text style={styles.nameText}> can we call you?</Text>
+            </View>
 
-        <TouchableOpacity style={styles.button} onPress={this.saveName}>
-          <Text style={styles.buttonText}>Continue</Text>
-          <AntDesign
-            style={{ alignSelf: 'center', color: '#F55963' }}
-            name="arrowright"
-            size={18}
-          />
-        </TouchableOpacity>
-      </View>
+            <TextInput
+              style={styles.inputContainer}
+              underlineColorAndroid="transparent"
+              autoCapitalize="none"
+              placeholder="Enter your name here"
+              onChangeText={text => this.setState({ text })}
+              value={this.state.text}
+            />
+            <Image source={bottom} style={styles.bottom} />
+            <TouchableOpacity style={styles.button} onPress={this.saveName}>
+              <Text style={styles.buttonText}>Continue</Text>
+              <AntDesign
+                style={{ alignSelf: 'center', color: '#F55963' }}
+                name="arrowright"
+                size={18}
+              />
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
+      </KeyboardAwareScrollView>
     );
   }
 }
@@ -91,6 +94,7 @@ export default class YourNameScreen extends Component {
 const styles = StyleSheet.create({
   top: {
     position: 'absolute',
+
     top: 0,
     right: 0,
   },
@@ -101,6 +105,8 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
+    // top: -60,
+    marginTop: -10,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'white',
@@ -132,10 +138,14 @@ const styles = StyleSheet.create({
     color: '#F55963',
   },
   inputContainer: {
+    // flex:1,
     color: '#f88c70',
     fontSize: 21,
+    // position: 'absolute',
     margin: 15,
-    height: 60,
+    marginBottom: Dimensions.get('window').height - 400,
+    // height: 700,
+    // top: 20,
     borderBottomWidth: 5,
     borderBottomColor: '#f2f7fd',
     padding: 15,

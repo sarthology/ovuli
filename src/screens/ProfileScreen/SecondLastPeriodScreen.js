@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -16,17 +16,10 @@ import { AntDesign } from '@expo/vector-icons';
 
 import TopImage from '../../assets/images/Last_Period/top.png';
 import { useNavigation } from '@react-navigation/native';
-import * as Font from 'expo-font';
 
 const SecondLastPeriodScreen = () => {
   const [selectedDate, setSelectedDate] = React.useState(null);
   const navigation = useNavigation();
-
-  useEffect(() => {
-    Font.loadAsync({
-      'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
-    });
-  }, []);
 
   const saveLastPeriod = () => {
     try {
@@ -35,7 +28,7 @@ const SecondLastPeriodScreen = () => {
       console.log(error);
     }
 
-    navigation.navigate('Dashboard');
+    navigation.navigate('ThirdLastPeriod');
   };
 
   return (
@@ -76,7 +69,7 @@ const SecondLastPeriodScreen = () => {
       </View>
       <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
         <View style={styles.buttonTextContainer}>
-          <Text style={styles.buttonText}>Finish</Text>
+          <Text style={styles.buttonText}>Continue</Text>
           <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
         </View>
       </TouchableOpacity>

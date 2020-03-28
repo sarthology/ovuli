@@ -1,6 +1,6 @@
 import 'react-native-gesture-handler';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -13,7 +13,6 @@ import {
 } from 'react-native';
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
-import * as Font from 'expo-font';
 
 import TopImage from '../../assets/images/Last_Period/top.png';
 import { useNavigation } from '@react-navigation/native';
@@ -21,12 +20,6 @@ import { useNavigation } from '@react-navigation/native';
 const ThirdLastPeriodScreen = () => {
   const [selectedDate, setSelectedDate] = React.useState(null);
   const navigation = useNavigation();
-
-  useEffect(() => {
-    Font.loadAsync({
-      'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
-    });
-  }, []);
 
   const saveLastPeriod = () => {
     try {

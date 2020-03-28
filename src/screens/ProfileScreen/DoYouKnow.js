@@ -12,19 +12,12 @@ import {
 } from 'react-native';
 import top from '../../../wireframes/assets/Your_Name/top.png';
 import { AntDesign } from '@expo/vector-icons';
-import * as Font from 'expo-font';
 
 export default class DoYouKnow extends Component {
   constructor(props) {
     super(props);
-    this.state = { text: '', count: '' };
+    this.state = { text: '' };
     // console.log(this.state.count);
-  }
-
-  componentDidMount() {
-    Font.loadAsync({
-      'PT-Sans': require('../../../wireframes/assets/fonts/PTC55F.ttf'),
-    });
   }
 
   saveName = async () => {
@@ -34,23 +27,13 @@ export default class DoYouKnow extends Component {
     } catch (e) {
       console.log(e);
     }
-    if (this.state.count == 'yes') {
-      console.log('yes wla');
-      this.props.navigation.navigate('AverageCycle');
-    }
-    if (this.state.count == 'no') {
-      console.log('no wlaa');
-      this.props.navigation.navigate('LastPeriod');
-    }
   };
 
   countYes = () => {
-    // Saving the Name in Asyncstorage
-    return this.setState({ count: 'yes' });
+    this.props.navigation.navigate('AverageCycle');
   };
   countNo = () => {
-    // Saving the Name in Asyncstorage
-    return this.setState({ count: 'no' });
+    this.props.navigation.navigate('LastPeriod');
   };
 
   render() {
@@ -204,15 +187,6 @@ export default class DoYouKnow extends Component {
             No
           </Text>
           <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button} onPress={this.saveName}>
-          <Text style={styles.buttonText}>Continue</Text>
-          <AntDesign
-            style={{ alignSelf: 'center', color: '#F55963' }}
-            name="arrowright"
-            size={18}
-          />
         </TouchableOpacity>
       </View>
     );
