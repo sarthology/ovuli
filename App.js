@@ -69,7 +69,6 @@ export default class App extends Component {
     super(props);
     this.state = { fontLoaded: false };
   }
-
   async componentDidMount() {
     try {
       await Font.loadAsync({
