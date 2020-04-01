@@ -1,3 +1,9 @@
+---
+id: Contributing
+title: Contributing File
+sidebar_label: Contributing Page
+---
+
 # Contributing
 
 Hey all 👋 
