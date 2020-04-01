@@ -1,5 +1,5 @@
 ---
-id: designSystem
+id: doc2
 title: Design System
 ---
 # Design System

@@ -1,5 +1,5 @@
 ---
-id: License
+id: doc3
 title: License
 ---
 

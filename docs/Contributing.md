@@ -1,5 +1,5 @@
 ---
-id: Contributing
+id: doc1
 title: Contributing File
 sidebar_label: Contributing Page
 ---
