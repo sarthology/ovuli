@@ -1,3 +1,4 @@
+/* eslint-disable no-dupe-keys */
 import 'react-native-gesture-handler';
 import React, { Component } from 'react';
 import {
@@ -5,7 +6,6 @@ import {
   TouchableOpacity,
   Text,
   View,
-  TextInput,
   AsyncStorage,
   Image,
   Dimensions,
@@ -33,7 +33,7 @@ export default class DoYouKnow extends Component {
     this.props.navigation.navigate('AverageCycle');
   };
   countNo = () => {
-    this.props.navigation.navigate('LastPeriod');
+    this.props.navigation.navigate('LastPeriod', { prevScreen: 'DoYouKnow' });
   };
 
   render() {
@@ -102,6 +102,7 @@ export default class DoYouKnow extends Component {
                     padding: 5,
                     // paddingLeft: 10,
                     color: '#F55963',
+                    // eslint-disable-next-line no-dupe-keys
                     color: 'white',
                   }
                 : {

@@ -56,7 +56,6 @@ function TabNavigator() {
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color, size }) => <Feather name="settings" color={color} size={size} />,
-
         }}
       />
     </Tab.Navigator>
@@ -87,11 +86,11 @@ export default class App extends Component {
 
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="DoYouKnow" headerMode="none">
+        <Stack.Navigator initialRouteName="Language" headerMode="none">
           <Stack.Screen name="Language" component={LanguageScreen} />
           <Stack.Screen name="Name" component={YourNameScreen} />
-          <Stack.Screen name="DoYouKnow" component={DoYouKnow} />
           <Stack.Screen name="AverageCycle" component={AvgCycleScreen} />
+          <Stack.Screen name="DoYouKnow" component={DoYouKnow} />
           <Stack.Screen name="LastPeriod" component={LastPeriodScreen} />
           <Stack.Screen name="SecondLastPeriod" component={SecondLastPeriodScreen} />
           <Stack.Screen name="ThirdLastPeriod" component={ThirdLastPeriodScreen} />

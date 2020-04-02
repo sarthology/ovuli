@@ -10,24 +10,30 @@ import {
   AsyncStorage,
   StatusBar,
 } from 'react-native';
+
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
 import TopImage from '../../assets/images/Last_Period/top.png';
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation, useRoute } from '@react-navigation/native';
 import AskLastPeriodImage from '@/assets/images/Last_Period/AskLastPeriod.png';
 
 const LastPeriodScreen = () => {
   const [selectedDate, setSelectedDate] = React.useState(null);
   const navigation = useNavigation();
-
+  const route = useRoute();
   const saveLastPeriod = () => {
     try {
       AsyncStorage.setItem('lastPeriod', selectedDate.toISOString());
     } catch (error) {
-      // console.log(error);
+      console.log(error);
     }
 
-    navigation.navigate('SecondLastPeriod');
+    if (route.params.prevScreen == 'DoYouKnow') {
+      navigation.navigate('SecondLastPeriod');
+    }
+    if (route.params.prevScreen == 'AverageCycle') {
+      navigation.navigate('Dashboard');
+    }
   };
 
   return (
