@@ -5,8 +5,8 @@ import {
   Text, 
   View,
   Dimensions,
+  TouchableHighlight,
   Image,
-  Picker,
  } from 'react-native';
 
 import profile from '../../../wireframes/assets/Setting_screen/profile.png';
@@ -18,11 +18,28 @@ export default class ProfileScreen extends Component {
   constructor(props) {
 		super(props);
 		this.state = {
-    language:" ",
-    cycle:" ",
-    last: " ",
+    language:"English",
+    cycle:"20 Days",
+    last: "14 July 2020",
 		};
-	}
+  }
+  
+  onPress = () => {
+    this.setState({
+      language:"Marathi",
+    })
+  }
+  onPress0 = () => {
+    this.setState({
+      cycle:"23 Days",
+    })
+  }
+  onPress1 = () => {
+    this.setState({
+      last: "19 June 2020",
+    })
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -35,35 +52,29 @@ export default class ProfileScreen extends Component {
 
         <View style={styles.design}>
           <MaterialIcons name="language" style={styles.create} />
-          <Text style={styles.welcome}>  Language</Text>
-          <Picker
-             selectedValue={this.state.language}
-             style={styles.content}
-             onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
-            <Picker.Item label="English" value="English" />
-          </Picker>
+          <Text style={styles.welcome}>  Language                    </Text>
+          <Text >{this.state.language} </Text>
+          <TouchableHighlight onPress={this.onPress}>
+           <Feather name="edit-3" size={20} color='#C0C0C0'/>
+          </TouchableHighlight>
         </View>
 
         <View style={styles.design}>
           <Entypo name="circular-graph" style={styles.create} />
-          <Text style={styles.welcome}>  Cycle Length</Text>
-          <Picker
-             selectedValue={this.state.cycle}
-             style={styles.content}
-             onValueChange={(itemValue, itemIndex) => this.setState({cycle: itemValue})}>
-            <Picker.Item label="20 Days" value="20" />
-          </Picker>
+          <Text style={styles.welcome}>  Cycle Length              </Text>
+          <Text>{this.state.cycle} </Text>
+          <TouchableHighlight  onPress={this.onPress0}>
+           <Feather name="edit-3" size={20} color='#C0C0C0'/>
+          </TouchableHighlight>
         </View>
 
         <View style={styles.design}>
           <Feather name="droplet" style={styles.create}/>
-          <Text style={styles.welcome}>  Last Period</Text>
-          <Picker
-             selectedValue={this.state.last}
-             style={styles.content}
-             onValueChange={(itemValue, itemIndex) => this.setState({last: itemValue})}>
-            <Picker.Item label="14 july 2020" value="14/07/2020" />
-          </Picker>
+          <Text style={styles.welcome}>  Last Period           </Text>
+          <Text>{this.state.last} </Text>
+          <TouchableHighlight onPress={this.onPress1}>
+           <Feather name="edit-3" size={20} color='#C0C0C0'/>
+          </TouchableHighlight>
         </View>
 
       </View>
@@ -103,7 +114,6 @@ const styles = StyleSheet.create({
     flex: 1, 
     position: 'relative',
     flexDirection: 'row',
-    justifyContent: 'space-evenly'
   },
   profile: {
     alignSelf: 'flex-start',
