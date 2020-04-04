@@ -18,7 +18,6 @@ const COLORS = {
   grey: 'rgb(179, 182, 183)',
 }
 
-export default colors;
 export default class ProfileScreen extends Component {
   constructor(props) {
 		super(props);
