@@ -9,34 +9,39 @@ import {
   Image,
  } from 'react-native';
 
-import profile from '../../../wireframes/assets/Setting_screen/profile.png';
+import profile from '@wireframes/assets/Setting_screen/profile.png';
 import { Entypo } from 'react-native-vector-icons';
 import { Feather } from 'react-native-vector-icons';
 import { MaterialIcons} from 'react-native-vector-icons';
 
+const COLORS = {
+  grey: 'rgb(179, 182, 183)',
+}
+
+export default colors;
 export default class ProfileScreen extends Component {
   constructor(props) {
 		super(props);
 		this.state = {
-    language:"English",
-    cycle:"20 Days",
-    last: "14 July 2020",
+    changeLanguage:"English",
+    changeCycleDays:"20 Days",
+    changeDate: "14 July 2020",
 		};
   }
   
   onPress = () => {
     this.setState({
-      language:"Marathi",
+      changeLanguage:"Marathi",
     })
   }
   onPress0 = () => {
     this.setState({
-      cycle:"23 Days",
+      changeCycleDays:"23 Days",
     })
   }
   onPress1 = () => {
     this.setState({
-      last: "19 June 2020",
+      changeDate: "19 June 2020",
     })
   }
 
@@ -55,7 +60,7 @@ export default class ProfileScreen extends Component {
           <Text style={styles.welcome}>  Language                    </Text>
           <Text >{this.state.language} </Text>
           <TouchableHighlight onPress={this.onPress}>
-           <Feather name="edit-3" size={20} color='#C0C0C0'/>
+           <Feather name="edit-3" size={20} color= {COLORS.grey}/>
           </TouchableHighlight>
         </View>
 
@@ -64,7 +69,7 @@ export default class ProfileScreen extends Component {
           <Text style={styles.welcome}>  Cycle Length              </Text>
           <Text>{this.state.cycle} </Text>
           <TouchableHighlight  onPress={this.onPress0}>
-           <Feather name="edit-3" size={20} color='#C0C0C0'/>
+           <Feather name="edit-3" size={20} color= {COLORS.grey}/>
           </TouchableHighlight>
         </View>
 
@@ -73,7 +78,7 @@ export default class ProfileScreen extends Component {
           <Text style={styles.welcome}>  Last Period           </Text>
           <Text>{this.state.last} </Text>
           <TouchableHighlight onPress={this.onPress1}>
-           <Feather name="edit-3" size={20} color='#C0C0C0'/>
+           <Feather name="edit-3" size={20} color= {COLORS.grey}/>
           </TouchableHighlight>
         </View>
 
