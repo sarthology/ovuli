@@ -1,198 +1,10 @@
 /* eslint-disable no-dupe-keys */
 import 'react-native-gesture-handler';
-import React, { Component } from 'react';
-import {
-  StyleSheet,
-  TouchableOpacity,
-  Text,
-  View,
-  AsyncStorage,
-  Image,
-  Dimensions,
-} from 'react-native';
-import top from '../../../wireframes/assets/Your_Name/top.png';
+import * as React from 'react';
+import { StyleSheet, TouchableOpacity, Text, View, Image, Dimensions } from 'react-native';
+import top from '@wireframes/assets/Your_Name/top.png';
 import { AntDesign } from '@expo/vector-icons';
-
-export default class DoYouKnow extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { text: '' };
-    // console.log(this.state.count);
-  }
-
-  saveName = async () => {
-    // Saving the Name in Asyncstorage
-    try {
-      await AsyncStorage.setItem('Name', this.state.text);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
-  countYes = () => {
-    this.props.navigation.navigate('AverageCycle');
-  };
-  countNo = () => {
-    this.props.navigation.navigate('LastPeriod', { prevScreen: 'DoYouKnow' });
-  };
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Image source={top} style={styles.top} />
-        <View style={{ flexDirection: 'row' }}>
-          <Text style={styles.nameText}>Do you know your Cycle Length?</Text>
-        </View>
-
-        <TouchableOpacity
-          style={
-            (styles.condbutton,
-            this.state.count == 'yes'
-              ? {
-                  borderWidth: 2,
-                  // color: 'red',
-                  width: 80,
-
-                  borderRadius: 5,
-                  // marginTop: -170,
-                  // padding: 4,
-                  top: Dimensions.get('window').height - 230,
-                  borderColor: '#F55963',
-                  position: 'absolute',
-                  // right: 30,
-                  // top: Dimensions.get('window').height - 50,
-                  flex: 1,
-                  alignContent: 'center',
-                  justifyContent: 'center',
-                  flexDirection: 'row',
-                  left: 80,
-                  backgroundColor: '#F55963',
-                }
-              : {
-                  borderWidth: 2,
-                  // color: 'red',
-                  width: 80,
-
-                  borderRadius: 5,
-                  // marginTop: -170,
-                  // padding: 4,
-                  top: Dimensions.get('window').height - 230,
-                  borderColor: '#F55963',
-                  position: 'absolute',
-                  // right: 30,
-                  // top: Dimensions.get('window').height - 50,
-                  flex: 1,
-                  alignContent: 'center',
-                  justifyContent: 'center',
-                  flexDirection: 'row',
-                  left: 80,
-                  backgroundColor: null,
-                })
-          }
-          onPress={this.countYes}
-        >
-          {/* {console.log(this.state.count + 'hello')} */}
-          <Text
-            style={
-              (styles.condText,
-              this.state.count == 'yes'
-                ? {
-                    fontSize: 20,
-                    textAlign: 'center',
-                    padding: 5,
-                    // paddingLeft: 10,
-                    color: '#F55963',
-                    // eslint-disable-next-line no-dupe-keys
-                    color: 'white',
-                  }
-                : {
-                    fontSize: 20,
-                    textAlign: 'center',
-                    padding: 5,
-                    // paddingLeft: 10,
-                    color: '#F55963',
-                    color: '#F55963',
-                  })
-            }
-          >
-            Yes
-          </Text>
-          <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
-        </TouchableOpacity>
-
-        <TouchableOpacity
-          style={
-            (styles.condnobutton,
-            this.state.count == 'no'
-              ? {
-                  borderWidth: 2,
-                  width: 80,
-                  borderRadius: 5,
-                  // marginTop: -170,
-                  // padding: 4,
-                  top: Dimensions.get('window').height - 230,
-                  borderColor: '#F55963',
-                  position: 'absolute',
-                  // right: 30,
-                  // top: Dimensions.get('window').height - 50,
-                  flex: 1,
-                  alignContent: 'center',
-                  justifyContent: 'center',
-                  flexDirection: 'row',
-                  right: 80,
-                  backgroundColor: '#F55963',
-                }
-              : {
-                  borderWidth: 2,
-                  width: 80,
-                  borderRadius: 5,
-                  // marginTop: -170,
-                  // padding: 4,
-                  top: Dimensions.get('window').height - 230,
-                  borderColor: '#F55963',
-                  position: 'absolute',
-                  // right: 30,
-                  // top: Dimensions.get('window').height - 50,
-                  flex: 1,
-                  alignContent: 'center',
-                  justifyContent: 'center',
-                  flexDirection: 'row',
-                  right: 80,
-                  backgroundColor: null,
-                })
-          }
-          onPress={this.countNo}
-        >
-          <Text
-            style={
-              (styles.condText,
-              this.state.count == 'no'
-                ? {
-                    fontSize: 20,
-                    textAlign: 'center',
-                    padding: 5,
-                    // paddingLeft: 10,
-                    color: '#F55963',
-                    color: 'white',
-                  }
-                : {
-                    fontSize: 20,
-                    textAlign: 'center',
-                    padding: 5,
-                    // paddingLeft: 10,
-                    color: '#F55963',
-                    color: '#F55963',
-                  })
-            }
-          >
-            No
-          </Text>
-          <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
+import { useNavigation } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
   top: {
@@ -308,3 +120,111 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.5,
   },
 });
+
+const DoYouKnow = () => {
+  const navigation = useNavigation();
+
+  const countYes = () => {
+    navigation.navigate('AverageCycle');
+  };
+  const countNo = () => {
+    navigation.navigate('LastPeriod', { prevScreen: 'DoYouKnow' });
+  };
+
+  return (
+    <View style={styles.container}>
+      <Image source={top} style={styles.top} />
+      <View style={{ flexDirection: 'row' }}>
+        <Text style={styles.nameText}>Do you know your Cycle Length?</Text>
+      </View>
+
+      <TouchableOpacity
+        style={{
+          borderWidth: 2,
+          // color: 'red',
+          width: 80,
+
+          borderRadius: 5,
+          // marginTop: -170,
+          // padding: 4,
+          top: Dimensions.get('window').height - 230,
+          borderColor: '#F55963',
+          position: 'absolute',
+          // right: 30,
+          // top: Dimensions.get('window').height - 50,
+          flex: 1,
+          alignContent: 'center',
+          justifyContent: 'center',
+          flexDirection: 'row',
+          left: 80,
+          backgroundColor: '#F55963',
+        }}
+        onPress={countYes}
+      >
+        {/* {console.log(this.state.count + 'hello')} */}
+        <Text
+          style={
+            (styles.condText,
+            [
+              {
+                fontSize: 20,
+                textAlign: 'center',
+                padding: 5,
+                // paddingLeft: 10,
+                color: '#F55963',
+                // eslint-disable-next-line no-dupe-keys
+                color: 'white',
+              },
+            ])
+          }
+        >
+          Yes
+        </Text>
+        <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={
+          (styles.condnobutton,
+          [
+            {
+              borderWidth: 2,
+              width: 80,
+              borderRadius: 5,
+              // marginTop: -170,
+              // padding: 4,
+              top: Dimensions.get('window').height - 230,
+              borderColor: '#F55963',
+              position: 'absolute',
+              // right: 30,
+              // top: Dimensions.get('window').height - 50,
+              flex: 1,
+              alignContent: 'center',
+              justifyContent: 'center',
+              flexDirection: 'row',
+              right: 80,
+              backgroundColor: '#F55963',
+            },
+          ])
+        }
+        onPress={countNo}
+      >
+        <Text
+          style={{
+            fontSize: 20,
+            textAlign: 'center',
+            padding: 5,
+            // paddingLeft: 10,
+            color: '#F55963',
+            color: 'white',
+          }}
+        >
+          No
+        </Text>
+        <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default DoYouKnow;

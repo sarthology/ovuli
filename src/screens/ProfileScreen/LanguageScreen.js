@@ -1,5 +1,5 @@
 import 'react-native-gesture-handler';
-import React, { Component } from 'react';
+import * as React from 'react';
 
 import {
   StyleSheet,
@@ -12,11 +12,11 @@ import {
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import { WheelPicker } from 'react-native-wheel-picker-android';
+import { useNavigation } from '@react-navigation/native';
+import top from '@wireframes/assets/Lang_Screen/top.png';
+import bottom from '@wireframes/assets/Lang_Screen/bottom.png';
 
-import top from '../../../wireframes/assets/Lang_Screen/top.png';
-import bottom from '../../../wireframes/assets/Lang_Screen/bottom.png';
-
-const wheelPickerData = [
+const languages = [
   'Assamese',
   'Bengali',
   'English',
@@ -37,103 +37,6 @@ const wheelPickerData = [
   'Telugu',
   'Urdu',
 ];
-
-export default class LanguageScreen extends Component {
-  state = { selectedItem: 0 };
-
-  saveSelectedItem = async () => {
-    let selectedLanguage = wheelPickerData[this.state.selectedItem];
-
-    try {
-      await AsyncStorage.setItem('useLanguage', selectedLanguage);
-      this.props.navigation.navigate('Name');
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  onItemSelected = selectedItem => {
-    this.setState({ selectedItem });
-  };
-  saveselectedItem = async () => {
-    // Saving the Name in Asyncstorage
-    try {
-      await AsyncStorage.setItem('language', this.state.selectedItem);
-    } catch (e) {
-      console.log(e);
-    }
-
-    // Navigating to the next screen
-    this.props.navigation.navigate('Name');
-  };
-
-  checkData = async () => {
-    try {
-      const name = await AsyncStorage.getItem('Name');
-      const lastPeriod = await AsyncStorage.getItem('lastPeriod');
-      const useLanguage = await AsyncStorage.getItem('useLanguage');
-      const avgCycle = await AsyncStorage.getItem('AvgPeriod');
-
-      if (name !== null && useLanguage !== null && (lastPeriod !== null || avgCycle !== null)) {
-        return true;
-      }
-      return false;
-    } catch (e) {
-      console.log(e);
-      return false;
-    }
-  };
-
-  render() {
-    if (this.checkData() === true) {
-      return <View>{this.props.navigation.navigate('Dashboard')}</View>;
-    }
-    return (
-      <View style={styles.container}>
-        <Image source={top} style={styles.top} />
-        <View style={styles.cycleText}>
-          <Text
-            style={[
-              { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' },
-            ]}
-          >
-            please
-          </Text>
-          <Text style={{ fontFamily: 'PT-Sans', fontSize: 25, marginTop: 8, alignSelf: 'center' }}>
-            {' '}
-            select your{' '}
-          </Text>
-        </View>
-        <Text
-          style={{ fontFamily: 'PT-Sans', fontSize: 25, alignSelf: 'center', marginBottom: 25 }}
-        >
-          language?
-        </Text>
-        <WheelPicker
-          selectedItem={this.state.selectedItem}
-          data={wheelPickerData}
-          onItemSelected={this.onItemSelected}
-        />
-        <View style={styles.wheelPicker}>
-          <WheelPicker
-            selectedItem={this.state.selectedItem}
-            data={wheelPickerData}
-            onItemSelected={this.onItemSelected}
-          />
-        </View>
-        <Image source={bottom} style={styles.bottom} />
-        <TouchableOpacity style={styles.button} onPress={this.saveSelectedItem}>
-          <Text style={styles.buttonText}>Continue</Text>
-          <AntDesign
-            style={{ alignSelf: 'center', color: '#F55963' }}
-            name="arrowright"
-            size={18}
-          />
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -184,3 +87,69 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+
+const LanguageScreen = () => {
+  const [selectedLanguageIndex, setSelectedLanguageIndex] = React.useState(0);
+  const navigation = useNavigation();
+  const saveUserLanguage = async () => {
+    try {
+      let selectedLanguage = languages[selectedLanguageIndex];
+      await AsyncStorage.setItem('userLanguage', selectedLanguage);
+      navigation.navigate('Name');
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // React.useEffect(() => {
+  //   (async function() {
+  //     try {
+  //       const name = await AsyncStorage.getItem('Name');
+  //       const lastPeriod = await AsyncStorage.getItem('lastPeriod');
+  //       const userLanguage = await AsyncStorage.getItem('userLanguage');
+  //       const avgCycle = await AsyncStorage.getItem('AvgPeriod');
+
+  //       if (name !== null && userLanguage !== null && (lastPeriod !== null || avgCycle !== null)) {
+  //         return true;
+  //       }
+  //       navigation.navigate('Dashboard');
+  //     } catch (e) {
+  //       console.log(e);
+  //     }
+  //   })();
+  // });
+
+  return (
+    <View style={styles.container}>
+      <Image source={top} style={styles.top} />
+      <View style={styles.cycleText}>
+        <Text
+          style={[{ fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' }]}
+        >
+          please
+        </Text>
+        <Text style={{ fontFamily: 'PT-Sans', fontSize: 25, marginTop: 8, alignSelf: 'center' }}>
+          {' '}
+          select your{' '}
+        </Text>
+      </View>
+      <Text style={{ fontFamily: 'PT-Sans', fontSize: 25, alignSelf: 'center', marginBottom: 25 }}>
+        language
+      </Text>
+      <View style={styles.wheelPicker}>
+        <WheelPicker
+          selectedItem={selectedLanguageIndex}
+          data={languages}
+          onItemSelected={selectedItem => setSelectedLanguageIndex(selectedItem)}
+        />
+      </View>
+      <Image source={bottom} style={styles.bottom} />
+      <TouchableOpacity style={styles.button} onPress={saveUserLanguage}>
+        <Text style={styles.buttonText}>Continue</Text>
+        <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} name="arrowright" size={18} />
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default LanguageScreen;

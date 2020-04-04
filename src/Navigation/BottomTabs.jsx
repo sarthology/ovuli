@@ -1,11 +1,10 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { Feather } from 'react-native-vector-icons';
-
 import HomeScreen from '@/screens/HomeScreen';
 import HistoryScreen from '@/screens/HistoryScreen';
 import ProfileScreen from '@/screens/ProfileScreen';
+import BottomTabIcon from './BottomIcon';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,15 +27,15 @@ export default function BottomTabs() {
         component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => <Feather name="home" color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => <BottomTabIcon name="home" color={color} size={size} />,
         }}
       />
       <Tab.Screen
         name="History"
         component={HistoryScreen}
         options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => <Feather name="clock" color={color} size={size} />,
+          tabBarLabel: 'History',
+          tabBarIcon: ({ color, size }) => <BottomTabIcon name="clock" color={color} size={size} />,
         }}
       />
       <Tab.Screen
@@ -44,7 +43,9 @@ export default function BottomTabs() {
         component={ProfileScreen}
         options={{
           tabBarLabel: 'Profile',
-          tabBarIcon: ({ color, size }) => <Feather name="settings" color={color} size={size} />,
+          tabBarIcon: ({ color, size }) => (
+            <BottomTabIcon name="settings" color={color} size={size} />
+          ),
         }}
       />
     </Tab.Navigator>
