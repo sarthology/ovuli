@@ -119,8 +119,8 @@ const YourNameScreen = () => {
   return (
     <KeyboardAwareScrollView
       style={{ flex: 1 }}
-      enableOnAndroid="true"
-      enableAutoAutomaticScroll="true"
+      enableOnAndroid={true}
+      enableAutoAutomaticScroll={true}
       keyboardOpeningTime={0}
     >
       <ScrollView
