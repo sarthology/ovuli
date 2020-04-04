@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   Text,
   View,
@@ -10,25 +10,20 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-export default class HowYouFeel extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      emoticons: [
-        require('../../assets/images/Emoji/neutral.png'),
-        require('../../assets/images/Emoji/happy.png'),
-        require('../../assets/images/Emoji/cry.png'),
-        require('../../assets/images/Emoji/fearful.png'),
-        require('../../assets/images/Emoji/love_hearts.png'),
-        require('../../assets/images/Emoji/tired_face.png'),
-        require('../../assets/images/Emoji/unamused.png'),
-        require('../../assets/images/Emoji/disappointed.png'),
-      ],
-    };
-  }
+import neutral from '@/assets/images/Emoji/neutral.png';
+import happy from '@/assets/images/Emoji/happy.png';
+import cry from '@/assets/images/Emoji/cry.png';
+import fearful from '@/assets/images/Emoji/fearful.png';
+import love_hearts from '@/assets/images/Emoji/love_hearts.png';
+import tired_face from '@/assets/images/Emoji/tired_face.png';
+import unamused from '@/assets/images/Emoji/unamused.png';
+import disappointed from '@/assets/images/Emoji/disappointed.png';
+
+const HowYouFeel = () => {
+  const emoticons = [neutral, happy, cry, fearful, love_hearts, tired_face, unamused, disappointed];
 
   saveData = async item => {
-    var emoList = [
+    const emotionList = [
       'neutral',
       'happy',
       'cry',
@@ -38,76 +33,56 @@ export default class HowYouFeel extends Component {
       'unamused',
       'disappointed',
     ];
-    var emotion = emoList[item];
+    let emotion = emotionList[item];
     const date = new Date();
     try {
       AsyncStorage.setItem('emotion', emotion);
-    } catch (error) {
-      console.log(error);
-    }
-    try {
       AsyncStorage.setItem('timestamp', date.toISOString());
     } catch (error) {
-      console.log(error);
+      console.log('Error saving data', error);
     }
   };
 
-  renderItem = img => {
-    return <Image style={styles.image} source={img} />;
-  };
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <View style={styles.cycleText}>
-          <Text
-            style={[
-              { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' },
-            ]}
-          >
-            How are
-          </Text>
-          <Text style={{ fontFamily: 'PT-Sans', fontSize: 25, marginTop: 8, alignSelf: 'center' }}>
-            {' '}
-            you feeling?{' '}
-          </Text>
-        </View>
-        <View style={styles.emoji}>
-          <FlatList
-            data={this.state.emoticons}
-            horizontal={true}
-            keyExtractor={(item, index) => index.toString()}
-            renderItem={({ item, index }) => (
-              <TouchableOpacity id={index} onPress={() => this.saveData(index)}>
-                {this.renderItem(item)}
-              </TouchableOpacity>
-            )}
-          />
-        </View>
+  return (
+    <View style={styles.container}>
+      <View style={styles.cycleText}>
+        <Text style={styles.textStyle_bold}>How are</Text>
+        <Text style={styles.textStyle_normal}>you feeling?</Text>
       </View>
-    );
-  }
-}
+      <View style={styles.emoji}>
+        <FlatList
+          data={emoticons}
+          horizontal={true}
+          keyExtractor={(item, index) => index.toString()}
+          renderItem={({ item, index }) => (
+            <TouchableOpacity id={index} onPress={() => saveData(index)}>
+              <Image style={styles.image} source={item} />
+            </TouchableOpacity>
+          )}
+        />
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     flex: 1,
     alignContent: 'center',
+    backgroundColor: '#fff',
   },
   image: {
     height: 90,
     width: 90,
     marginRight: 20,
   },
-  flatlist: {
-    flex: 1,
-  },
   emoji: {
     justifyContent: 'center',
     alignContent: 'center',
     width: Dimensions.get('window').width - 50,
     marginLeft: 20,
+    marginTop: 10,
   },
   cycleText: {
     alignSelf: 'center',
@@ -116,4 +91,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
   },
+  textStyle_bold: {
+    fontFamily: 'PT-Sans',
+    fontSize: 30,
+    fontWeight: 'bold',
+    alignSelf: 'center',
+  },
+  textStyle_normal: {
+    fontFamily: 'PT-Sans',
+    fontSize: 25,
+    marginTop: 8,
+    alignSelf: 'center',
+    marginLeft: 10,
+  },
 });
+
+export default HowYouFeel;

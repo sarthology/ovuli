@@ -1,75 +1,11 @@
 import 'react-native-gesture-handler';
-import React, { Component } from 'react';
-import { 
-  StyleSheet,
-  Text, 
-  View,
-  Dimensions,
-  Image,
-  Picker,
- } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Dimensions, Image, Picker } from 'react-native';
 
-import profile from '../../../wireframes/assets/Setting_screen/profile.png';
+import profile from '@wireframes/assets/Setting_screen/profile.png';
 import { Entypo } from 'react-native-vector-icons';
 import { Feather } from 'react-native-vector-icons';
-import { MaterialIcons} from 'react-native-vector-icons';
-
-export default class ProfileScreen extends Component {
-  constructor(props) {
-		super(props);
-		this.state = {
-    language:" ",
-    cycle:" ",
-    last: " ",
-		};
-	}
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.head}>Settings{'\n'}</Text>
-
-        <View style={{flexDirection: 'row'}}>
-          <Image source={profile} style={styles.profile} />
-          <Text style={styles.wel}>{'\n\n'}  Samriddhi </Text>
-        </View>
-
-        <View style={styles.design}>
-          <MaterialIcons name="language" style={styles.create} />
-          <Text style={styles.welcome}>  Language</Text>
-          <Picker
-             selectedValue={this.state.language}
-             style={styles.content}
-             onValueChange={(itemValue, itemIndex) => this.setState({language: itemValue})}>
-            <Picker.Item label="English" value="English" />
-          </Picker>
-        </View>
-
-        <View style={styles.design}>
-          <Entypo name="circular-graph" style={styles.create} />
-          <Text style={styles.welcome}>  Cycle Length</Text>
-          <Picker
-             selectedValue={this.state.cycle}
-             style={styles.content}
-             onValueChange={(itemValue, itemIndex) => this.setState({cycle: itemValue})}>
-            <Picker.Item label="20 Days" value="20" />
-          </Picker>
-        </View>
-
-        <View style={styles.design}>
-          <Feather name="droplet" style={styles.create}/>
-          <Text style={styles.welcome}>  Last Period</Text>
-          <Picker
-             selectedValue={this.state.last}
-             style={styles.content}
-             onValueChange={(itemValue, itemIndex) => this.setState({last: itemValue})}>
-            <Picker.Item label="14 july 2020" value="14/07/2020" />
-          </Picker>
-        </View>
-
-      </View>
-    );
-  }
-}
+import { MaterialIcons } from 'react-native-vector-icons';
 
 const styles = StyleSheet.create({
   container: {
@@ -89,21 +25,21 @@ const styles = StyleSheet.create({
   create: {
     fontSize: 31,
     alignItems: 'stretch',
-    color: '#F08080'
+    color: '#F08080',
   },
   head: {
     fontSize: 35,
-    alignSelf: 'flex-start', 
+    alignSelf: 'flex-start',
   },
-  content: { 
+  content: {
     height: 50,
     width: 150,
   },
   design: {
-    flex: 1, 
+    flex: 1,
     position: 'relative',
     flexDirection: 'row',
-    justifyContent: 'space-evenly'
+    justifyContent: 'space-evenly',
   },
   profile: {
     alignSelf: 'flex-start',
@@ -114,5 +50,66 @@ const styles = StyleSheet.create({
     bottom: 50,
     left: 0,
   },
-  
+  userInfo: {
+    flexDirection: 'row',
+  },
 });
+
+const ProfileScreen = () => {
+  const [language, setLanguage] = React.useState('');
+  const [cycle, setCycle] = React.useState('');
+  const [lastCycle, setLastCycle] = React.useState('');
+
+  console.log(language);
+  console.log(cycle);
+  console.log(lastCycle);
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.head}>Settings</Text>
+
+      <View style={styles.userInfo}>
+        <Image source={profile} style={styles.profile} />
+        <Text style={styles.wel}>Samriddhi</Text>
+      </View>
+
+      <View style={styles.design}>
+        <MaterialIcons name="language" style={styles.create} />
+        <Text style={styles.welcome}>Language</Text>
+        <Picker
+          selectedValue={language}
+          style={styles.content}
+          onValueChange={language => setLanguage(language)}
+        >
+          <Picker.Item label="English" value="English" />
+        </Picker>
+      </View>
+
+      <View style={styles.design}>
+        <Entypo name="circular-graph" style={styles.create} />
+        <Text style={styles.welcome}>Cycle Length</Text>
+        <Picker
+          selectedValue={cycle}
+          style={styles.content}
+          onValueChange={cycle => setCycle(cycle)}
+        >
+          <Picker.Item label="20 Days" value="20" />
+        </Picker>
+      </View>
+
+      <View style={styles.design}>
+        <Feather name="droplet" style={styles.create} />
+        <Text style={styles.welcome}>Last Period</Text>
+        <Picker
+          selectedValue={lastCycle}
+          style={styles.content}
+          onValueChange={lastCycle => setLastCycle(lastCycle)}
+        >
+          <Picker.Item label="14 july 2020" value="14/07/2020" />
+        </Picker>
+      </View>
+    </View>
+  );
+};
+
+export default ProfileScreen;

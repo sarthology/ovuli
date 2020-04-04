@@ -1,16 +1,6 @@
 import 'react-native-gesture-handler';
-import React, { Component } from 'react';
+import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
-export default class HistoryScreen extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>History</Text>
-      </View>
-    );
-  }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -24,3 +14,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+const HistoryScreen = () => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.welcome}>History</Text>
+    </View>
+  );
+};
+
+export default HistoryScreen;

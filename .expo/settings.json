@@ -1,8 +1,8 @@
 {
-  "urlRandomness": "mb-ehn",
   "hostType": "lan",
   "lanType": "ip",
   "dev": true,
   "minify": false,
+  "urlRandomness": "9f-xs3",
   "https": false
 }
