@@ -23,19 +23,19 @@ export default function BottomTabs() {
       }}
     >
       <Tab.Screen
-        name="Home"
-        component={HomeScreen}
-        options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color, size }) => <BottomTabIcon name="home" color={color} size={size} />,
-        }}
-      />
-      <Tab.Screen
         name="History"
         component={HistoryScreen}
         options={{
           tabBarLabel: 'History',
           tabBarIcon: ({ color, size }) => <BottomTabIcon name="clock" color={color} size={size} />,
+        }}
+      />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ color, size }) => <BottomTabIcon name="home" color={color} size={size} />,
         }}
       />
       <Tab.Screen
