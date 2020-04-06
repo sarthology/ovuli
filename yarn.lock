@@ -9849,7 +9849,7 @@ mkdirp@^1.0.3:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-1.0.3.tgz#4cf2e30ad45959dddea53ad97d518b6c8205e1ea"
   integrity sha512-6uCP4Qc0sWsgMLy1EOqqS/3rjDHOEnsStVr/4vtAIK2Y5i2kA7lFFejYrpIyiN9w0pYf4ckeCYT9f1r1P9KX5g==
 
-moment@>=2.10.3, moment@^2.10.6, moment@^2.22.0, moment@^2.24.0:
+moment@>=2.10.3, moment@^2.10.6, moment@^2.24.0:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
   integrity sha512-bV7f+6l2QigeBBZSM/6yTNq4P2fNpSWj/0e7jQcy87A8e7o2nAfP/34/2ky5Vw4B9S446EtIhodAzkFCcR4dQg==
@@ -11921,13 +11921,6 @@ react-native-web@~0.11.7:
     normalize-css-color "^1.0.2"
     prop-types "^15.6.0"
     react-timer-mixin "^0.13.4"
-
-react-native-wheel-picker-android@^2.0.6:
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/react-native-wheel-picker-android/-/react-native-wheel-picker-android-2.0.6.tgz#e6698cc67e9ba3882b1138c0b1626daf7a512646"
-  integrity sha512-gwstWymEZUmSokWKDQufD3t/alSRkYDTSEe3YrtsDtpcKM55t9BeAPdKzYURTVRUGCYeoOy4nyxKBYkMnqbvlQ==
-  dependencies:
-    moment "^2.22.0"
 
 react-native-wheel-scroll-picker@^0.2.4:
   version "0.2.4"
