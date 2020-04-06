@@ -82,37 +82,24 @@ const styles = StyleSheet.create({
     color: '#F55963',
   },
   wheelPicker: {
-    // backgroundColor: '#ccc',
     height: 270,
     width: '100%',
-    // flex: 1,
     alignItems: 'center',
   },
   itemStyleVertical: {
     width: 150,
     height: 50,
-    borderRadius: 10,
     justifyContent: 'center',
   },
-
-  itemSelectedStyleVertical: {
-    borderColor: '#fff',
-  },
-
   itemSelectedStyleVertical_: {
+    borderRadius: 10,
     backgroundColor: '#F55963',
   },
 });
 
-const Bubble = props => {
-  const { children, selected } = props;
+const Bubble = ({ children, selected }) => {
   return (
-    <View
-      style={[
-        styles.itemStyleVertical,
-        selected ? styles.itemSelectedStyleVertical_ : styles.itemSelectedStyleVertical,
-      ]}
-    >
+    <View style={[styles.itemStyleVertical, selected && styles.itemSelectedStyleVertical_]}>
       <Text
         style={{
           textAlign: 'center',
@@ -128,7 +115,9 @@ const Bubble = props => {
 };
 
 const LanguageScreen = () => {
-  const [selectedLanguageIndex, setSelectedLanguageIndex] = React.useState(2);
+  const [selectedLanguageIndex, setSelectedLanguageIndex] = React.useState(
+    languages.indexOf('English'),
+  );
   const navigation = useNavigation();
   const saveUserLanguage = async () => {
     try {
