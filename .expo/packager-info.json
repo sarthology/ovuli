@@ -1,10 +1,10 @@
 {
   "expoServerPort": 19000,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "expoServerNgrokUrl": "https://q9-ksr.anonymous.ovuli.exp.direct",
+  "packagerNgrokUrl": "https://packager.q9-ksr.anonymous.ovuli.exp.direct",
+  "ngrokPid": 8588,
   "devToolsPort": 19002,
   "packagerPort": 19001,
-  "packagerPid": 46182,
+  "packagerPid": 9680,
   "webpackServerPort": null
 }
