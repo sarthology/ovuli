@@ -11,7 +11,7 @@ import {
   AsyncStorage,
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
-import { WheelPicker } from 'react-native-wheel-picker-android';
+import SmoothPicker from 'react-native-smooth-picker';
 import { useNavigation } from '@react-navigation/native';
 import top from '@wireframes/assets/Lang_Screen/top.png';
 import bottom from '@wireframes/assets/Lang_Screen/bottom.png';
@@ -82,14 +82,42 @@ const styles = StyleSheet.create({
     color: '#F55963',
   },
   wheelPicker: {
+    height: 270,
     width: '100%',
-    flex: 1,
     alignItems: 'center',
+  },
+  itemStyleVertical: {
+    width: 150,
+    height: 50,
+    justifyContent: 'center',
+  },
+  itemSelectedStyleVertical_: {
+    borderRadius: 10,
+    backgroundColor: '#F55963',
   },
 });
 
+const Bubble = ({ children, selected }) => {
+  return (
+    <View style={[styles.itemStyleVertical, selected && styles.itemSelectedStyleVertical_]}>
+      <Text
+        style={{
+          textAlign: 'center',
+          fontSize: selected ? 20 : 17,
+          color: selected ? 'white' : 'gray',
+          fontWeight: selected ? 'bold' : 'normal',
+        }}
+      >
+        {children}
+      </Text>
+    </View>
+  );
+};
+
 const LanguageScreen = () => {
-  const [selectedLanguageIndex, setSelectedLanguageIndex] = React.useState(0);
+  const [selectedLanguageIndex, setSelectedLanguageIndex] = React.useState(
+    languages.indexOf('English'),
+  );
   const navigation = useNavigation();
   const saveUserLanguage = async () => {
     try {
@@ -137,10 +165,20 @@ const LanguageScreen = () => {
         language
       </Text>
       <View style={styles.wheelPicker}>
-        <WheelPicker
-          selectedItem={selectedLanguageIndex}
+        <SmoothPicker
+          initialScrollToIndex={2}
+          // ref={ref => (this.refList = ref)}
+          keyExtractor={(_, index) => index.toString()}
+          showsVerticalScrollIndicator={false}
+          // bounces={true}
+          offsetSelection={50}
+          magnet={true}
+          scrollAnimation={true}
           data={languages}
-          onItemSelected={selectedItem => setSelectedLanguageIndex(selectedItem)}
+          onSelected={({ index }) => setSelectedLanguageIndex(index)}
+          renderItem={({ item, index }) => (
+            <Bubble selected={index === selectedLanguageIndex}>{item}</Bubble>
+          )}
         />
       </View>
       <Image source={bottom} style={styles.bottom} />
