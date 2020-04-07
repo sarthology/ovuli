@@ -86,7 +86,7 @@ class CalendarComponent extends Component {
                 },
               },
             },
-            [fertileWindowStart]: {
+            '2020-04-10': {
               customStyles: {
                 container: {
                   backgroundColor: '#fab3a0',
