@@ -79,10 +79,6 @@ const CalendarComponent = props => {
         }}
         markingType={'custom'} //{"period"}
         markedDates={{
-          // [this.state.calendarDate]: {
-          //   selected: true,
-          //   selectedColor: "#e35052",
-          // },
           [calendarState]: {
             customStyles: {
               container: {
