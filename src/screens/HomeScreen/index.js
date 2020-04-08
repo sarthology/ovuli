@@ -9,9 +9,11 @@ import {
   SafeAreaView,
   ScrollView,
 } from 'react-native';
-import Constants from 'expo-constants';
+import Calendar from '../../Components/Calendar/index';
 import { calculateOvuli, calculateAverageCycle } from '@/util/ovuli';
-import Calendar from './Calendar/CalendarComponent';
+//import Constants from 'expo-constants';
+//import Calendar from './Calendar/CalendarComponent';
+
 const styles = StyleSheet.create({
   scrollview: {
     marginTop: 10,
@@ -81,7 +83,8 @@ const HomeScreen = () => {
           <Text>Fertile Window : START MONTH :: {ovuliResult['fertileWindow']['startMonth']}</Text>
           <Button title="Reset" onPress={resetCycle} />
           <View style={{ flexDirection: 'row' }}>
-            <Calendar fertileWindowStart={ovuliResult['fertileWindow']['start']} />
+            <Calendar />
+            {/* fertileWindowStart={ovuliResult['fertileWindow']['start']} /> */}
           </View>
         </View>
       </ScrollView>
