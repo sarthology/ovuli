@@ -2,7 +2,7 @@
 
 const moment = require('moment');
 /**
- * This is a function to caluclate female different ovuli days.
+ * This is a function to calculate female different ovuli days.
  * @param {string} lastDate -  Day of female's last period.
  * @param {string} averageCycle - Average cycle days of females.
  *
@@ -56,7 +56,7 @@ const calculateOvuli = ({ lastDate }, { averageCycle }) => {
 };
 
 /**
- * This is a function to caluclate female different ovuli days.
+ * This is a function to calculate female different ovuli days.
  * @param {string} cycles -  Array of female's last `n` numbers of periods's first days.
  *
  *

@@ -10,64 +10,12 @@ import {
   AsyncStorage,
   StatusBar,
 } from 'react-native';
-
+// eslint-disable-next-line import/named
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
 import TopImage from '../../assets/images/Last_Period/top.png';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AskLastPeriodImage from '@/assets/images/Last_Period/AskLastPeriod.png';
-
-const LastPeriodScreen = () => {
-  const [selectedDate, setSelectedDate] = React.useState(null);
-  const navigation = useNavigation();
-  const route = useRoute();
-  const saveLastPeriod = () => {
-    try {
-      AsyncStorage.setItem('lastPeriod', selectedDate.toISOString());
-    } catch (error) {
-      console.log(error);
-    }
-
-    if (route.params.prevScreen == 'DoYouKnow') {
-      navigation.navigate('SecondLastPeriod');
-    }
-    if (route.params.prevScreen == 'AverageCycle') {
-      navigation.navigate('Dashboard');
-    }
-  };
-
-  return (
-    <View style={styles.container}>
-      <StatusBar hidden />
-      <Image style={styles.topImage} source={TopImage} />
-      <View style={{ padding: 20, alignSelf: 'flex-start' }}>
-        <Image style={styles.lastPeriodText} source={AskLastPeriodImage} />
-      </View>
-
-      <View style={styles.calenderContainer}>
-        <CalendarPicker
-          onDateChange={date => setSelectedDate(date)}
-          startFromMonday={true}
-          previousTitle=""
-          nextTitle=""
-          headingLevel={0}
-          weekdays={CALENDAR_WEEK_DAYS}
-          dayOfWeekStyles={styles.dayOfWeekStyles}
-          selectedDayStyle={styles.selectedDate}
-          selectedDayTextColor="#fff"
-        />
-      </View>
-      <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
-        <View style={styles.buttonTextContainer}>
-          <Text style={styles.buttonText}>Continue</Text>
-          <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
-        </View>
-      </TouchableOpacity>
-    </View>
-  );
-};
-
-export default LastPeriodScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -124,3 +72,55 @@ const styles = StyleSheet.create({
     backgroundColor: '#F55963',
   },
 });
+
+const LastPeriodScreen = () => {
+  const [selectedDate, setSelectedDate] = React.useState(null);
+  const navigation = useNavigation();
+  const route = useRoute();
+  const saveLastPeriod = () => {
+    try {
+      AsyncStorage.setItem('lastPeriod', selectedDate.toISOString());
+    } catch (error) {
+      console.log(error);
+    }
+
+    if (route.params.prevScreen == 'DoYouKnow') {
+      navigation.navigate('SecondLastPeriod');
+    }
+    if (route.params.prevScreen == 'AverageCycle') {
+      navigation.navigate('Dashboard');
+    }
+  };
+
+  return (
+    <View style={styles.container}>
+      <StatusBar hidden />
+      <Image style={styles.topImage} source={TopImage} />
+      <View style={{ padding: 20, alignSelf: 'flex-start' }}>
+        <Image style={styles.lastPeriodText} source={AskLastPeriodImage} />
+      </View>
+
+      <View style={styles.calenderContainer}>
+        <CalendarPicker
+          onDateChange={date => setSelectedDate(date)}
+          startFromMonday={true}
+          previousTitle=""
+          nextTitle=""
+          headingLevel={0}
+          weekdays={CALENDAR_WEEK_DAYS}
+          dayOfWeekStyles={styles.dayOfWeekStyles}
+          selectedDayStyle={styles.selectedDate}
+          selectedDayTextColor="#fff"
+        />
+      </View>
+      <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
+        <View style={styles.buttonTextContainer}>
+          <Text style={styles.buttonText}>Continue</Text>
+          <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
+        </View>
+      </TouchableOpacity>
+    </View>
+  );
+};
+
+export default LastPeriodScreen;

@@ -2,6 +2,7 @@ import 'react-native-gesture-handler';
 import React, {useState} from 'react';
 import { StyleSheet, TouchableHighlight, Text, View, Dimensions, Image, Picker } from 'react-native';
 
+
 import profile from '@wireframes/assets/Setting_screen/profile.png';
 import { Entypo } from 'react-native-vector-icons';
 import { Feather } from 'react-native-vector-icons';
@@ -74,6 +75,7 @@ const ProfileScreen = () => {
       <View style={styles.userInfo}>
         <Image source={profile} style={styles.profile} />
         <Text style={styles.wel}>{'\n\n'}Samriddhi</Text>
+
       </View>
 
       <View style={styles.design}>
@@ -83,24 +85,29 @@ const ProfileScreen = () => {
           <TouchableHighlight onPress={() => setLanguage('Marathi')}>
            <Feather name="edit-3" size={20} color= {COLORS.grey}/>
           </TouchableHighlight>
+
       </View>
 
       <View style={styles.design}>
         <Entypo name="circular-graph" style={styles.create} />
+
         <Text style={styles.welcome}>  Cycle Length             </Text>
         <Text>{cycle} </Text>
           <TouchableHighlight  onPress={() => setCycle('23 Days')}>
            <Feather name="edit-3" size={20} color= {COLORS.grey}/>
           </TouchableHighlight>
+
       </View>
 
       <View style={styles.design}>
         <Feather name="droplet" style={styles.create} />
+
         <Text style={styles.welcome}> Last Period           </Text>
         <Text>{lastCycle} </Text>
           <TouchableHighlight onPress={() => setLastCycle('19 June 2020')}>
            <Feather name="edit-3" size={20} color= {COLORS.grey}/>
           </TouchableHighlight>
+
       </View>
     </View>
   );
