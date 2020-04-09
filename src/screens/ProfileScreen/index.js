@@ -64,10 +64,6 @@ const ProfileScreen = () => {
   const [cycle, setCycle] = React.useState('20 Days');
   const [lastCycle, setLastCycle] = React.useState('14 July 2020');
 
-  console.log(language);
-  console.log(cycle);
-  console.log(lastCycle);
-
   return (
     <View style={styles.container}>
       <Text style={styles.head}>Settings</Text>
