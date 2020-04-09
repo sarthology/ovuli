@@ -32,6 +32,41 @@ expo start
 
 **Note:** *Don't use npm*
 
+## Contribution Conventions
+
+1. Start using functional components.
+
+2. Start using module resolver.
+
+    eg.
+    ### bad practice
+    ```
+    import LanguageScreen from '../../languageScreen';
+    ```
+    ### good practice
+    ```
+    import LanguageScreen from '@/screens/profileScreen/LanguageScreen'
+    ```
+    ### Reason
+    * Easy to debug the file.
+    * Increase readability.
+
+3. Don't use Inline styles.
+4. Please take create of the variable names. A variable name should define the function work.
+5. If you are using colors. Then please create a color object for your component.
+* Please add the outside the component scope like styles object. Define this after the Imports.
+
+e.g.
+```
+const colors = {
+   colorName: 'colorCode'
+}
+```
+### Reason
+In the future, if we have to change the color so we don't need to find them. This makes easy to find and updates.
+
+
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](https://github.com/sarthology/ovuli/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
