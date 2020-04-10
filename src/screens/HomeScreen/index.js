@@ -60,31 +60,36 @@ const HomeScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text>The Average Cycle is {calculateCycle}</Text>
-      <Text>
-        Approximate Ovulation Date : {ovuliResult['approximateOvulationDate']['day']}-
-        {ovuliResult['approximateOvulationDate']['month']}
-      </Text>
-      <Text>
-        Next Period Date : {ovuliResult['nextPeriodDate']['day']}-
-        {ovuliResult['nextPeriodDate']['month']}
-      </Text>
-      <Text>
-        Next Pregnancy Test Date : {ovuliResult['nextPregnancTestDate']['day']}-
-        {ovuliResult['nextPregnancTestDate']['month']}
-      </Text>
-      <Text style={{ marginTop: 20 }}>
-        Fertile Window : START :: {ovuliResult['fertileWindow']['start']}
-      </Text>
-      <Text>Fertile Window : END :: {ovuliResult['fertileWindow']['end']}</Text>
-      <Text>Fertile Window : START MONTH :: {ovuliResult['fertileWindow']['startMonth']}</Text>
-      <Button
-        title={i18n.t('Reset')}
-        // "Reset"
-        onPress={resetCycle}
-      />
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      {/* {console.log(ovuliResult['fertileWindow']['start'])} */}
+      <ScrollView style={styles.scrollview}>
+        <View style={styles.container}>
+          <Text>The Average Cycle is {calculateCycle}</Text>
+          <Text>
+            Approximate Ovulation Date : {ovuliResult['approximateOvulationDate']['day']}-
+            {ovuliResult['approximateOvulationDate']['month']}
+          </Text>
+          <Text>
+            Next Period Date : {ovuliResult['nextPeriodDate']['day']}-
+            {ovuliResult['nextPeriodDate']['month']}
+          </Text>
+          <Text>
+            Next Pregnancy Test Date : {ovuliResult['nextPregnancTestDate']['day']}-
+            {ovuliResult['nextPregnancTestDate']['month']}
+          </Text>
+          <Text style={{ marginTop: 20 }}>
+            Fertile Window : START :: {ovuliResult['fertileWindow']['start']}
+          </Text>
+          <Text>Fertile Window : END :: {ovuliResult['fertileWindow']['end']}</Text>
+          <Text>Fertile Window : START MONTH :: {ovuliResult['fertileWindow']['startMonth']}</Text>
+          <Button title="Reset" onPress={resetCycle} />
+          <View style={{ flexDirection: 'row' }}>
+            <Calendar />
+            {/* fertileWindowStart={ovuliResult['fertileWindow']['start']} /> */}
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

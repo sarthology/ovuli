@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-// import { Calendar } from 'react-native-toggle-calendar';
+import { Calendar } from 'react-native-toggle-calendar';
 import moment from 'moment';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import CalendarHeader from './CalendarHeader';
