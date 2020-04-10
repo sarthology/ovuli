@@ -14,7 +14,7 @@ import {
 // eslint-disable-next-line import/named
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
-
+import i18n from '../../i18n';
 import TopImage from '../../assets/images/Last_Period/top.png';
 import { useNavigation } from '@react-navigation/native';
 
@@ -104,11 +104,12 @@ const SecondLastPeriodScreen = () => {
         <Text
           style={[styles.nameText, { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' }]}
         >
-          When
+          {/* When */}
         </Text>
         <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
-          {' '}
-          was your second last period?
+          {/* {' '} */}
+          {i18n.t('Whenwasyoursecondlastperiod')}
+          {/* was your second last period? */}
         </Text>
       </View>
       <View style={styles.calenderContainer}>
@@ -126,7 +127,10 @@ const SecondLastPeriodScreen = () => {
       </View>
       <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
         <View style={styles.buttonTextContainer}>
-          <Text style={styles.buttonText}>Continue</Text>
+          <Text style={styles.buttonText}>
+            {i18n.t('Continue')}
+            {/* Continue */}
+          </Text>
           <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
         </View>
       </TouchableOpacity>

@@ -2,7 +2,7 @@ import 'react-native-gesture-handler';
 import React from 'react';
 import { StyleSheet, Text, View, AsyncStorage, Button } from 'react-native';
 import { calculateOvuli, calculateAverageCycle } from '@/util/ovuli';
-
+import i18n from '../../i18n';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -64,7 +64,11 @@ const HomeScreen = () => {
       </Text>
       <Text>Fertile Window : END :: {ovuliResult['fertileWindow']['end']}</Text>
       <Text>Fertile Window : START MONTH :: {ovuliResult['fertileWindow']['startMonth']}</Text>
-      <Button title="Reset" onPress={resetCycle} />
+      <Button
+        title={i18n.t('Reset')}
+        // "Reset"
+        onPress={resetCycle}
+      />
     </View>
   );
 };

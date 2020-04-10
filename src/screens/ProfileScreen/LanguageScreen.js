@@ -1,6 +1,5 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
-
 import {
   StyleSheet,
   View,
@@ -15,6 +14,7 @@ import SmoothPicker from 'react-native-smooth-picker';
 import { useNavigation } from '@react-navigation/native';
 import top from '@wireframes/assets/Lang_Screen/top.png';
 import bottom from '@wireframes/assets/Lang_Screen/bottom.png';
+import i18n from '../../i18n';
 
 const languages = [
   'Assamese',
@@ -123,6 +123,8 @@ const LanguageScreen = () => {
     try {
       let selectedLanguage = languages[selectedLanguageIndex];
       await AsyncStorage.setItem('userLanguage', selectedLanguage);
+      i18n.locale = selectedLanguage;
+      console.log(selectedLanguage + 'this is fjksdjafijaiji ');
       navigation.navigate('Name');
     } catch (error) {
       console.log(error);
@@ -154,15 +156,17 @@ const LanguageScreen = () => {
         <Text
           style={[{ fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' }]}
         >
-          please
+          {/* please */}
         </Text>
         <Text style={{ fontFamily: 'PT-Sans', fontSize: 25, marginTop: 8, alignSelf: 'center' }}>
-          {' '}
-          select your{' '}
+          {/* {' '} */}
+
+          {i18n.t('Pleaseselectyourlanguage')}
+          {/* select your{' '} */}
         </Text>
       </View>
       <Text style={{ fontFamily: 'PT-Sans', fontSize: 25, alignSelf: 'center', marginBottom: 25 }}>
-        language
+        {/* language */}
       </Text>
       <View style={styles.wheelPicker}>
         <SmoothPicker
@@ -183,7 +187,10 @@ const LanguageScreen = () => {
       </View>
       <Image source={bottom} style={styles.bottom} />
       <TouchableOpacity style={styles.button} onPress={saveUserLanguage}>
-        <Text style={styles.buttonText}>Continue</Text>
+        <Text style={styles.buttonText}>
+          {/* Continue */}
+          {i18n.t('Continue')}
+        </Text>
         <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} name="arrowright" size={18} />
       </TouchableOpacity>
     </View>

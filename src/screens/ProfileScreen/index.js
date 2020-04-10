@@ -6,7 +6,7 @@ import profile from '@wireframes/assets/Setting_screen/profile.png';
 import { Entypo } from 'react-native-vector-icons';
 import { Feather } from 'react-native-vector-icons';
 import { MaterialIcons } from 'react-native-vector-icons';
-
+import i18n from '../../i18n';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -66,7 +66,10 @@ const ProfileScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.head}>Settings</Text>
+      <Text style={styles.head}>
+        {/* Settings */}
+        {i18n.t('Settings')}
+      </Text>
 
       <View style={styles.userInfo}>
         <Image source={profile} style={styles.profile} />
@@ -75,7 +78,10 @@ const ProfileScreen = () => {
 
       <View style={styles.design}>
         <MaterialIcons name="language" style={styles.create} />
-        <Text style={styles.welcome}>Language</Text>
+        <Text style={styles.welcome}>
+          {i18n.t('Language')}
+          {/* Language */}
+        </Text>
         <Picker
           selectedValue={language}
           style={styles.content}
@@ -87,7 +93,10 @@ const ProfileScreen = () => {
 
       <View style={styles.design}>
         <Entypo name="circular-graph" style={styles.create} />
-        <Text style={styles.welcome}>Cycle Length</Text>
+        <Text style={styles.welcome}>
+          {/* Cycle Length */}
+          {i18n.t('Cyclelength')}
+        </Text>
         <Picker
           selectedValue={cycle}
           style={styles.content}
@@ -99,7 +108,10 @@ const ProfileScreen = () => {
 
       <View style={styles.design}>
         <Feather name="droplet" style={styles.create} />
-        <Text style={styles.welcome}>Last Period</Text>
+        <Text style={styles.welcome}>
+          {/* Last Period */}
+          {i18n.t('LastPeriod')}
+        </Text>
         <Picker
           selectedValue={lastCycle}
           style={styles.content}

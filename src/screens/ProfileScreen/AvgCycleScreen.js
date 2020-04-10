@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import SmoothPicker from 'react-native-smooth-picker';
-
+import i18n from '../../i18n';
 import top from '@wireframes/assets/Avg_Cycle/top.png';
 import { useNavigation } from '@react-navigation/native';
 
@@ -131,9 +131,12 @@ const AvgCycle = () => {
         <Text
           style={[{ fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' }]}
         >
-          How long
+          {/* How long */}
         </Text>
-        <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}> is your cycle?</Text>
+        <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
+          {i18n.t('HowLongisyouriscycle')}
+          {/* is your cycle? */}
+        </Text>
       </View>
       <View style={styles.wrapperHorizontal}>
         <StatusBar hidden />
@@ -154,7 +157,10 @@ const AvgCycle = () => {
         />
       </View>
       <TouchableOpacity style={styles.button} onPress={saveAvgPeriod}>
-        <Text style={styles.buttonText}>Continue</Text>
+        <Text style={styles.buttonText}>
+          {/* Continue */}
+          {i18n.t('Continue')}
+        </Text>
         <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} name="arrowright" size={18} />
       </TouchableOpacity>
     </View>

@@ -5,6 +5,7 @@ import { StyleSheet, TouchableOpacity, Text, View, Image, Dimensions } from 'rea
 import top from '@wireframes/assets/Your_Name/top.png';
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import i18n from '../../i18n';
 
 const styles = StyleSheet.create({
   top: {
@@ -135,7 +136,11 @@ const DoYouKnow = () => {
     <View style={styles.container}>
       <Image source={top} style={styles.top} />
       <View style={{ flexDirection: 'row' }}>
-        <Text style={styles.nameText}>Do you know your Cycle Length?</Text>
+        <Text style={styles.nameText}>
+          {i18n.t('Doyouknowyourcyclelength')}
+
+          {/* Do you know your Cycle Length? */}
+        </Text>
       </View>
 
       <TouchableOpacity
@@ -178,7 +183,8 @@ const DoYouKnow = () => {
             ])
           }
         >
-          Yes
+          {i18n.t('Yes')}
+          {/* Yes */}
         </Text>
         <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
       </TouchableOpacity>
@@ -219,7 +225,8 @@ const DoYouKnow = () => {
             color: 'white',
           }}
         >
-          No
+          {/* No */}
+          {i18n.t('No')}
         </Text>
         <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
       </TouchableOpacity>
