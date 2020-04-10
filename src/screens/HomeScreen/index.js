@@ -1,9 +1,24 @@
 import 'react-native-gesture-handler';
 import React from 'react';
-import { StyleSheet, Text, View, AsyncStorage, Button } from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  AsyncStorage,
+  Button,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
+import Calendar from '../../Components/Calendar/index';
 import { calculateOvuli, calculateAverageCycle } from '@/util/ovuli';
 import i18n from '../../i18n';
+//import Constants from 'expo-constants';
+//import Calendar from './Calendar/CalendarComponent';
+
 const styles = StyleSheet.create({
+  scrollview: {
+    marginTop: 10,
+  },
   container: {
     flex: 1,
     justifyContent: 'center',

@@ -1,6 +1,14 @@
 import 'react-native-gesture-handler';
-import React from 'react';
-import { StyleSheet, Text, View, Dimensions, Image, Picker } from 'react-native';
+import React, { useState } from 'react';
+import {
+  StyleSheet,
+  TouchableHighlight,
+  Text,
+  View,
+  Dimensions,
+  Image,
+  Picker,
+} from 'react-native';
 
 import profile from '@wireframes/assets/Setting_screen/profile.png';
 import { Entypo } from 'react-native-vector-icons';
@@ -55,14 +63,13 @@ const styles = StyleSheet.create({
   },
 });
 
+const COLORS = {
+  grey: 'rgb(179, 182, 183)',
+};
 const ProfileScreen = () => {
-  const [language, setLanguage] = React.useState('');
-  const [cycle, setCycle] = React.useState('');
-  const [lastCycle, setLastCycle] = React.useState('');
-
-  console.log(language);
-  console.log(cycle);
-  console.log(lastCycle);
+  const [language, setLanguage] = React.useState('English');
+  const [cycle, setCycle] = React.useState('20 Days');
+  const [lastCycle, setLastCycle] = React.useState('14 July 2020');
 
   return (
     <View style={styles.container}>
@@ -73,7 +80,7 @@ const ProfileScreen = () => {
 
       <View style={styles.userInfo}>
         <Image source={profile} style={styles.profile} />
-        <Text style={styles.wel}>Samriddhi</Text>
+        <Text style={styles.wel}>{'\n\n'}Samriddhi</Text>
       </View>
 
       <View style={styles.design}>
