@@ -19,7 +19,7 @@ const HistoryScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>
-        {i18n.t('History')}
+        {i18n.t('history')}
         {/* History */}
       </Text>
     </View>

@@ -134,7 +134,7 @@ const AvgCycle = () => {
           {/* How long */}
         </Text>
         <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
-          {i18n.t('HowLongisyouriscycle')}
+          {i18n.t('how_long_is_your_cycle')}
           {/* is your cycle? */}
         </Text>
       </View>
@@ -159,7 +159,7 @@ const AvgCycle = () => {
       <TouchableOpacity style={styles.button} onPress={saveAvgPeriod}>
         <Text style={styles.buttonText}>
           {/* Continue */}
-          {i18n.t('Continue')}
+          {i18n.t('continue')}
         </Text>
         <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} name="arrowright" size={18} />
       </TouchableOpacity>

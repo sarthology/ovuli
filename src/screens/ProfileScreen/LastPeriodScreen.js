@@ -106,7 +106,7 @@ const LastPeriodScreen = () => {
       <View style={{ padding: 20, alignSelf: 'flex-start' }}>
         {/* <View style={{ flexDirection: 'row', marginTop: 200 }}> */}
         <Text style={styles.nameText}>
-          {i18n.t('Whenwasyourlastperiod')}
+          {i18n.t('when_was_your_last_period')}
           {/* can we call you? */}
         </Text>
         {/* </View> */}
@@ -129,7 +129,7 @@ const LastPeriodScreen = () => {
       <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
         <View style={styles.buttonTextContainer}>
           <Text style={styles.buttonText}>
-            {i18n.t('Continue')}
+            {i18n.t('continue')}
             {/* Continue */}
           </Text>
           <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />

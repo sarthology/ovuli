@@ -137,7 +137,7 @@ const DoYouKnow = () => {
       <Image source={top} style={styles.top} />
       <View style={{ flexDirection: 'row' }}>
         <Text style={styles.nameText}>
-          {i18n.t('Doyouknowyourcyclelength')}
+          {i18n.t('do_you_know_your_cycle_length')}
 
           {/* Do you know your Cycle Length? */}
         </Text>
@@ -183,7 +183,7 @@ const DoYouKnow = () => {
             ])
           }
         >
-          {i18n.t('Yes')}
+          {i18n.t('yes')}
           {/* Yes */}
         </Text>
         <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
@@ -226,7 +226,7 @@ const DoYouKnow = () => {
           }}
         >
           {/* No */}
-          {i18n.t('No')}
+          {i18n.t('no')}
         </Text>
         <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
       </TouchableOpacity>

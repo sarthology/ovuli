@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import Calendar from '../../Components/Calendar/index';
 import { calculateOvuli, calculateAverageCycle } from '@/util/ovuli';
-import i18n from '../../i18n';
+
 //import Constants from 'expo-constants';
 //import Calendar from './Calendar/CalendarComponent';
 

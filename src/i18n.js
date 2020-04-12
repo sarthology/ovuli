@@ -1,7 +1,7 @@
 import i18n from 'i18n-js';
 // import * as RNLocalize from ‘react-native-localize’;
 // import memoize from ‘lodash.memoize’; // Use for caching/memoize for better performance
-import en from '../languageBase/en.json';
+import English from '../languageBase/en.json';
 import Hindi from '../languageBase/hi.json';
 import Nepali from '../languageBase/ne.json';
 import Bengali from '../languageBase/be.json';
@@ -18,11 +18,11 @@ import Malayalam from '../languageBase/ml.json';
 // I18n.locale = locales[0].languageTag;
 // }
 
-i18n.defaultLocale = 'en';
+i18n.defaultLocale = 'English';
 i18n.locale = null;
 i18n.fallbacks = true;
 i18n.translations = {
-  en,
+  English,
   Hindi,
   Nepali,
   Bengali,

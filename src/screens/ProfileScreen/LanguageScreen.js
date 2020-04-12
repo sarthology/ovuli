@@ -161,7 +161,7 @@ const LanguageScreen = () => {
         <Text style={{ fontFamily: 'PT-Sans', fontSize: 25, marginTop: 8, alignSelf: 'center' }}>
           {/* {' '} */}
 
-          {i18n.t('Pleaseselectyourlanguage')}
+          {i18n.t('please_select_your_language')}
           {/* select your{' '} */}
         </Text>
       </View>
@@ -189,7 +189,7 @@ const LanguageScreen = () => {
       <TouchableOpacity style={styles.button} onPress={saveUserLanguage}>
         <Text style={styles.buttonText}>
           {/* Continue */}
-          {i18n.t('Continue')}
+          {i18n.t('continue')}
         </Text>
         <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} name="arrowright" size={18} />
       </TouchableOpacity>

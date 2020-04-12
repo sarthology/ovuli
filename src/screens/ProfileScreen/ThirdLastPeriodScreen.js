@@ -108,7 +108,7 @@ const ThirdLastPeriodScreen = () => {
         </Text>
         <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
           {/* {' '} */}
-          {i18n.t('Whenwasyourthirdlastperiod')}
+          {i18n.t('when_was_your_third_last_period')}
           {/* was your third last period? */}
         </Text>
       </View>
@@ -129,7 +129,7 @@ const ThirdLastPeriodScreen = () => {
       <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
         <View style={styles.buttonTextContainer}>
           <Text style={styles.buttonText}>
-            {i18n.t('Finish')}
+            {i18n.t('finish')}
             {/* Finish */}
           </Text>
           <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />

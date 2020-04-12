@@ -26,7 +26,7 @@ export default function BottomTabs() {
         name="History"
         component={HistoryScreen}
         options={{
-          tabBarLabel: ({ color }) => <Text style={{ color: color }}>{i18n.t('History')}</Text>,
+          tabBarLabel: ({ color }) => <Text style={{ color: color }}>{i18n.t('history')}</Text>,
           tabBarIcon: ({ color, size }) => <BottomTabIcon name="clock" color={color} size={size} />,
         }}
       />
@@ -34,7 +34,7 @@ export default function BottomTabs() {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarLabel: ({ color }) => <Text style={{ color: color }}>{i18n.t('Home')}</Text>,
+          tabBarLabel: ({ color }) => <Text style={{ color: color }}>{i18n.t('home')}</Text>,
 
           tabBarIcon: ({ color, size }) => <BottomTabIcon name="home" color={color} size={size} />,
         }}
@@ -43,7 +43,7 @@ export default function BottomTabs() {
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarLabel: ({ color }) => <Text style={{ color: color }}>{i18n.t('Profile')}</Text>,
+          tabBarLabel: ({ color }) => <Text style={{ color: color }}>{i18n.t('profile')}</Text>,
           tabBarIcon: ({ color, size }) => (
             <BottomTabIcon name="settings" color={color} size={size} />
           ),

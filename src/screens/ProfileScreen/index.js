@@ -75,7 +75,7 @@ const ProfileScreen = () => {
     <View style={styles.container}>
       <Text style={styles.head}>
         {/* Settings */}
-        {i18n.t('Settings')}
+        {i18n.t('settings')}
       </Text>
 
       <View style={styles.userInfo}>
@@ -86,7 +86,7 @@ const ProfileScreen = () => {
       <View style={styles.design}>
         <MaterialIcons name="language" style={styles.create} />
         <Text style={styles.welcome}>
-          {i18n.t('Language')}
+          {i18n.t('language')}
           {/* Language */}
         </Text>
         <Picker
@@ -102,7 +102,7 @@ const ProfileScreen = () => {
         <Entypo name="circular-graph" style={styles.create} />
         <Text style={styles.welcome}>
           {/* Cycle Length */}
-          {i18n.t('Cyclelength')}
+          {i18n.t('cycle_length')}
         </Text>
         <Picker
           selectedValue={cycle}
@@ -117,7 +117,7 @@ const ProfileScreen = () => {
         <Feather name="droplet" style={styles.create} />
         <Text style={styles.welcome}>
           {/* Last Period */}
-          {i18n.t('LastPeriod')}
+          {i18n.t('last_period')}
         </Text>
         <Picker
           selectedValue={lastCycle}

@@ -139,7 +139,7 @@ const YourNameScreen = () => {
               {/* How */}
             </Text>
             <Text style={styles.nameText}>
-              {i18n.t('Howcanwecallyou')}
+              {i18n.t('how_can_we_call_you')}
               {/* can we call you? */}
             </Text>
           </View>
@@ -149,7 +149,7 @@ const YourNameScreen = () => {
             underlineColorAndroid="transparent"
             autoCapitalize="none"
             placeholder={
-              i18n.t('Pleaseenteryourname') // "Enter your name here"
+              i18n.t('please_enter_your_name') // "Enter your name here"
             }
             onChangeText={text => setName(text)}
             value={name}
@@ -158,7 +158,7 @@ const YourNameScreen = () => {
           <TouchableOpacity style={styles.button} onPress={saveName}>
             <Text style={styles.buttonText}>
               {/* Continue */}
-              {i18n.t('Continue')}
+              {i18n.t('continue')}
             </Text>
             <AntDesign
               style={{ alignSelf: 'center', color: '#F55963' }}
