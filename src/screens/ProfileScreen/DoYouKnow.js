@@ -5,7 +5,7 @@ import { StyleSheet, TouchableOpacity, Text, View, Image, Dimensions } from 'rea
 import top from '@wireframes/assets/Your_Name/top.png';
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
-import i18n from '../../i18n';
+import i18n from '@/i18n';
 
 const styles = StyleSheet.create({
   top: {

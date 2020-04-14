@@ -9,7 +9,7 @@ import {
   SafeAreaView,
   ScrollView,
 } from 'react-native';
-import Calendar from '../../Components/Calendar/index';
+import Calendar from '@/Components/Calendar/index';
 import { calculateOvuli, calculateAverageCycle } from '@/util/ovuli';
 
 const styles = StyleSheet.create({

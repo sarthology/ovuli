@@ -15,7 +15,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import top from '@wireframes/assets/Your_Name/top.png';
 import bottom from '@wireframes/assets/Your_Name/bottom.png';
 import { useNavigation } from '@react-navigation/native';
-import i18n from '../../i18n';
+import i18n from '@/i18n';
 
 import { AntDesign } from '@expo/vector-icons';
 

@@ -14,7 +14,7 @@ import SmoothPicker from 'react-native-smooth-picker';
 import { useNavigation } from '@react-navigation/native';
 import top from '@wireframes/assets/Lang_Screen/top.png';
 import bottom from '@wireframes/assets/Lang_Screen/bottom.png';
-import i18n from '../../i18n';
+import i18n from '@/i18n';
 
 const languages = [
   'Assamese',

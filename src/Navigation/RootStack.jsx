@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-
 import LanguageScreen from '@/screens/ProfileScreen/LanguageScreen';
 import YourNameScreen from '@/screens/ProfileScreen/YourNameScreen';
 import AvgCycleScreen from '@/screens/ProfileScreen/AvgCycleScreen';

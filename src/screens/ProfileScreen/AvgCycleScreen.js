@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import SmoothPicker from 'react-native-smooth-picker';
-import i18n from '../../i18n';
+import i18n from '@/i18n';
 import top from '@wireframes/assets/Avg_Cycle/top.png';
 import { useNavigation } from '@react-navigation/native';
 

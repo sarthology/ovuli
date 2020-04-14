@@ -6,7 +6,7 @@ import profile from '@wireframes/assets/Setting_screen/profile.png';
 import { Entypo } from 'react-native-vector-icons';
 import { Feather } from 'react-native-vector-icons';
 import { MaterialIcons } from 'react-native-vector-icons';
-import i18n from '../../i18n';
+import i18n from '@/i18n';
 const styles = StyleSheet.create({
   container: {
     flex: 1,

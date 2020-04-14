@@ -13,10 +13,10 @@ import {
 // eslint-disable-next-line import/named
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
-import TopImage from '../../assets/images/Last_Period/top.png';
+import TopImage from '@/assets/images/Last_Period/top.png';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
-import i18n from '../../i18n';
+import i18n from '@/i18n';
 const styles = StyleSheet.create({
   container: {
     flex: 1,

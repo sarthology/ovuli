@@ -5,7 +5,7 @@ import HomeScreen from '@/screens/HomeScreen';
 import HistoryScreen from '@/screens/HistoryScreen';
 import ProfileScreen from '@/screens/ProfileScreen';
 import BottomTabIcon from './BottomIcon';
-import i18n from '../i18n';
+import i18n from '@/i18n';
 const Tab = createBottomTabNavigator();
 
 const Colors = {

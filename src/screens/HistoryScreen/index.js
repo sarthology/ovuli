@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import i18n from '../../i18n';
+import i18n from '@/i18n';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
