@@ -124,30 +124,12 @@ const LanguageScreen = () => {
       let selectedLanguage = languages[selectedLanguageIndex];
       await AsyncStorage.setItem('userLanguage', selectedLanguage);
       i18n.locale = selectedLanguage;
-      console.log(selectedLanguage + 'this is fjksdjafijaiji ');
+
       navigation.navigate('Name');
     } catch (error) {
       console.log(error);
     }
   };
-
-  // React.useEffect(() => {
-  //   (async function() {
-  //     try {
-  //       const name = await AsyncStorage.getItem('Name');
-  //       const lastPeriod = await AsyncStorage.getItem('lastPeriod');
-  //       const userLanguage = await AsyncStorage.getItem('userLanguage');
-  //       const avgCycle = await AsyncStorage.getItem('AvgPeriod');
-
-  //       if (name !== null && userLanguage !== null && (lastPeriod !== null || avgCycle !== null)) {
-  //         return true;
-  //       }
-  //       navigation.navigate('Dashboard');
-  //     } catch (e) {
-  //       console.log(e);
-  //     }
-  //   })();
-  // });
 
   return (
     <View style={styles.container}>
@@ -155,19 +137,14 @@ const LanguageScreen = () => {
       <View style={styles.cycleText}>
         <Text
           style={[{ fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' }]}
-        >
-          {/* please */}
-        </Text>
+        ></Text>
         <Text style={{ fontFamily: 'PT-Sans', fontSize: 25, marginTop: 8, alignSelf: 'center' }}>
-          {/* {' '} */}
-
           {i18n.t('please_select_your_language')}
-          {/* select your{' '} */}
         </Text>
       </View>
-      <Text style={{ fontFamily: 'PT-Sans', fontSize: 25, alignSelf: 'center', marginBottom: 25 }}>
-        {/* language */}
-      </Text>
+      <Text
+        style={{ fontFamily: 'PT-Sans', fontSize: 25, alignSelf: 'center', marginBottom: 25 }}
+      ></Text>
       <View style={styles.wheelPicker}>
         <SmoothPicker
           initialScrollToIndex={2}
@@ -187,10 +164,7 @@ const LanguageScreen = () => {
       </View>
       <Image source={bottom} style={styles.bottom} />
       <TouchableOpacity style={styles.button} onPress={saveUserLanguage}>
-        <Text style={styles.buttonText}>
-          {/* Continue */}
-          {i18n.t('continue')}
-        </Text>
+        <Text style={styles.buttonText}>{i18n.t('continue')}</Text>
         <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} name="arrowright" size={18} />
       </TouchableOpacity>
     </View>

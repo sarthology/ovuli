@@ -103,13 +103,9 @@ const SecondLastPeriodScreen = () => {
       >
         <Text
           style={[styles.nameText, { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' }]}
-        >
-          {/* When */}
-        </Text>
+        ></Text>
         <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
-          {/* {' '} */}
           {i18n.t('when_was_your_second_last_period')}
-          {/* was your second last period? */}
         </Text>
       </View>
       <View style={styles.calenderContainer}>
@@ -127,10 +123,7 @@ const SecondLastPeriodScreen = () => {
       </View>
       <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
         <View style={styles.buttonTextContainer}>
-          <Text style={styles.buttonText}>
-            {i18n.t('continue')}
-            {/* Continue */}
-          </Text>
+          <Text style={styles.buttonText}>{i18n.t('continue')}</Text>
           <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
         </View>
       </TouchableOpacity>

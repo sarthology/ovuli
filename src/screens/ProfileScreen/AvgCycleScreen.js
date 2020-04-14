@@ -130,12 +130,9 @@ const AvgCycle = () => {
       <View style={[{ flexDirection: 'row' }, styles.cycleText]}>
         <Text
           style={[{ fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold', alignSelf: 'center' }]}
-        >
-          {/* How long */}
-        </Text>
+        ></Text>
         <Text style={{ fontSize: 25, fontFamily: 'PT-Sans', marginTop: 8 }}>
           {i18n.t('how_long_is_your_cycle')}
-          {/* is your cycle? */}
         </Text>
       </View>
       <View style={styles.wrapperHorizontal}>
@@ -157,10 +154,7 @@ const AvgCycle = () => {
         />
       </View>
       <TouchableOpacity style={styles.button} onPress={saveAvgPeriod}>
-        <Text style={styles.buttonText}>
-          {/* Continue */}
-          {i18n.t('continue')}
-        </Text>
+        <Text style={styles.buttonText}>{i18n.t('continue')}</Text>
         <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} name="arrowright" size={18} />
       </TouchableOpacity>
     </View>

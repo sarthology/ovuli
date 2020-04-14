@@ -1,14 +1,6 @@
 import 'react-native-gesture-handler';
-import React, { useState } from 'react';
-import {
-  StyleSheet,
-  TouchableHighlight,
-  Text,
-  View,
-  Dimensions,
-  Image,
-  Picker,
-} from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, Dimensions, Image, Picker } from 'react-native';
 
 import profile from '@wireframes/assets/Setting_screen/profile.png';
 import { Entypo } from 'react-native-vector-icons';
@@ -63,9 +55,6 @@ const styles = StyleSheet.create({
   },
 });
 
-const COLORS = {
-  grey: 'rgb(179, 182, 183)',
-};
 const ProfileScreen = () => {
   const [language, setLanguage] = React.useState('English');
   const [cycle, setCycle] = React.useState('20 Days');
@@ -73,10 +62,7 @@ const ProfileScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.head}>
-        {/* Settings */}
-        {i18n.t('settings')}
-      </Text>
+      <Text style={styles.head}>{i18n.t('settings')}</Text>
 
       <View style={styles.userInfo}>
         <Image source={profile} style={styles.profile} />
@@ -100,10 +86,7 @@ const ProfileScreen = () => {
 
       <View style={styles.design}>
         <Entypo name="circular-graph" style={styles.create} />
-        <Text style={styles.welcome}>
-          {/* Cycle Length */}
-          {i18n.t('cycle_length')}
-        </Text>
+        <Text style={styles.welcome}>{i18n.t('cycle_length')}</Text>
         <Picker
           selectedValue={cycle}
           style={styles.content}
@@ -115,10 +98,7 @@ const ProfileScreen = () => {
 
       <View style={styles.design}>
         <Feather name="droplet" style={styles.create} />
-        <Text style={styles.welcome}>
-          {/* Last Period */}
-          {i18n.t('last_period')}
-        </Text>
+        <Text style={styles.welcome}>{i18n.t('last_period')}</Text>
         <Picker
           selectedValue={lastCycle}
           style={styles.content}

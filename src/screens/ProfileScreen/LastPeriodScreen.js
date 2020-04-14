@@ -15,7 +15,7 @@ import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker
 import { AntDesign } from '@expo/vector-icons';
 import TopImage from '../../assets/images/Last_Period/top.png';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import AskLastPeriodImage from '@/assets/images/Last_Period/AskLastPeriod.png';
+
 import i18n from '../../i18n';
 const styles = StyleSheet.create({
   container: {
@@ -104,13 +104,7 @@ const LastPeriodScreen = () => {
       <StatusBar hidden />
       <Image style={styles.topImage} source={TopImage} />
       <View style={{ padding: 20, alignSelf: 'flex-start' }}>
-        {/* <View style={{ flexDirection: 'row', marginTop: 200 }}> */}
-        <Text style={styles.nameText}>
-          {i18n.t('when_was_your_last_period')}
-          {/* can we call you? */}
-        </Text>
-        {/* </View> */}
-        {/* <Image style={styles.lastPeriodText} source={AskLastPeriodImage} /> */}
+        <Text style={styles.nameText}>{i18n.t('when_was_your_last_period')}</Text>
       </View>
 
       <View style={styles.calenderContainer}>
@@ -128,10 +122,7 @@ const LastPeriodScreen = () => {
       </View>
       <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
         <View style={styles.buttonTextContainer}>
-          <Text style={styles.buttonText}>
-            {i18n.t('continue')}
-            {/* Continue */}
-          </Text>
+          <Text style={styles.buttonText}>{i18n.t('continue')}</Text>
           <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
         </View>
       </TouchableOpacity>
