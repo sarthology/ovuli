@@ -5,6 +5,7 @@ import { StyleSheet, TouchableOpacity, Text, View, Image, Dimensions } from 'rea
 import top from '@wireframes/assets/Your_Name/top.png';
 import { AntDesign } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
+import i18n from '@/i18n';
 
 const styles = StyleSheet.create({
   top: {
@@ -59,8 +60,7 @@ const styles = StyleSheet.create({
     top: Dimensions.get('window').height - 230,
     borderColor: '#F55963',
     position: 'absolute',
-    // right: 30,
-    // top: Dimensions.get('window').height - 50,
+
     flex: 1,
     alignContent: 'center',
     justifyContent: 'center',
@@ -135,23 +135,21 @@ const DoYouKnow = () => {
     <View style={styles.container}>
       <Image source={top} style={styles.top} />
       <View style={{ flexDirection: 'row' }}>
-        <Text style={styles.nameText}>Do you know your Cycle Length?</Text>
+        <Text style={styles.nameText}>{i18n.t('do_you_know_your_cycle_length')}</Text>
       </View>
 
       <TouchableOpacity
         style={{
           borderWidth: 2,
-          // color: 'red',
+
           width: 80,
 
           borderRadius: 5,
-          // marginTop: -170,
-          // padding: 4,
+
           top: Dimensions.get('window').height - 230,
           borderColor: '#F55963',
           position: 'absolute',
-          // right: 30,
-          // top: Dimensions.get('window').height - 50,
+
           flex: 1,
           alignContent: 'center',
           justifyContent: 'center',
@@ -161,7 +159,6 @@ const DoYouKnow = () => {
         }}
         onPress={countYes}
       >
-        {/* {console.log(this.state.count + 'hello')} */}
         <Text
           style={
             (styles.condText,
@@ -170,15 +167,15 @@ const DoYouKnow = () => {
                 fontSize: 20,
                 textAlign: 'center',
                 padding: 5,
-                // paddingLeft: 10,
+
                 color: '#F55963',
-                // eslint-disable-next-line no-dupe-keys
+
                 color: 'white',
               },
             ])
           }
         >
-          Yes
+          {i18n.t('yes')}
         </Text>
         <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
       </TouchableOpacity>
@@ -191,13 +188,11 @@ const DoYouKnow = () => {
               borderWidth: 2,
               width: 80,
               borderRadius: 5,
-              // marginTop: -170,
-              // padding: 4,
+
               top: Dimensions.get('window').height - 230,
               borderColor: '#F55963',
               position: 'absolute',
-              // right: 30,
-              // top: Dimensions.get('window').height - 50,
+
               flex: 1,
               alignContent: 'center',
               justifyContent: 'center',
@@ -214,12 +209,12 @@ const DoYouKnow = () => {
             fontSize: 20,
             textAlign: 'center',
             padding: 5,
-            // paddingLeft: 10,
+
             color: '#F55963',
             color: 'white',
           }}
         >
-          No
+          {i18n.t('no')}
         </Text>
         <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} size={18} />
       </TouchableOpacity>

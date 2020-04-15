@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-
+import i18n from '@/i18n';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 const HistoryScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>History</Text>
+      <Text style={styles.welcome}>{i18n.t('history')}</Text>
     </View>
   );
 };
