@@ -15,7 +15,6 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import top from '@wireframes/assets/Your_Name/top.png';
 import bottom from '@wireframes/assets/Your_Name/bottom.png';
 import { useNavigation } from '@react-navigation/native';
-import i18n from '@/i18n';
 
 import { AntDesign } from '@expo/vector-icons';
 
@@ -135,21 +134,23 @@ const YourNameScreen = () => {
           <View style={{ flexDirection: 'row', marginTop: 200 }}>
             <Text
               style={[styles.nameText, { fontFamily: 'PT-Sans', fontSize: 30, fontWeight: 'bold' }]}
-            ></Text>
-            <Text style={styles.nameText}>{i18n.t('how_can_we_call_you')}</Text>
+            >
+              How
+            </Text>
+            <Text style={styles.nameText}> can we call you?</Text>
           </View>
 
           <TextInput
             style={styles.inputContainer}
             underlineColorAndroid="transparent"
             autoCapitalize="none"
-            placeholder={i18n.t('please_enter_your_name')}
+            placeholder="Enter your name here"
             onChangeText={text => setName(text)}
             value={name}
           />
           <Image source={bottom} style={styles.bottom} />
           <TouchableOpacity style={styles.button} onPress={saveName}>
-            <Text style={styles.buttonText}>{i18n.t('continue')}</Text>
+            <Text style={styles.buttonText}>Continue</Text>
             <AntDesign
               style={{ alignSelf: 'center', color: '#F55963' }}
               name="arrowright"

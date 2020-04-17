@@ -13,10 +13,10 @@ import {
 // eslint-disable-next-line import/named
 import CalendarPicker, { CALENDAR_WEEK_DAYS } from 'react-native-calendar-picker';
 import { AntDesign } from '@expo/vector-icons';
-import TopImage from '@/assets/images/Last_Period/top.png';
+import TopImage from '../../assets/images/Last_Period/top.png';
 import { useNavigation, useRoute } from '@react-navigation/native';
+import AskLastPeriodImage from '@/assets/images/Last_Period/AskLastPeriod.png';
 
-import i18n from '@/i18n';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -71,13 +71,6 @@ const styles = StyleSheet.create({
   dayOfWeekStyles: {
     backgroundColor: '#F55963',
   },
-  nameText: {
-    alignSelf: 'center',
-    marginTop: Dimensions.get('window').height / 3 - 150,
-    marginBottom: 27,
-    fontFamily: 'PT-Sans',
-    fontSize: 25,
-  },
 });
 
 const LastPeriodScreen = () => {
@@ -104,7 +97,7 @@ const LastPeriodScreen = () => {
       <StatusBar hidden />
       <Image style={styles.topImage} source={TopImage} />
       <View style={{ padding: 20, alignSelf: 'flex-start' }}>
-        <Text style={styles.nameText}>{i18n.t('when_was_your_last_period')}</Text>
+        <Image style={styles.lastPeriodText} source={AskLastPeriodImage} />
       </View>
 
       <View style={styles.calenderContainer}>
@@ -122,7 +115,7 @@ const LastPeriodScreen = () => {
       </View>
       <TouchableOpacity style={styles.button} onPress={saveLastPeriod}>
         <View style={styles.buttonTextContainer}>
-          <Text style={styles.buttonText}>{i18n.t('continue')}</Text>
+          <Text style={styles.buttonText}>Continue</Text>
           <AntDesign style={styles.arrowIcon} name="arrowright" size={18} />
         </View>
       </TouchableOpacity>

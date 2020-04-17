@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     padding: 12,
     backgroundColor: 'transparent',
-    marginLeft: 15,
+    marginLeft: 15, //Dimensions.get("screen").width - 2,
     marginRight: 15,
   },
   linearGradient: {

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Text } from 'react-native';
+
 import HomeScreen from '@/screens/HomeScreen';
 import HistoryScreen from '@/screens/HistoryScreen';
 import ProfileScreen from '@/screens/ProfileScreen';
 import BottomTabIcon from './BottomIcon';
-import i18n from '@/i18n';
+
 const Tab = createBottomTabNavigator();
 
 const Colors = {
@@ -26,7 +26,7 @@ export default function BottomTabs() {
         name="History"
         component={HistoryScreen}
         options={{
-          tabBarLabel: ({ color }) => <Text style={{ color: color }}>{i18n.t('history')}</Text>,
+          tabBarLabel: 'History',
           tabBarIcon: ({ color, size }) => <BottomTabIcon name="clock" color={color} size={size} />,
         }}
       />
@@ -34,8 +34,7 @@ export default function BottomTabs() {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarLabel: ({ color }) => <Text style={{ color: color }}>{i18n.t('home')}</Text>,
-
+          tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => <BottomTabIcon name="home" color={color} size={size} />,
         }}
       />
@@ -43,7 +42,7 @@ export default function BottomTabs() {
         name="Profile"
         component={ProfileScreen}
         options={{
-          tabBarLabel: ({ color }) => <Text style={{ color: color }}>{i18n.t('profile')}</Text>,
+          tabBarLabel: 'Profile',
           tabBarIcon: ({ color, size }) => (
             <BottomTabIcon name="settings" color={color} size={size} />
           ),
