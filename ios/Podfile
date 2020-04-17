@@ -45,4 +45,6 @@ target 'ovuli' do
   use_native_modules!
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
 
+  pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
 end
