@@ -12,7 +12,7 @@ import {
 import { AntDesign } from '@expo/vector-icons';
 import SmoothPicker from 'react-native-smooth-picker';
 
-import top from '@wireframes/assets/Avg_Cycle/top.png';
+import top from '@wireframes/assets/Avg_Cycle_SVG/top.svg';
 import { useNavigation } from '@react-navigation/native';
 
 const styles = StyleSheet.create({
