@@ -1,13 +1,12 @@
 import 'react-native-gesture-handler';
-import React, {useState} from 'react';
-import { StyleSheet, TouchableHighlight, Text, View, Dimensions, Image, Picker } from 'react-native';
-
+import React from 'react';
+import { StyleSheet, Text, View, Dimensions, Image, Picker } from 'react-native';
 
 import profile from '@wireframes/assets/Setting_screen/profile.png';
 import { Entypo } from 'react-native-vector-icons';
 import { Feather } from 'react-native-vector-icons';
 import { MaterialIcons } from 'react-native-vector-icons';
-
+import i18n from '@/i18n';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -56,9 +55,6 @@ const styles = StyleSheet.create({
   },
 });
 
-const COLORS = {
-  grey: 'rgb(179, 182, 183)',
-}
 const ProfileScreen = () => {
   const [language, setLanguage] = React.useState('English');
   const [cycle, setCycle] = React.useState('20 Days');
@@ -66,44 +62,50 @@ const ProfileScreen = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.head}>Settings</Text>
+      <Text style={styles.head}>{i18n.t('settings')}</Text>
 
       <View style={styles.userInfo}>
         <Image source={profile} style={styles.profile} />
         <Text style={styles.wel}>{'\n\n'}Samriddhi</Text>
-
       </View>
 
       <View style={styles.design}>
         <MaterialIcons name="language" style={styles.create} />
-        <Text style={styles.welcome}>  Language                    </Text>
-        <Text >{language} </Text>
-          <TouchableHighlight onPress={() => setLanguage('Marathi')}>
-           <Feather name="edit-3" size={20} color= {COLORS.grey}/>
-          </TouchableHighlight>
-
+        <Text style={styles.welcome}>
+          {i18n.t('language')}
+          {/* Language */}
+        </Text>
+        <Picker
+          selectedValue={language}
+          style={styles.content}
+          onValueChange={language => setLanguage(language)}
+        >
+          <Picker.Item label="English" value="English" />
+        </Picker>
       </View>
 
       <View style={styles.design}>
         <Entypo name="circular-graph" style={styles.create} />
-
-        <Text style={styles.welcome}>  Cycle Length             </Text>
-        <Text>{cycle} </Text>
-          <TouchableHighlight  onPress={() => setCycle('23 Days')}>
-           <Feather name="edit-3" size={20} color= {COLORS.grey}/>
-          </TouchableHighlight>
-
+        <Text style={styles.welcome}>{i18n.t('cycle_length')}</Text>
+        <Picker
+          selectedValue={cycle}
+          style={styles.content}
+          onValueChange={cycle => setCycle(cycle)}
+        >
+          <Picker.Item label="20 Days" value="20" />
+        </Picker>
       </View>
 
       <View style={styles.design}>
         <Feather name="droplet" style={styles.create} />
-
-        <Text style={styles.welcome}> Last Period           </Text>
-        <Text>{lastCycle} </Text>
-          <TouchableHighlight onPress={() => setLastCycle('19 June 2020')}>
-           <Feather name="edit-3" size={20} color= {COLORS.grey}/>
-          </TouchableHighlight>
-
+        <Text style={styles.welcome}>{i18n.t('last_period')}</Text>
+        <Picker
+          selectedValue={lastCycle}
+          style={styles.content}
+          onValueChange={lastCycle => setLastCycle(lastCycle)}
+        >
+          <Picker.Item label="14 july 2020" value="14/07/2020" />
+        </Picker>
       </View>
     </View>
   );

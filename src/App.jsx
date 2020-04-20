@@ -20,7 +20,6 @@ const App = () => {
   if (!isFontLoaded) {
     return <AppLoading />;
   }
-
   return <CustomNavigationContainer />;
 };
 
