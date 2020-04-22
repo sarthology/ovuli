@@ -96,7 +96,7 @@ I know not everyone has their grasp on React Native yet but there are multiple w
 
 1. **Design:** If you feel like that your *Design sense* is awesome. This section is for you, we are using figma to create deisgn. All the wireframes will be uploaded in `wireframes` folder. 
 2. **Documentation / Wiki:** Documentation is very important aspect of any open source project and it is for this project as well. You might learn a lot while writing about it.
-3. **Language Translation:** We are not using google translator to be precise. Also the language conversion will be only for UI elements. Feel free to add your own language. We will be storing this info in `languageBase` folder.
+3. **Language Translation:** We are not using google translator to be precise. Also the language conversion will be only for UI elements. Feel free to add your own language. We will be storing this info in `translations` folder.
 4. **Report Issues:** I consider this as one of the most important tasks. Follow the steps mention is upcomming section.
 5. **Code:** Last but not least you can code the feature or fix a bug to make it flawless. There are two ways you can do that 
 	-	**HTML & CSS:** We are using [Atomic Design System](https://bradfrost.com/blog/post/atomic-web-design/) so you can even just design and button by changing it's color and still have a big impact of the over all platform.
