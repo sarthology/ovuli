@@ -151,7 +151,7 @@ const YourNameScreen = () => {
           <TouchableOpacity style={styles.button} onPress={saveName}>
             <Text style={styles.buttonText}>{i18n.t('continue')}</Text>
             <AntDesign
-              style={{ alignSelf: 'center', color: '#F55963' }}
+              style={{ alignSelf: 'center', color: '#F55963', top: 2, left: -4 }}
               name="arrowright"
               size={18}
             />

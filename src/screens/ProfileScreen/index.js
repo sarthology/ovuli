@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-start',
   },
   content: {
-    height: 50,
+    height: 40,
     width: 150,
   },
   design: {
@@ -66,7 +66,7 @@ const ProfileScreen = () => {
 
       <View style={styles.userInfo}>
         <Image source={profile} style={styles.profile} />
-        <Text style={styles.wel}>{'\n\n'}Samriddhi</Text>
+        <Text style={styles.wel}>{'\n\n\n '} Samriddhi</Text>
       </View>
 
       <View style={styles.design}>
