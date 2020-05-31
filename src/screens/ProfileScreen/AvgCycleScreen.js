@@ -155,7 +155,11 @@ const AvgCycle = () => {
       </View>
       <TouchableOpacity style={styles.button} onPress={saveAvgPeriod}>
         <Text style={styles.buttonText}>{i18n.t('continue')}</Text>
-        <AntDesign style={{ alignSelf: 'center', color: '#F55963' }} name="arrowright" size={18} />
+        <AntDesign
+          style={{ alignSelf: 'center', color: '#F55963', top: 2, left: -4 }}
+          name="arrowright"
+          size={18}
+        />
       </TouchableOpacity>
     </View>
   );
