@@ -12,8 +12,8 @@ import {
 import { AntDesign } from '@expo/vector-icons';
 import SmoothPicker from 'react-native-smooth-picker';
 import { useNavigation } from '@react-navigation/native';
-import top from '@wireframes/assets/Lang_Screen/top.png';
-import bottom from '@wireframes/assets/Lang_Screen/bottom.png';
+import top from '@wireframes/assets/Lang_Screen_SVG/top.svg';
+import bottom from '@wireframes/assets/Lang_Screen_SVG/bottom.svg';
 import i18n from '@/i18n';
 
 const languages = [
