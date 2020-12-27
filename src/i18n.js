@@ -1,6 +1,7 @@
 import i18n from 'i18n-js';
 
 import English from '../translations/en.json';
+import Deutsch from '../translations/de.json';
 import Hindi from '../translations/hi.json';
 import Nepali from '../translations/ne.json';
 import Bengali from '../translations/be.json';
@@ -18,6 +19,7 @@ i18n.locale = null;
 i18n.fallbacks = true;
 i18n.translations = {
   English,
+  Deutsch,
   Hindi,
   Nepali,
   Bengali,
