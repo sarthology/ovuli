@@ -20,6 +20,7 @@ const languages = [
   'Assamese',
   'Bengali',
   'English',
+  'German',
   'Gujarati',
   'Hindi',
   'Kannada',
